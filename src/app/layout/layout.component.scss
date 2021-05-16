@@ -2,23 +2,29 @@
   height: 100%;
 }
 
+.sider {
+  border-right: 1px solid #dedede;
+}
+
 .sider-user {
   text-align: center;
-  padding: 32px 0;
+  padding-top: 32px;
+  padding-bottom: 24px;
 }
 
 .sider-menu {
   border: none;
 }
 
-nz-breadcrumb {
-  margin: 16px 0;
+nz-header {
+  background: #fff;
+  border-bottom: 1px solid #dedede;
+  padding: 0;
 }
 
-.inner-layout {
-  padding: 0 24px 24px;
+nz-page-header {
 }
 
 nz-content {
-  background: #fff;
+  padding: 15px 12px;
 }

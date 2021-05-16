@@ -1,4 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
@@ -8,18 +9,30 @@ import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzCardModule } from 'ng-zorro-antd/card';
+
 
 @NgModule({
   exports: [
+    CommonModule,
     NzLayoutModule,
     NzMenuModule,
     NzBreadCrumbModule,
     NzIconModule,
+    NzSpaceModule,
     NzPageHeaderModule,
+    NzCardModule,
     NzDescriptionsModule,
     NzButtonModule,
+    NzInputModule,
     NzAvatarModule,
-    NzBadgeModule
+    NzBadgeModule,
+    NzTableModule,
+    NzDividerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

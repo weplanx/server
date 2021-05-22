@@ -15,24 +15,17 @@ import en from '@angular/common/locales/en';
 registerLocaleData(en);
 
 import { AppComponent } from './app.component';
-import { NzIconService } from 'ng-zorro-antd/icon';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./app.router.module').then(m => m.AppRouterModule)
-    // canActivate: [TokenService]
   }
-  // {
-  //   path: 'login',
-  //   component: LoginComponent
-  // }
 ];
 
 const ngZorroConfig: NzConfig = {
   notification: { nzPlacement: 'bottomRight' },
-  table: { nzSize: 'middle' },
-  card: { nzBordered: false }
+  table: { nzSize: 'middle' }
 };
 
 @NgModule({

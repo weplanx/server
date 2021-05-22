@@ -36,6 +36,7 @@
               }
             ],
             "styles": [
+              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -73,7 +74,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "console:build"
+            "browserTarget": "console:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

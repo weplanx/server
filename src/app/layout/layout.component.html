@@ -1,91 +1,136 @@
 <nz-layout class="main-layout">
-  <nz-sider
-    class="sider"
-    [nzTheme]="'light'"
-    [nzWidth]="240"
-  >
-    <div class="sider-user">
-      <nz-badge [nzCount]="5">
-        <nz-avatar [nzSize]="100" nzIcon="user"></nz-avatar>
-      </nz-badge>
+  <nz-header>
+    <div class="logo">
+      <a href="#">
+        <img src="/assets/weplanx.png" alt="weplanx"> WePlanx
+      </a>
     </div>
-    <ul class="sider-menu" nz-menu nzMode="inline">
-      <li nz-submenu nzTitle="User" nzIcon="user">
-        <ul>
-          <li nz-menu-item>Tom</li>
-          <li nz-menu-item>Bill</li>
-          <li nz-menu-item>Alex</li>
-        </ul>
+    <ul nz-menu nzMode="horizontal">
+      <li nz-menu-item nzSelected>
+        <i nz-icon nzType="mail"></i>
+        Navigation One
       </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
+      <li nz-menu-item nzDisabled>
+        <i nz-icon nzType="appstore"></i>
+        Navigation Two
+      </li>
+      <li nz-submenu nzTitle="Navigation Three - Submenu" nzIcon="setting">
         <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
+          <li nz-menu-group nzTitle="Item 1">
+            <ul>
+              <li nz-menu-item>Option 1</li>
+              <li nz-menu-item>Option 2</li>
+            </ul>
+          </li>
+          <li nz-menu-group nzTitle="Item 2">
+            <ul>
+              <li nz-menu-item>Option 3</li>
+              <li nz-menu-item>Option 4</li>
+              <li nz-submenu nzTitle="Sub Menu">
+                <ul>
+                  <li nz-menu-item nzDisabled>Option 5</li>
+                  <li nz-menu-item>Option 6</li>
+                </ul>
+              </li>
+              <li nz-submenu nzDisabled nzTitle="Disabled Sub Menu">
+                <ul>
+                  <li nz-menu-item>Option 5</li>
+                  <li nz-menu-item>Option 6</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li nz-menu-item>
-        <i nz-icon nzType="file"></i>
-        <span>File</span>
+        <a href="https://ng.ant.design" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
       </li>
     </ul>
-  </nz-sider>
-  <nz-layout>
-    <nz-page-header nzTitle="App" [nzGhost]="false">
-      <nz-breadcrumb [nzSeparator]="breadcrumbIcon" nz-page-header-breadcrumb>
-        <ng-template #breadcrumbIcon>
-          <i nz-icon nzType="right"></i>
-        </ng-template>
-        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-        <nz-breadcrumb-item>List</nz-breadcrumb-item>
-        <nz-breadcrumb-item>App</nz-breadcrumb-item>
-      </nz-breadcrumb>
-      <nz-page-header-extra>
-        <button nz-button>Operation</button>
-        <button nz-button nzType="primary">Primary</button>
-      </nz-page-header-extra>
-    </nz-page-header>
+  </nz-header>
 
-    <nz-content>
-      <nz-card [nzTitle]="title">
-        <nz-table #basicTable [nzData]="listOfData">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Address</th>
-            <th>Action</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let data of basicTable.data">
-            <td>{{ data.name }}</td>
-            <td>{{ data.age }}</td>
-            <td>{{ data.address }}</td>
-            <td>
-              <a>Action 一 {{ data.name }}</a>
-              <nz-divider nzType="vertical"></nz-divider>
-              <a>Delete</a>
-            </td>
-          </tr>
-          </tbody>
-        </nz-table>
-      </nz-card>
-      <ng-template #title>
-        <nz-space>
-          <nz-input-group *nzSpaceItem nzSearch [nzAddOnAfter]="nzAddOnAfter" style="width: 320px">
-            <input nz-input />
-          </nz-input-group>
-          <ng-template #nzAddOnAfter>
-            <button
-              nz-button
-              nzType="primary"
-              nzSearch
-            >
-              <i nz-icon nzType="search"></i>
-            </button>
+  <nz-layout>
+    <nz-sider
+      class="sider"
+      nzTheme="light"
+      nzWidth="240px"
+    >
+      <ul class="sider-menu" nz-menu nzMode="inline">
+        <li nz-submenu nzTitle="User" nzIcon="user">
+          <ul>
+            <li nz-menu-item>Tom</li>
+            <li nz-menu-item>Bill</li>
+            <li nz-menu-item>Alex</li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="Team" nzIcon="team">
+          <ul>
+            <li nz-menu-item>Team 1</li>
+            <li nz-menu-item>Team 2</li>
+          </ul>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="file"></i>
+          <span>File</span>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-page-header nzTitle="App" [nzGhost]="false">
+        <nz-breadcrumb [nzSeparator]="breadcrumbIcon" nz-page-header-breadcrumb>
+          <ng-template #breadcrumbIcon>
+            <i nz-icon nzType="right"></i>
           </ng-template>
-        </nz-space>
-      </ng-template>
-    </nz-content>
+          <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+          <nz-breadcrumb-item>List</nz-breadcrumb-item>
+          <nz-breadcrumb-item>App</nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <nz-page-header-extra>
+          <button nz-button>Operation</button>
+          <button nz-button nzType="primary">Primary</button>
+        </nz-page-header-extra>
+      </nz-page-header>
+      <nz-content>
+        <nz-card [nzTitle]="title">
+          <nz-table #basicTable [nzData]="listOfData">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Address</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>{{ data.name }}</td>
+              <td>{{ data.age }}</td>
+              <td>{{ data.address }}</td>
+              <td>
+                <a>Action 一 {{ data.name }}</a>
+                <nz-divider nzType="vertical"></nz-divider>
+                <a>Delete</a>
+              </td>
+            </tr>
+            </tbody>
+          </nz-table>
+        </nz-card>
+        <ng-template #title>
+          <nz-space>
+            <nz-input-group *nzSpaceItem nzSearch [nzAddOnAfter]="nzAddOnAfter" style="width: 320px">
+              <input nz-input />
+            </nz-input-group>
+            <ng-template #nzAddOnAfter>
+              <button
+                nz-button
+                nzType="primary"
+                nzSearch
+              >
+                <i nz-icon nzType="search"></i>
+              </button>
+            </ng-template>
+          </nz-space>
+        </ng-template>
+      </nz-content>
+    </nz-layout>
   </nz-layout>
 </nz-layout>

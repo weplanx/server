@@ -23,11 +23,8 @@
       "@common/*": [
         "src/app/common/*"
       ],
-      "@api/*": [
-        "src/app/api/*"
-      ],
-      "@ext": [
-        "src/app/app.ext.module.ts"
+      "@share": [
+        "src/app/app-share.module.ts"
       ]
     }
   },

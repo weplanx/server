@@ -46,5 +46,5 @@ import { FormsModule } from '@angular/forms';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppExtModule {
+export class AppShareModule {
 }

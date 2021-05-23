@@ -3,12 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NZ_CONFIG, NzConfig } from 'ng-zorro-antd/core/config';
 import { RouterModule, Routes } from '@angular/router';
-import { AppExtModule } from '@ext';
+import { AppShareModule } from '@share';
 
 import en from '@angular/common/locales/en';
 
@@ -19,7 +18,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./app.router.module').then(m => m.AppRouterModule)
+    loadChildren: () => import('./app-router.module').then(m => m.AppRouterModule)
   }
 ];
 
@@ -35,7 +34,7 @@ const ngZorroConfig: NzConfig = {
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppExtModule,
+    AppShareModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [

@@ -1,26 +1,32 @@
 <nz-layout class="main-layout">
   <nz-header>
     <div class="logo">
-      <a href="#">
-        <img src="/assets/weplanx.png" alt="weplanx"> WePlanx
-      </a>
+      <a href="#"> <img src="/assets/weplanx.png" alt="weplanx" /> WePlanx </a>
     </div>
     <ul class="nav" nz-menu nzMode="horizontal">
-      <li nz-menu-item>
-        <i nz-icon nzType="dashboard"></i>
-        Dashboard
+      <li nz-menu-item nzMatchRouter>
+        <a [routerLink]="['dashboard']">
+          <i nz-icon nzType="dashboard"></i>
+          Dashboard
+        </a>
       </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="desktop"></i>
-        Workbench
+      <li nz-menu-item nzMatchRouter>
+        <a [routerLink]="['workbench']">
+          <i nz-icon nzType="desktop"></i>
+          Workbench
+        </a>
       </li>
-      <li nz-menu-item nzSelected>
-        <i nz-icon nzType="project"></i>
-        Projects
+      <li nz-menu-item nzMatchRouter>
+        <a [routerLink]="['projects']">
+          <i nz-icon nzType="project"></i>
+          Projects
+        </a>
       </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="code"></i>
-        Console
+      <li nz-menu-item nzMatchRouter>
+        <a [routerLink]="['console']">
+          <i nz-icon nzType="code"></i>
+          Console
+        </a>
       </li>
     </ul>
     <nz-space class="extra">
@@ -42,7 +48,7 @@
         nzPlacement="bottomRight"
         [nzDropdownMenu]="center"
       >
-        <nz-badge [nzCount]="5" style="margin-right: 24px;">
+        <nz-badge [nzCount]="5" style="margin-right: 24px">
           <nz-avatar [nzSrc]="'/assets/user.jpg'" [nzShape]="'square'"></nz-avatar>
         </nz-badge>
         <nz-dropdown-menu #center>
@@ -87,11 +93,7 @@
     <div class="clearfix"></div>
   </nz-header>
   <nz-layout>
-    <nz-sider
-      class="sider"
-      nzTheme="light"
-      nzWidth="240px"
-    >
+    <nz-sider class="sider" nzTheme="light" nzWidth="240px">
       <ul nz-menu nzMode="inline">
         <li nz-submenu nzTitle="Favorites" nzIcon="star">
           <ul>
@@ -139,111 +141,7 @@
         </nz-page-header-extra>
       </nz-page-header>
       <nz-content>
-        <ng-template #search>
-          <nz-space>
-            <nz-input-group
-              *nzSpaceItem
-              nzSearch
-              nzSuffixIcon="search"
-              style="width: 240px"
-            >
-              <input nz-input placeholder="Search Project Name" />
-            </nz-input-group>
-            <nz-select
-              *nzSpaceItem
-              nzAllowClear
-              nzMode="multiple"
-              [ngModel]="tags"
-              style="width: 260px"
-            >
-              <nz-option nzLabel="Popularity" [nzValue]="1"></nz-option>
-              <nz-option nzLabel="Takeaway" [nzValue]="2"></nz-option>
-            </nz-select>
-            <nz-button-group *nzSpaceItem nz-button>
-              <button nz-button>
-                Creation Time
-                <i nz-icon nzType="down"></i>
-              </button>
-              <button nz-button nz-dropdown nzPlacement="bottomRight">
-                <i nz-icon nzType="sort-ascending"></i>
-              </button>
-            </nz-button-group>
-          </nz-space>
-        </ng-template>
-        <ng-template #extra>
-          <nz-button-group>
-            <button nz-button>
-              <i nz-icon nzType="sync"></i>
-            </button>
-            <button nz-button>
-              <i nz-icon nzType="clear"></i>
-            </button>
-            <button nz-button nzDanger [disabled]="true">
-              <i nz-icon nzType="rest"></i>
-            </button>
-          </nz-button-group>
-        </ng-template>
-        <nz-card [nzTitle]="search" [nzExtra]="extra">
-          <nz-table #basicTable [nzData]="listOfData">
-            <thead>
-            <tr>
-              <th>Project Name</th>
-              <th nzWidth="420px" nzRight>Features</th>
-              <th nzWidth="240px" nzRight>Partner</th>
-              <th nzWidth="120px" nzRight>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let data of basicTable.data">
-              <td>
-                <nz-avatar [nzShape]="'square'" [nzText]="'SOL'"></nz-avatar>
-                <nz-divider nzType="vertical"></nz-divider>
-                {{ data.name }}
-              </td>
-              <td>
-                <nz-space>
-                  <button *nzSpaceItem nz-button nzType="text">
-                    <i nz-icon nzType="bulb" nzTheme="outline"></i>
-                  </button>
-                  <button *nzSpaceItem nz-button nzType="text">
-                    <i nz-icon nzType="code" nzTheme="outline"></i>
-                  </button>
-                  <button *nzSpaceItem nz-button nzType="text">
-                    <i nz-icon nzType="schedule" nzTheme="outline"></i>
-                  </button>
-                  <button *nzSpaceItem nz-button nzType="text">
-                    <i nz-icon nzType="mail" nzTheme="outline"></i>
-                  </button>
-                  <button *nzSpaceItem nz-button nzType="text">
-                    <i nz-icon nzType="cluster" nzTheme="outline"></i>
-                  </button>
-                  <button *nzSpaceItem nz-button nzType="text">
-                    <i nz-icon nzType="ci" nzTheme="outline"></i>
-                  </button>
-                  <button *nzSpaceItem nz-button nzType="text">
-                    <i nz-icon nzType="send" nzTheme="outline"></i>
-                  </button>
-                  <button *nzSpaceItem nz-button nzType="text">
-                    <i nz-icon nzType="cloud-server" nzTheme="outline"></i>
-                  </button>
-                </nz-space>
-              </td>
-              <td>
-                <nz-avatar [nzSrc]="'/assets/user.jpg'"></nz-avatar>
-              </td>
-              <td>
-                <button nz-button nzType="text">
-                  <i nz-icon nzType="star"></i>
-                </button>
-                <nz-divider nzType="vertical"></nz-divider>
-                <button nz-button nzType="text">
-                  <i nz-icon nzType="ellipsis"></i>
-                </button>
-              </td>
-            </tr>
-            </tbody>
-          </nz-table>
-        </nz-card>
+        <router-outlet></router-outlet>
       </nz-content>
     </nz-layout>
   </nz-layout>

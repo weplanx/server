@@ -5,47 +5,86 @@
         <img src="/assets/weplanx.png" alt="weplanx"> WePlanx
       </a>
     </div>
-    <ul nz-menu nzMode="horizontal">
+    <ul class="nav" nz-menu nzMode="horizontal">
       <li nz-menu-item nzSelected>
-        <i nz-icon nzType="mail"></i>
-        Navigation One
-      </li>
-      <li nz-menu-item nzDisabled>
-        <i nz-icon nzType="appstore"></i>
-        Navigation Two
-      </li>
-      <li nz-submenu nzTitle="Navigation Three - Submenu" nzIcon="setting">
-        <ul>
-          <li nz-menu-group nzTitle="Item 1">
-            <ul>
-              <li nz-menu-item>Option 1</li>
-              <li nz-menu-item>Option 2</li>
-            </ul>
-          </li>
-          <li nz-menu-group nzTitle="Item 2">
-            <ul>
-              <li nz-menu-item>Option 3</li>
-              <li nz-menu-item>Option 4</li>
-              <li nz-submenu nzTitle="Sub Menu">
-                <ul>
-                  <li nz-menu-item nzDisabled>Option 5</li>
-                  <li nz-menu-item>Option 6</li>
-                </ul>
-              </li>
-              <li nz-submenu nzDisabled nzTitle="Disabled Sub Menu">
-                <ul>
-                  <li nz-menu-item>Option 5</li>
-                  <li nz-menu-item>Option 6</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <i nz-icon nzType="dashboard"></i>
+        Dashboard
       </li>
       <li nz-menu-item>
-        <a href="https://ng.ant.design" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
+        <i nz-icon nzType="desktop"></i>
+        Workbench
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="project"></i>
+        Projects
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="code"></i>
+        Console
       </li>
     </ul>
+    <nz-space class="extra">
+      <button
+        *nzSpaceItem
+        nz-button
+        nzType="text"
+        nz-popover
+        nzPopoverTitle="Notifications"
+        nzPopoverContent="Content"
+        nzPopoverPlacement="bottomRight"
+      >
+        <i nz-icon nzType="notification"></i>
+      </button>
+      <div
+        *nzSpaceItem
+        class="center"
+        nz-dropdown
+        nzPlacement="bottomRight"
+        [nzDropdownMenu]="center"
+      >
+        <nz-badge [nzCount]="5" style="margin-right: 24px;">
+          <nz-avatar [nzSrc]="'/assets/user.jpg'" [nzShape]="'square'"></nz-avatar>
+        </nz-badge>
+        <nz-dropdown-menu #center>
+          <ul nz-menu>
+            <li nz-menu-item nzDisabled>
+              <div class="user-detail">
+                <nz-avatar [nzSize]="64" [nzSrc]="'/assets/user.jpg'"></nz-avatar>
+                <nz-space [nzSize]="2" nzDirection="vertical">
+                  <nz-tag *nzSpaceItem nzColor="blue">Team Admin</nz-tag>
+                  <h4 *nzSpaceItem>kain</h4>
+                </nz-space>
+              </div>
+            </li>
+            <li nz-menu-item>
+              <i nz-icon nzType="user"></i>
+              Profile
+            </li>
+            <li nz-menu-divider></li>
+            <li nz-menu-item>
+              <i nz-icon nzType="team"></i>
+              Team
+            </li>
+            <li nz-menu-item>
+              <i nz-icon nzType="user-add"></i>
+              Invite
+            </li>
+            <li nz-menu-divider></li>
+            <li nz-submenu nzTitle="Language" nzIcon="translation">
+              <ul>
+                <li nz-menu-item>中文</li>
+                <li nz-menu-item>English</li>
+              </ul>
+            </li>
+            <li nz-menu-item>
+              <i nz-icon nzType="logout"></i>
+              Exit
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+    </nz-space>
+    <div class="clearfix"></div>
   </nz-header>
 
   <nz-layout>

@@ -14,6 +14,10 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzElementPatchModule } from 'ng-zorro-antd/core/element-patch';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 
 @NgModule({
@@ -32,7 +36,10 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NzAvatarModule,
     NzBadgeModule,
     NzTableModule,
-    NzDividerModule
+    NzDividerModule,
+    NzPopoverModule,
+    NzDropDownModule,
+    NzTagModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

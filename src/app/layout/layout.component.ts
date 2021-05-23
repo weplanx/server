@@ -8,20 +8,17 @@ import { Component } from '@angular/core';
 export class LayoutComponent {
   listOfData: any[] = [
     {
-      key: '1',
-      name: 'John Brown',
+      name: 'Solution A',
       age: 32,
       address: 'New York No. 1 Lake Park'
     },
     {
-      key: '2',
-      name: 'Jim Green',
+      name: 'Solution B',
       age: 42,
       address: 'London No. 1 Lake Park'
     },
     {
-      key: '3',
-      name: 'Joe Black',
+      name: 'Solution C',
       age: 32,
       address: 'Sidney No. 1 Lake Park'
     }

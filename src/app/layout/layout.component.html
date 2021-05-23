@@ -6,7 +6,7 @@
       </a>
     </div>
     <ul class="nav" nz-menu nzMode="horizontal">
-      <li nz-menu-item nzSelected>
+      <li nz-menu-item>
         <i nz-icon nzType="dashboard"></i>
         Dashboard
       </li>
@@ -14,7 +14,7 @@
         <i nz-icon nzType="desktop"></i>
         Workbench
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item nzSelected>
         <i nz-icon nzType="project"></i>
         Projects
       </li>
@@ -57,7 +57,7 @@
               </div>
             </li>
             <li nz-menu-item>
-              <i nz-icon nzType="user"></i>
+              <i nz-icon nzType="idcard"></i>
               Profile
             </li>
             <li nz-menu-divider></li>
@@ -86,46 +86,56 @@
     </nz-space>
     <div class="clearfix"></div>
   </nz-header>
-
   <nz-layout>
     <nz-sider
       class="sider"
       nzTheme="light"
       nzWidth="240px"
     >
-      <ul class="sider-menu" nz-menu nzMode="inline">
-        <li nz-submenu nzTitle="User" nzIcon="user">
+      <ul nz-menu nzMode="inline">
+        <li nz-submenu nzTitle="Favorites" nzIcon="star">
           <ul>
-            <li nz-menu-item>Tom</li>
-            <li nz-menu-item>Bill</li>
-            <li nz-menu-item>Alex</li>
+            <li nz-menu-item>Solution A</li>
+            <li nz-menu-item>Solution B</li>
+            <li nz-menu-item>Solution C</li>
           </ul>
         </li>
-        <li nz-submenu nzTitle="Team" nzIcon="team">
+        <li nz-submenu nzTitle="Popular" nzIcon="fire">
           <ul>
-            <li nz-menu-item>Team 1</li>
-            <li nz-menu-item>Team 2</li>
+            <li nz-menu-item>Solution C</li>
+            <li nz-menu-item>Solution A</li>
+            <li nz-menu-item>Solution B</li>
           </ul>
         </li>
         <li nz-menu-item>
-          <i nz-icon nzType="file"></i>
-          <span>File</span>
+          <i nz-icon nzType="inbox"></i>
+          <span>Archive</span>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="tags"></i>
+          <span>Tags</span>
         </li>
       </ul>
     </nz-sider>
     <nz-layout>
-      <nz-page-header nzTitle="App" [nzGhost]="false">
+      <nz-page-header nzTitle="Projects" [nzGhost]="false">
         <nz-breadcrumb [nzSeparator]="breadcrumbIcon" nz-page-header-breadcrumb>
           <ng-template #breadcrumbIcon>
             <i nz-icon nzType="right"></i>
           </ng-template>
           <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-          <nz-breadcrumb-item>List</nz-breadcrumb-item>
-          <nz-breadcrumb-item>App</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Projects</nz-breadcrumb-item>
         </nz-breadcrumb>
         <nz-page-header-extra>
-          <button nz-button>Operation</button>
-          <button nz-button nzType="primary">Primary</button>
+          <nz-space>
+            <button *nzSpaceItem nz-button nzType="primary">
+              <i nz-icon nzType="plus"></i>
+              Create Project
+            </button>
+            <button *nzSpaceItem nz-button>
+              <i nz-icon nzType="ellipsis"></i>
+            </button>
+          </nz-space>
         </nz-page-header-extra>
       </nz-page-header>
       <nz-content>
@@ -133,21 +143,58 @@
           <nz-table #basicTable [nzData]="listOfData">
             <thead>
             <tr>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Address</th>
-              <th>Action</th>
+              <th>Project Name</th>
+              <th nzWidth="360px" nzRight>Features</th>
+              <th nzWidth="200px" nzRight>Partner</th>
+              <th nzWidth="120px" nzRight>Action</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let data of basicTable.data">
-              <td>{{ data.name }}</td>
-              <td>{{ data.age }}</td>
-              <td>{{ data.address }}</td>
               <td>
-                <a>Action 一 {{ data.name }}</a>
+                <nz-avatar [nzShape]="'square'" [nzText]="'SOL'"></nz-avatar>
                 <nz-divider nzType="vertical"></nz-divider>
-                <a>Delete</a>
+                {{ data.name }}
+              </td>
+              <td>
+                <nz-space>
+                  <button *nzSpaceItem nz-button nzType="text">
+                    <i nz-icon nzType="bulb" nzTheme="outline"></i>
+                  </button>
+                  <button *nzSpaceItem nz-button nzType="text">
+                    <i nz-icon nzType="code" nzTheme="outline"></i>
+                  </button>
+                  <button *nzSpaceItem nz-button nzType="text">
+                    <i nz-icon nzType="schedule" nzTheme="outline"></i>
+                  </button>
+                  <button *nzSpaceItem nz-button nzType="text">
+                    <i nz-icon nzType="mail" nzTheme="outline"></i>
+                  </button>
+                  <button *nzSpaceItem nz-button nzType="text">
+                    <i nz-icon nzType="cluster" nzTheme="outline"></i>
+                  </button>
+                  <button *nzSpaceItem nz-button nzType="text">
+                    <i nz-icon nzType="ci" nzTheme="outline"></i>
+                  </button>
+                  <button *nzSpaceItem nz-button nzType="text">
+                    <i nz-icon nzType="send" nzTheme="outline"></i>
+                  </button>
+                  <button *nzSpaceItem nz-button nzType="text">
+                    <i nz-icon nzType="cloud-server" nzTheme="outline"></i>
+                  </button>
+                </nz-space>
+              </td>
+              <td>
+                <nz-avatar [nzSrc]="'/assets/user.jpg'"></nz-avatar>
+              </td>
+              <td>
+                <button nz-button nzType="text">
+                  <i nz-icon nzType="star"></i>
+                </button>
+                <nz-divider nzType="vertical"></nz-divider>
+                <button nz-button nzType="text">
+                  <i nz-icon nzType="ellipsis"></i>
+                </button>
               </td>
             </tr>
             </tbody>

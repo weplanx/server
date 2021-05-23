@@ -33,6 +33,10 @@ nz-header {
   .nav {
     float: left;
 
+    li {
+      padding: 0 4px;
+    }
+
     .ant-menu-horizontal {
       border: none;
     }

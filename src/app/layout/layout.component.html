@@ -93,7 +93,7 @@
     <div class="clearfix"></div>
   </nz-header>
   <nz-layout>
-    <nz-sider class="sider" nzTheme="light" nzWidth="240px">
+    <nz-sider *ngIf="siderOn" class="sider" nzTheme="light" nzWidth="240px">
       <ul nz-menu nzMode="inline">
         <li nz-submenu nzTitle="Favorites" nzIcon="star">
           <ul>
@@ -120,13 +120,18 @@
       </ul>
     </nz-sider>
     <nz-layout>
-      <nz-page-header nzTitle="Projects" [nzGhost]="false">
-        <nz-breadcrumb [nzSeparator]="breadcrumbIcon" nz-page-header-breadcrumb>
-          <ng-template #breadcrumbIcon>
-            <i nz-icon nzType="right"></i>
-          </ng-template>
-          <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-          <nz-breadcrumb-item>Projects</nz-breadcrumb-item>
+      <nz-page-header *ngIf="pageHeaderOn" nzTitle="Projects" [nzGhost]="false">
+        <nz-breadcrumb
+          *ngIf="pageHeaderBreadcrumbOn"
+          nz-page-header-breadcrumb
+          nzSeparator=">"
+          [nzAutoGenerate]="true"
+        >
+          <nz-breadcrumb-item>
+            <a [routerLink]="['/']">
+              <i nz-icon nzType="home"></i>
+            </a>
+          </nz-breadcrumb-item>
         </nz-breadcrumb>
         <nz-page-header-extra>
           <nz-space>

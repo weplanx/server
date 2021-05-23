@@ -12,11 +12,25 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+        data: {
+          control: {
+            sider: false,
+            pageHeader: false,
+            pageHeaderBreadcrumb: false
+          }
+        }
       },
       {
         path: 'workbench',
-        loadChildren: () => import('./workbench/workbench.module').then(m => m.WorkbenchModule)
+        loadChildren: () => import('./workbench/workbench.module').then(m => m.WorkbenchModule),
+        data: {
+          control: {
+            sider: true,
+            pageHeader: false,
+            pageHeaderBreadcrumb: false
+          }
+        }
       },
       {
         path: 'projects',

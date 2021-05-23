@@ -6,21 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent {
+  tags = [1, 2];
   listOfData: any[] = [
     {
-      name: 'Solution A',
-      age: 32,
-      address: 'New York No. 1 Lake Park'
+      name: 'Solution A'
     },
     {
-      name: 'Solution B',
-      age: 42,
-      address: 'London No. 1 Lake Park'
+      name: 'Solution B'
     },
     {
-      name: 'Solution C',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park'
+      name: 'Solution C'
     }
   ];
 }

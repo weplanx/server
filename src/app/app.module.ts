@@ -33,7 +33,6 @@ const ngZorroConfig: NzConfig = {
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppExtModule,

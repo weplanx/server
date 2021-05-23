@@ -139,7 +139,51 @@
         </nz-page-header-extra>
       </nz-page-header>
       <nz-content>
-        <nz-card [nzTitle]="title">
+        <ng-template #search>
+          <nz-space>
+            <nz-input-group
+              *nzSpaceItem
+              nzSearch
+              nzSuffixIcon="search"
+              style="width: 240px"
+            >
+              <input nz-input placeholder="Search Project Name" />
+            </nz-input-group>
+            <nz-select
+              *nzSpaceItem
+              nzAllowClear
+              nzMode="multiple"
+              [ngModel]="tags"
+              style="width: 260px"
+            >
+              <nz-option nzLabel="Popularity" [nzValue]="1"></nz-option>
+              <nz-option nzLabel="Takeaway" [nzValue]="2"></nz-option>
+            </nz-select>
+            <nz-button-group *nzSpaceItem nz-button>
+              <button nz-button>
+                Creation time
+                <i nz-icon nzType="down"></i>
+              </button>
+              <button nz-button nz-dropdown nzPlacement="bottomRight">
+                <i nz-icon nzType="sort-ascending"></i>
+              </button>
+            </nz-button-group>
+          </nz-space>
+        </ng-template>
+        <ng-template #extra>
+          <nz-button-group>
+            <button nz-button>
+              <i nz-icon nzType="sync"></i>
+            </button>
+            <button nz-button>
+              <i nz-icon nzType="clear"></i>
+            </button>
+            <button nz-button nzDanger [disabled]="true">
+              <i nz-icon nzType="rest"></i>
+            </button>
+          </nz-button-group>
+        </ng-template>
+        <nz-card [nzTitle]="search" [nzExtra]="extra">
           <nz-table #basicTable [nzData]="listOfData">
             <thead>
             <tr>
@@ -200,22 +244,6 @@
             </tbody>
           </nz-table>
         </nz-card>
-        <ng-template #title>
-          <nz-space>
-            <nz-input-group *nzSpaceItem nzSearch [nzAddOnAfter]="nzAddOnAfter" style="width: 320px">
-              <input nz-input />
-            </nz-input-group>
-            <ng-template #nzAddOnAfter>
-              <button
-                nz-button
-                nzType="primary"
-                nzSearch
-              >
-                <i nz-icon nzType="search"></i>
-              </button>
-            </ng-template>
-          </nz-space>
-        </ng-template>
       </nz-content>
     </nz-layout>
   </nz-layout>

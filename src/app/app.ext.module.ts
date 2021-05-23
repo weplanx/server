@@ -15,14 +15,16 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
-import { NzElementPatchModule } from 'ng-zorro-antd/core/element-patch';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   exports: [
     CommonModule,
+    FormsModule,
     NzLayoutModule,
     NzMenuModule,
     NzBreadCrumbModule,
@@ -39,7 +41,8 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
     NzDividerModule,
     NzPopoverModule,
     NzDropDownModule,
-    NzTagModule
+    NzTagModule,
+    NzSelectModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,6 +1,6 @@
-export interface LayoutControl {
-  sider?: boolean;
-  pageHeader?: boolean;
-  pageHeaderBreadcrumb?: boolean;
+export interface LayoutNav {
+  name: string;
+  icon: string;
+  router: string;
 }
 

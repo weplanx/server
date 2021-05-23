@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { LayoutService } from './layout.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, take, takeUntil } from 'rxjs/operators';
+import { LayoutNav } from './types';
 
 @Component({
   selector: 'app-layout',
@@ -10,6 +11,13 @@ import { filter, map, take, takeUntil } from 'rxjs/operators';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit, OnDestroy {
+  navItems: LayoutNav[] = [
+    { name: 'Dashboard', icon: 'dashboard', router: 'dashboard' },
+    { name: 'Workbench', icon: 'desktop', router: 'workbench' },
+    { name: 'Projects', icon: 'project', router: 'projects' },
+    { name: 'Console', icon: 'code', router: 'console' }
+  ];
+
   siderOn = false;
   pageHeaderOn = false;
   pageHeaderBreadcrumbOn = false;

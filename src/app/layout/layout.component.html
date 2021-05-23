@@ -4,28 +4,10 @@
       <a href="#"> <img src="/assets/weplanx.png" alt="weplanx" /> WePlanx </a>
     </div>
     <ul class="nav" nz-menu nzMode="horizontal">
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['dashboard']">
-          <i nz-icon nzType="dashboard"></i>
-          Dashboard
-        </a>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['workbench']">
-          <i nz-icon nzType="desktop"></i>
-          Workbench
-        </a>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['projects']">
-          <i nz-icon nzType="project"></i>
-          Projects
-        </a>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['console']">
-          <i nz-icon nzType="code"></i>
-          Console
+      <li *ngFor="let nav of navItems" nz-menu-item nzMatchRouter>
+        <a [routerLink]="[nav.router]">
+          <i nz-icon [nzType]="nav.icon"></i>
+          {{ nav.name }}
         </a>
       </li>
     </ul>

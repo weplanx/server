@@ -20,11 +20,14 @@
       "@env": [
         "src/environments/environment.ts"
       ],
+      "@share": [
+        "src/app/app-share.module.ts"
+      ],
       "@common/*": [
         "src/app/common/*"
       ],
-      "@share": [
-        "src/app/app-share.module.ts"
+      "@layout/*": [
+        "src/app/layout/*"
       ]
     }
   },

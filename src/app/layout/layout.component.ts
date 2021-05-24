@@ -2,8 +2,8 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LayoutService } from './layout.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, take, takeUntil } from 'rxjs/operators';
-import { LayoutNav } from './types';
+import { filter, map, take } from 'rxjs/operators';
+import { navItems } from '@layout/nav-items';
 
 @Component({
   selector: 'app-layout',
@@ -11,13 +11,7 @@ import { LayoutNav } from './types';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit, OnDestroy {
-  navItems: LayoutNav[] = [
-    { name: 'Dashboard', icon: 'dashboard', router: 'dashboard' },
-    { name: 'Workbench', icon: 'desktop', router: 'workbench' },
-    { name: 'Projects', icon: 'project', router: 'projects' },
-    { name: 'Console', icon: 'code', router: 'console' }
-  ];
-
+  navItems = navItems;
   siderOn = false;
   pageHeaderOn = false;
   pageHeaderBreadcrumbOn = false;
@@ -54,6 +48,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
         return;
       }
       let changed = false;
+      this.layoutService.reset();
       for (const key in control) {
         if (control.hasOwnProperty(key) && control[key] !== undefined) {
           Reflect.set(this, key + 'On', control[key]);

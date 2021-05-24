@@ -19,7 +19,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
-
+import { ComponentModule } from './component/component.module';
 
 @NgModule({
   exports: [
@@ -42,7 +42,8 @@ import { FormsModule } from '@angular/forms';
     NzPopoverModule,
     NzDropDownModule,
     NzTagModule,
-    NzSelectModule
+    NzSelectModule,
+    ComponentModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

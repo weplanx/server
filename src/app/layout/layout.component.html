@@ -77,30 +77,6 @@
   <nz-layout>
     <nz-sider *ngIf="siderOn" class="sider" nzTheme="light" nzWidth="240px">
       <ng-container *ngTemplateOutlet="layoutService.sider"></ng-container>
-      <ul nz-menu nzMode="inline">
-        <li nz-submenu nzTitle="Favorites" nzIcon="star">
-          <ul>
-            <li nz-menu-item>Solution A</li>
-            <li nz-menu-item>Solution B</li>
-            <li nz-menu-item>Solution C</li>
-          </ul>
-        </li>
-        <li nz-submenu nzTitle="Popular" nzIcon="fire">
-          <ul>
-            <li nz-menu-item>Solution C</li>
-            <li nz-menu-item>Solution A</li>
-            <li nz-menu-item>Solution B</li>
-          </ul>
-        </li>
-        <li nz-menu-item>
-          <i nz-icon nzType="inbox"></i>
-          <span>Archive</span>
-        </li>
-        <li nz-menu-item>
-          <i nz-icon nzType="tags"></i>
-          <span>Tags</span>
-        </li>
-      </ul>
     </nz-sider>
     <nz-layout>
       <nz-page-header *ngIf="pageHeaderOn" nzTitle="Projects" [nzGhost]="false">

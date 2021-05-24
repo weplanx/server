@@ -20,6 +20,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
 import { ComponentModule } from './component/component.module';
+import { NzResultModule } from 'ng-zorro-antd/result';
 
 @NgModule({
   exports: [
@@ -43,6 +44,7 @@ import { ComponentModule } from './component/component.module';
     NzDropDownModule,
     NzTagModule,
     NzSelectModule,
+    NzResultModule,
     ComponentModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

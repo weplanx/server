@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppShareModule } from '@share';
-import { LayoutComponent } from './layout/layout.component';
-import { PagesModule } from './pages/pages.module';
-import { EmptyComponent } from './pages/empty.component';
-import { LayoutModule } from './layout/layout.module';
+import { LayoutComponent } from '@layout/layout.component';
+import { LayoutModule } from '@layout/layout.module';
+import { EmptyComponent } from './component/empty/empty.component';
 
 const routes: Routes = [
   {
@@ -56,17 +55,6 @@ const routes: Routes = [
         }
       },
       {
-        path: 'notifications',
-        loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule),
-        data: {
-          control: {
-            sider: false,
-            pageHeader: false,
-            pageHeaderBreadcrumb: false
-          }
-        }
-      },
-      {
         path: 'center',
         loadChildren: () => import('./center/center.module').then(m => m.CenterModule),
         data: {
@@ -94,7 +82,6 @@ const routes: Routes = [
   imports: [
     AppShareModule,
     LayoutModule,
-    PagesModule,
     RouterModule.forChild(routes)
   ]
 })

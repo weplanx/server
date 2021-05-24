@@ -76,6 +76,7 @@
   </nz-header>
   <nz-layout>
     <nz-sider *ngIf="siderOn" class="sider" nzTheme="light" nzWidth="240px">
+      <ng-container *ngTemplateOutlet="layoutService.sider"></ng-container>
       <ul nz-menu nzMode="inline">
         <li nz-submenu nzTitle="Favorites" nzIcon="star">
           <ul>

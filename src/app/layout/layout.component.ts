@@ -27,7 +27,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private layoutService: LayoutService,
+    public layoutService: LayoutService,
     private changeDetectorRef: ChangeDetectorRef
   ) {
   }

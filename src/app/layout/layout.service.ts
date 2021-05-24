@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, TemplateRef } from '@angular/core';
 
 @Injectable()
 export class LayoutService {
-  siderItems: any[] = [];
+  sider: TemplateRef<any>;
 }

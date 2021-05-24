@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LayoutService } from '../../layout/layout.service';
 
 @Component({
   selector: 'app-projects-index',
   templateUrl: './projects-index.component.html',
   styleUrls: ['./projects-index.component.scss']
 })
-export class ProjectsIndexComponent {
+export class ProjectsIndexComponent implements OnInit {
   tags = [1, 2];
   listOfData: any[] = [
     {
@@ -18,4 +19,10 @@ export class ProjectsIndexComponent {
       name: 'Solution C'
     }
   ];
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
 }

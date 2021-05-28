@@ -35,6 +35,18 @@ nz-header {
 
     li {
       padding: 0 4px;
+
+      &.ant-menu-item-active,
+      &.ant-menu-item-open,
+      &.ant-menu-item-selected,
+      &.ant-menu-item:hover,
+      &.ant-menu-submenu-active,
+      &.ant-menu-submenu-open,
+      &.ant-menu-submenu-selected,
+      &.ant-menu-submenu:hover {
+        border-bottom: 2px solid transparent;
+        border-top: 2px solid #1890ff;
+      }
     }
 
     .ant-menu-horizontal {
@@ -56,14 +68,18 @@ nz-header {
   }
 }
 
-::ng-deep .user-detail {
-  margin-left: 4px;
-  padding-bottom: 4px;
+::ng-deep {
+  .user-detail {
+    margin-left: 4px;
+    padding-bottom: 4px;
 
-  nz-space {
-    float: right;
-    margin-left: 24px;
+    nz-space {
+      float: right;
+      margin-left: 24px;
+    }
   }
+
+
 }
 
 .sider {

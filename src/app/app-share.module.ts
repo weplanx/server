@@ -21,6 +21,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
 import { ComponentModule } from './component/component.module';
 import { NzResultModule } from 'ng-zorro-antd/result';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 @NgModule({
   exports: [
@@ -45,6 +46,7 @@ import { NzResultModule } from 'ng-zorro-antd/result';
     NzTagModule,
     NzSelectModule,
     NzResultModule,
+    NzEmptyModule,
     ComponentModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

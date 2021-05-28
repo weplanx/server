@@ -1,42 +1,69 @@
 <app-layout-sider>
   <ul nz-menu nzMode="inline">
-    <li nz-submenu nzTitle="Issues" nzIcon="solution">
+    <li nz-menu-item>
+      <i nz-icon nzType="dashboard"></i>
+      <span>仪表盘</span>
+    </li>
+    <li nz-menu-item nzDisabled>
+      <i nz-icon nzType="api"></i>
+      <span>服务集成</span>
+    </li>
+    <li nz-menu-item nzDisabled>
+      <i nz-icon nzType="code"></i>
+      <span>代码仓库</span>
+    </li>
+    <li nz-menu-item nzDisabled>
+      <i nz-icon nzType="calendar"></i>
+      <span>维护计划</span>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-group nzTitle="团队管理">
       <ul>
         <li nz-menu-item>
-          <i nz-icon nzType="carry-out"></i>
-          <span>Task</span>
+          <i nz-icon nzType="audit"></i>
+          <span>团队信息</span>
         </li>
         <li nz-menu-item>
-          <i nz-icon nzType="bulb"></i>
-          <span>Requirement</span>
+          <i nz-icon nzType="team"></i>
+          <span>团队成员</span>
         </li>
         <li nz-menu-item>
-          <i nz-icon nzType="bug"></i>
-          <span>Defect</span>
+          <i nz-icon nzType="partition"></i>
+          <span>权限组</span>
         </li>
       </ul>
     </li>
     <li nz-menu-divider></li>
-    <li nz-menu-item>
-      <i nz-icon nzType="pull-request"></i>
-      <span>Merge Request</span>
-    </li>
-    <li nz-menu-item>
-      <i nz-icon nzType="build"></i>
-      <span>Build Jobs</span>
-    </li>
-    <li nz-menu-item>
-      <i nz-icon nzType="thunderbolt"></i>
-      <span>Wait Confirmations</span>
+    <li nz-menu-group nzTitle="安全审计">
+      <ul>
+        <li nz-menu-item nzDisabled>
+          <i nz-icon nzType="safety-certificate"></i>
+          <span>访问控制</span>
+        </li>
+        <li nz-menu-item nzDisabled>
+          <i nz-icon nzType="history"></i>
+          <span>操作日志</span>
+        </li>
+        <li nz-menu-item nzDisabled>
+          <i nz-icon nzType="key"></i>
+          <span>登录日志</span>
+        </li>
+      </ul>
     </li>
     <li nz-menu-divider></li>
-    <li nz-menu-item>
-      <i nz-icon nzType="calendar"></i>
-      <span>Calendar</span>
+    <li nz-menu-group nzTitle="系统设置">
+      <ul>
+        <li nz-menu-item nzDisabled>
+          <i nz-icon nzType="notification"></i>
+          <span>消息通知</span>
+        </li>
+        <li nz-menu-item nzDisabled>
+          <i nz-icon nzType="appstore-add"></i>
+          <span>组件模块</span>
+        </li>
+
+      </ul>
     </li>
-    <li nz-menu-item>
-      <i nz-icon nzType="notification"></i>
-      <span>Notifications</span>
-    </li>
+
   </ul>
 </app-layout-sider>

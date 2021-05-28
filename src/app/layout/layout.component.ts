@@ -12,6 +12,7 @@ import { navItems } from '@layout/nav-items';
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   navItems = navItems;
+  title: string;
   siderOn = false;
   pageHeaderOn = false;
   pageHeaderBreadcrumbOn = false;

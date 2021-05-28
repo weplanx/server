@@ -17,10 +17,13 @@
         nz-button
         nzType="text"
         nz-popover
-        nzPopoverTitle="Notifications"
-        nzPopoverContent="Content"
+        nzPopoverTitle="消息通知"
+        [nzPopoverContent]="notification"
         nzPopoverPlacement="bottomRight"
       >
+        <ng-template #notification>
+          <nz-empty></nz-empty>
+        </ng-template>
         <i nz-icon nzType="notification"></i>
       </button>
       <div
@@ -30,7 +33,7 @@
         nzPlacement="bottomRight"
         [nzDropdownMenu]="center"
       >
-        <nz-badge [nzCount]="5" style="margin-right: 24px">
+        <nz-badge [nzCount]="0" style="margin-right: 24px">
           <nz-avatar [nzSrc]="'/assets/user.jpg'" [nzShape]="'square'"></nz-avatar>
         </nz-badge>
         <nz-dropdown-menu #center>
@@ -39,34 +42,33 @@
               <div class="user-detail">
                 <nz-avatar [nzSize]="64" [nzSrc]="'/assets/user.jpg'"></nz-avatar>
                 <nz-space [nzSize]="2" nzDirection="vertical">
-                  <nz-tag *nzSpaceItem nzColor="blue">Team Admin</nz-tag>
+                  <nz-tag *nzSpaceItem nzColor="blue">团队管理员</nz-tag>
                   <h4 *nzSpaceItem>kain</h4>
                 </nz-space>
               </div>
             </li>
             <li nz-menu-item>
               <i nz-icon nzType="idcard"></i>
-              Profile
+              <span>帐号设置</span>
             </li>
-            <li nz-menu-divider></li>
-            <li nz-menu-item>
-              <i nz-icon nzType="team"></i>
-              Team
-            </li>
-            <li nz-menu-item>
-              <i nz-icon nzType="user-add"></i>
-              Invite
-            </li>
-            <li nz-menu-divider></li>
-            <li nz-submenu nzTitle="Language" nzIcon="translation">
+            <li nz-submenu nzTitle="切换语言" nzIcon="translation" nzDisabled>
               <ul>
-                <li nz-menu-item>中文</li>
-                <li nz-menu-item>English</li>
+                <li nz-menu-item><span>中文</span></li>
+                <li nz-menu-item><span>English</span></li>
               </ul>
+            </li>
+            <li nz-menu-divider></li>
+            <li nz-menu-item nzDisabled>
+              <i nz-icon nzType="mail"></i>
+              <span>系统公告</span>
+            </li>
+            <li nz-menu-item nzDisabled>
+              <i nz-icon nzType="bug"></i>
+              <span>问题反馈</span>
             </li>
             <li nz-menu-item>
               <i nz-icon nzType="logout"></i>
-              Exit
+              <span>退出</span>
             </li>
           </ul>
         </nz-dropdown-menu>
@@ -79,7 +81,7 @@
       <ng-container *ngTemplateOutlet="layoutService.sider"></ng-container>
     </nz-sider>
     <nz-layout>
-      <nz-page-header *ngIf="pageHeaderOn" nzTitle="Projects" [nzGhost]="false">
+      <nz-page-header *ngIf="pageHeaderOn" [nzTitle]="title" [nzGhost]="false">
         <nz-breadcrumb
           *ngIf="pageHeaderBreadcrumbOn"
           nz-page-header-breadcrumb

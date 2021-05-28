@@ -9,13 +9,13 @@ export class ProjectsIndexComponent implements OnInit {
   tags = [1, 2];
   listOfData: any[] = [
     {
-      name: 'Solution A'
+      name: '解决方案 A'
     },
     {
-      name: 'Solution B'
+      name: '解决方案 B'
     },
     {
-      name: 'Solution C'
+      name: '解决方案 C'
     }
   ];
 

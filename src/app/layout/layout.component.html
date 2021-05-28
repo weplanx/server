@@ -4,10 +4,16 @@
       <a href="#"> <img src="/assets/weplanx.png" alt="weplanx" /> WePlanx </a>
     </div>
     <ul class="nav" nz-menu nzMode="horizontal">
-      <li *ngFor="let nav of navItems" nz-menu-item nzMatchRouter>
-        <a [routerLink]="[nav.router]">
-          <i nz-icon [nzType]="nav.icon"></i>
-          {{ nav.name }}
+      <li nz-menu-item nzMatchRouter>
+        <a [routerLink]="['workbench']">
+          <i nz-icon nzType="laptop"></i>
+          工作区
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a [routerLink]="['projects']">
+          <i nz-icon nzType="project"></i>
+          所有项目
         </a>
       </li>
     </ul>
@@ -98,7 +104,7 @@
           <nz-space>
             <button *nzSpaceItem nz-button nzType="primary">
               <i nz-icon nzType="plus"></i>
-              Create Project
+              创建项目
             </button>
             <button *nzSpaceItem nz-button>
               <i nz-icon nzType="ellipsis"></i>

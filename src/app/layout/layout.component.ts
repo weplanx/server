@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 import { LayoutService } from './layout.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, take } from 'rxjs/operators';
-import { navItems } from '@layout/nav-items';
 
 @Component({
   selector: 'app-layout',
@@ -11,7 +10,6 @@ import { navItems } from '@layout/nav-items';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit, OnDestroy {
-  navItems = navItems;
   title: string;
   siderOn = false;
   pageHeaderOn = false;

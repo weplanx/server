@@ -10,7 +10,7 @@ const routes: Routes = [
     component: ProjectsIndexComponent
   },
   {
-    path: ':key',
+    path: 'items/:key',
     component: ProjectsPageComponent
   }
 ];

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutService } from '../../layout/layout.service';
 
 @Component({
   selector: 'app-projects-index',

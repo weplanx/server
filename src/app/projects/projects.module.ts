@@ -3,6 +3,7 @@ import { AppShareModule } from '@share';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectsIndexComponent } from './projects-index/projects-index.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
+import { ProjectsArchiveComponent } from './projects-archive/projects-archive.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,11 @@ const routes: Routes = [
     component: ProjectsIndexComponent
   },
   {
-    path: 'items/:key',
+    path: 'archive',
+    component: ProjectsArchiveComponent
+  },
+  {
+    path: 'key/:key',
     component: ProjectsPageComponent
   }
 ];
@@ -22,10 +27,12 @@ const routes: Routes = [
   ],
   declarations: [
     ProjectsIndexComponent,
+    ProjectsArchiveComponent,
     ProjectsPageComponent
   ],
   exports: [
     ProjectsIndexComponent,
+    ProjectsArchiveComponent,
     ProjectsPageComponent
   ]
 })

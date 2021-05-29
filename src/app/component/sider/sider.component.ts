@@ -2,14 +2,14 @@ import { AfterViewInit, Component, TemplateRef, ViewChild } from '@angular/core'
 import { LayoutService } from '@layout/layout.service';
 
 @Component({
-  selector: 'app-layout-sider',
+  selector: 'app-sider',
   template: `
     <ng-template #ref>
       <ng-content></ng-content>
     </ng-template>
   `
 })
-export class LayoutSiderComponent implements AfterViewInit {
+export class SiderComponent implements AfterViewInit {
   @ViewChild(TemplateRef) ref: TemplateRef<any>;
 
   constructor(

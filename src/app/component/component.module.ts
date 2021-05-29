@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { LayoutSiderComponent } from './layout-sider/layout-sider.component';
-import { BuildingComponent } from './building/building.component';
+import { RouterModule } from '@angular/router';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { RouterModule } from '@angular/router';
+import { SiderComponent } from './sider/sider.component';
 import { EmptyComponent } from './empty/empty.component';
 
 @NgModule({
@@ -13,14 +12,12 @@ import { EmptyComponent } from './empty/empty.component';
     RouterModule
   ],
   declarations: [
-    LayoutSiderComponent,
-    EmptyComponent,
-    BuildingComponent
+    SiderComponent,
+    EmptyComponent
   ],
   exports: [
-    LayoutSiderComponent,
-    EmptyComponent,
-    BuildingComponent
+    SiderComponent,
+    EmptyComponent
   ]
 })
 export class ComponentModule {

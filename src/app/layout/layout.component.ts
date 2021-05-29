@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LayoutService } from './layout.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, take, throttle, throttleTime } from 'rxjs/operators';
+import { filter, map, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout',
@@ -41,9 +41,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   private layoutUpdate(): void {
     this.route.firstChild.data.pipe(
       take(1),
-      map(v => {
-        return !v.control ? null : v.control;
-      })
+      map(v => !v.control ? null : v.control)
     ).subscribe(control => {
       if (!control) {
         return;

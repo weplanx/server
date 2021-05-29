@@ -5,6 +5,7 @@ import { ProjectsComponent } from './projects.component';
 import { StatusComponent } from './status/status.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
   {
@@ -35,13 +36,13 @@ const routes: Routes = [
       title: '应用授权'
     }
   },
-  // {
-  //   path: 'key/:key/schedule',
-  //   component: ProjectsPageComponent,
-  //   data: {
-  //     title: '任务调度'
-  //   }
-  // },
+  {
+    path: 'key/:key/schedule',
+    component: ScheduleComponent,
+    data: {
+      title: '任务调度'
+    }
+  },
   {
     path: 'key/:key',
     redirectTo: '/projects/key/:key/status',
@@ -58,7 +59,8 @@ const routes: Routes = [
     ProjectsComponent,
     NavComponent,
     StatusComponent,
-    AuthorizationComponent
+    AuthorizationComponent,
+    ScheduleComponent
   ]
 })
 export class ProjectsModule {

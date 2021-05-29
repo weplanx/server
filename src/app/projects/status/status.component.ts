@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './status.component.html'
 })
 export class StatusComponent implements OnInit {
-  private key: string;
+  key: string;
 
   constructor(
     private route: ActivatedRoute

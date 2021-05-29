@@ -87,13 +87,9 @@
       <ng-container *ngTemplateOutlet="content.sider"></ng-container>
     </nz-sider>
     <nz-layout>
-      <nz-page-header
-        *ngIf="pageHeaderOn"
-        [nzTitle]="title"
-        [nzGhost]="false"
-      >
+      <nz-page-header *ngIf="pageHeaderOn" [nzTitle]="title" [nzGhost]="false">
         <nz-breadcrumb
-          *ngIf="pageHeaderBreadcrumbOn"
+          *ngIf="content.breadcrumb.length !== 0"
           nz-page-header-breadcrumb
           nzSeparator=">"
         >
@@ -102,6 +98,16 @@
               <i nz-icon nzType="home"></i>
             </a>
           </nz-breadcrumb-item>
+          <ng-container *ngFor="let item of content.breadcrumb; last as isLast">
+            <nz-breadcrumb-item>
+              <a [routerLink]="item?.routerlink" *ngIf="!isLast; else last">
+                {{ item.name }}
+              </a>
+              <ng-template #last>
+                {{ item.name }}
+              </ng-template>
+            </nz-breadcrumb-item>
+          </ng-container>
         </nz-breadcrumb>
         <nz-page-header-extra>
           <ng-container *ngTemplateOutlet="content.extra"></ng-container>

@@ -42,6 +42,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.route.firstChild.data.pipe(
       take(1)
     ).subscribe(data => {
+      this.content.clear();
       for (const key in data) {
         if (data.hasOwnProperty(key) &&
           data[key] !== undefined &&

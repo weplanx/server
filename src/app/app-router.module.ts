@@ -4,7 +4,6 @@ import { AppShareModule } from '@share';
 import { LayoutComponent } from '@layout/layout.component';
 import { LayoutModule } from '@layout/layout.module';
 import { EmptyComponent } from './component/empty/empty.component';
-import { WorkbenchModule } from './workbench/workbench.module';
 
 const routes: Routes = [
   {
@@ -61,7 +60,6 @@ const routes: Routes = [
   imports: [
     AppShareModule,
     LayoutModule,
-    WorkbenchModule,
     RouterModule.forChild(routes)
   ]
 })

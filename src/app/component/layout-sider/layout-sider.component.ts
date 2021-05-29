@@ -18,6 +18,6 @@ export class LayoutSiderComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.layoutService.sider = this.ref;
+    this.layoutService.sider.next(this.ref);
   }
 }

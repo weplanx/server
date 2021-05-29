@@ -7,13 +7,13 @@
       <li nz-menu-item nzMatchRouter>
         <a [routerLink]="['workbench']">
           <i nz-icon nzType="laptop"></i>
-          工作区
+          <b>工作区</b>
         </a>
       </li>
       <li nz-menu-item nzMatchRouter>
         <a [routerLink]="['projects']">
           <i nz-icon nzType="project"></i>
-          所有项目
+          <b>所有项目</b>
         </a>
       </li>
     </ul>
@@ -84,7 +84,7 @@
   </nz-header>
   <nz-layout>
     <nz-sider *ngIf="siderOn" class="sider" nzTheme="light" nzWidth="240px">
-      <ng-container *ngTemplateOutlet="layoutService.sider"></ng-container>
+      <ng-container *ngTemplateOutlet="layoutService.sider | async"></ng-container>
     </nz-sider>
     <nz-layout>
       <nz-page-header *ngIf="pageHeaderOn" [nzTitle]="title" [nzGhost]="false">

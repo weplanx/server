@@ -1,0 +1,79 @@
+<app-content>
+  <ul app-sider nz-menu nzMode="inline">
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+      <a [routerLink]="open()">
+        <i nz-icon nzType="dashboard"></i>
+        仪表盘
+      </a>
+    </li>
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+      <a [routerLink]="open(['services'])">
+        <i nz-icon nzType="deployment-unit"></i>
+        服务集成
+      </a>
+    </li>
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+      <a [routerLink]="open(['repository'])">
+        <i nz-icon nzType="hdd"></i>
+        代码仓库
+      </a>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-group nzTitle="团队信息">
+      <ul>
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+          <a [routerLink]="open(['team'])">
+            <i nz-icon nzType="audit"></i>
+            团队设置
+          </a>
+        </li>
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+          <a [routerLink]="open(['users'])">
+            <i nz-icon nzType="team"></i>
+            团队成员
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-group nzTitle="安全审计">
+      <ul>
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+          <a [routerLink]="open(['security'])">
+            <i nz-icon nzType="safety-certificate"></i>
+            访问控制
+          </a>
+        </li>
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+          <a [routerLink]="open(['logs'])">
+            <i nz-icon nzType="key"></i>
+            登录日志
+          </a>
+        </li>
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+          <a [routerLink]="open(['operation'])">
+            <i nz-icon nzType="history"></i>
+            操作日志
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-group nzTitle="系统设置">
+      <ul>
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+          <a [routerLink]="open(['notifications'])">
+            <i nz-icon nzType="notification"></i>
+            消息通知
+          </a>
+        </li>
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+          <a [routerLink]="open(['module'])">
+            <i nz-icon nzType="appstore-add"></i>
+            组件模块
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</app-content>

@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home.component';
 import { AppShareModule } from '@share';
+import { HomeComponent } from './home.component';
+import { UsersComponent } from './users/users.component';
+import { NavComponent } from './nav/nav.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {
+      title: '仪表盘'
+    }
+  },
+  {
+    path: 'users',
+    component: HomeComponent,
+    data: {
+      title: '团队成员'
+    }
   }
 ];
 
@@ -16,7 +28,9 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    NavComponent,
+    UsersComponent
   ]
 })
 export class HomeModule {

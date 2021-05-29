@@ -13,6 +13,8 @@ import { MessageTopicComponent } from './message-topic/message-topic.component';
 import { MessageTriggerComponent } from './message-trigger/message-trigger.component';
 import { ImTokenComponent } from './im-token/im-token.component';
 import { ImTopicComponent } from './im-topic/im-topic.component';
+import { SubNavComponent } from './sub-nav/sub-nav.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 const routes: Routes = [
   {
@@ -24,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'archive',
-    component: ProjectsComponent,
+    component: ArchiveComponent,
     data: {
       title: '已归档'
     }
@@ -112,8 +114,10 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-    ProjectsComponent,
     NavComponent,
+    ProjectsComponent,
+    ArchiveComponent,
+    SubNavComponent,
     StatusComponent,
     AuthorizationComponent,
     ScheduleComponent,

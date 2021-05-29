@@ -11,10 +11,6 @@ import { ContentService } from '@common/content.service';
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   title: string;
-  siderOn = false;
-  pageHeaderOn = false;
-  pageHeaderBreadcrumbOn = false;
-
   private events$: Subscription;
 
   constructor(
@@ -39,20 +35,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   }
 
   private layoutUpdate(): void {
-    this.route.firstChild.data.pipe(
-      take(1)
-    ).subscribe(data => {
-      this.content.clear();
-      for (const key in data) {
-        if (data.hasOwnProperty(key) &&
-          data[key] !== undefined &&
-          Reflect.has(this, key + 'On')
-        ) {
-          Reflect.set(this, key + 'On', data[key]);
-        }
-      }
-      this.changeDetectorRef.detectChanges();
-    });
+    this.changeDetectorRef.detectChanges();
     this.route.firstChild?.firstChild?.data.pipe(
       take(1)
     ).subscribe(data => {

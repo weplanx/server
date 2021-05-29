@@ -83,11 +83,11 @@
     <div class="clearfix"></div>
   </nz-header>
   <nz-layout>
-    <nz-sider *ngIf="siderOn" class="sider" nzTheme="light" nzWidth="240px">
+    <nz-sider class="sider" nzTheme="light" nzWidth="240px">
       <ng-container *ngTemplateOutlet="content.sider"></ng-container>
     </nz-sider>
     <nz-layout>
-      <nz-page-header *ngIf="pageHeaderOn" [nzTitle]="title" [nzGhost]="false">
+      <nz-page-header [nzTitle]="title" [nzGhost]="false">
         <nz-breadcrumb
           *ngIf="content.breadcrumb.length !== 0"
           nz-page-header-breadcrumb

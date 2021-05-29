@@ -12,30 +12,15 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-        data: {
-          sider: true,
-          pageHeader: false,
-          pageHeaderBreadcrumb: false
-        }
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'projects',
-        loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule),
-        data: {
-          sider: true,
-          pageHeader: true,
-          pageHeaderBreadcrumb: false
-        }
+        loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule)
       },
       {
         path: 'center',
-        loadChildren: () => import('./center/center.module').then(m => m.CenterModule),
-        data: {
-          sider: true,
-          pageHeader: false,
-          pageHeaderBreadcrumb: false
-        }
+        loadChildren: () => import('./center/center.module').then(m => m.CenterModule)
       },
       {
         path: '',

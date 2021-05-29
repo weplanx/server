@@ -1,19 +1,19 @@
 <app-content>
   <ul app-sider nz-menu nzMode="inline">
-    <li nz-menu-item>
-      <a [routerLink]="['./']">
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+      <a [routerLink]="['/projects', 'key', 'hello', 'status']">
         <i nz-icon nzType="fund-view"></i>
         服务状态
       </a>
     </li>
-    <li nz-menu-item>
-      <a [routerLink]="['authorization']">
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+      <a [routerLink]="['/projects', 'key', 'hello', 'authorization']">
         <i nz-icon nzType="file-protect"></i>
         应用授权
       </a>
     </li>
-    <li nz-menu-item>
-      <a [routerLink]="['schedule']">
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+      <a [routerLink]="['/projects', 'key', 'hello', 'schedule']">
         <i nz-icon nzType="schedule"></i>
         任务调度
       </a>
@@ -21,14 +21,14 @@
     <li nz-menu-divider></li>
     <li nz-menu-group nzTitle="集群">
       <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a [routerLink]="['server']">
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+          <a [routerLink]="['/projects', 'key', 'hello', 'server']">
             <i nz-icon nzType="cloud-server"></i>
             服务器节点
           </a>
         </li>
-        <li nz-menu-item nzMatchRouter>
-          <a [routerLink]="['container']">
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+          <a [routerLink]="['/projects', 'key', 'hello', 'container']">
             <i nz-icon nzType="container"></i>
             容器编排
           </a>
@@ -38,20 +38,20 @@
     <li nz-menu-divider></li>
     <li nz-menu-group nzTitle="消息队列">
       <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a [routerLink]="['message-queue']">
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+          <a [routerLink]="['/projects', 'key', 'hello', 'message-queue']">
             <i nz-icon nzType="mail"></i>
             队列管理
           </a>
         </li>
-        <li nz-menu-item nzMatchRouter>
-          <a [routerLink]="['message-topic']">
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+          <a [routerLink]="['/projects', 'key', 'hello', 'message-topic']">
             <i nz-icon nzType="send"></i>
             主题管理
           </a>
         </li>
-        <li nz-menu-item nzMatchRouter>
-          <a [routerLink]="['message-trigger']">
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+          <a [routerLink]="['/projects', 'key', 'hello', 'message-trigger']">
             <i nz-icon nzType="thunderbolt"></i>
             自动网络回调
           </a>
@@ -61,14 +61,14 @@
     <li nz-menu-divider></li>
     <li nz-menu-group nzTitle="即时通讯">
       <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a [routerLink]="['im-token']">
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+          <a [routerLink]="['/projects', 'key', 'hello', 'im-token']">
             <i nz-icon nzType="safety"></i>
             认证令牌
           </a>
         </li>
-        <li nz-menu-item nzMatchRouter>
-          <a [routerLink]="['im-topic']">
+        <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+          <a [routerLink]="['/projects', 'key', 'hello', 'im-topic']">
             <i nz-icon nzType="message"></i>
             通讯主题
           </a>

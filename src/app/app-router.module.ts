@@ -11,41 +11,35 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'workbench',
-        loadChildren: () => import('./workbench/workbench.module').then(m => m.WorkbenchModule),
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
         data: {
-          control: {
-            sider: true,
-            pageHeader: false,
-            pageHeaderBreadcrumb: false
-          }
+          sider: true,
+          pageHeader: false,
+          pageHeaderBreadcrumb: false
         }
       },
       {
         path: 'projects',
         loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule),
         data: {
-          control: {
-            sider: true,
-            pageHeader: true,
-            pageHeaderBreadcrumb: false
-          }
+          sider: true,
+          pageHeader: true,
+          pageHeaderBreadcrumb: false
         }
       },
       {
         path: 'center',
         loadChildren: () => import('./center/center.module').then(m => m.CenterModule),
         data: {
-          control: {
-            sider: true,
-            pageHeader: false,
-            pageHeaderBreadcrumb: false
-          }
+          sider: true,
+          pageHeader: false,
+          pageHeaderBreadcrumb: false
         }
       },
       {
         path: '',
-        redirectTo: '/workbench',
+        redirectTo: '/home',
         pathMatch: 'full'
       },
       {

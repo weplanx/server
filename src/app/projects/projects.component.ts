@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-projects-index',
-  templateUrl: './projects-index.component.html'
+  selector: 'app-projects',
+  templateUrl: './projects.component.html'
 })
-export class ProjectsIndexComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
   tags = [1, 2];
   listOfData: any[] = [
     {

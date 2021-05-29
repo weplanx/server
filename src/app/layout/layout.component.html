@@ -5,13 +5,13 @@
     </div>
     <ul class="nav" nz-menu nzMode="horizontal">
       <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['workbench']">
+        <a [routerLink]="['/home']">
           <i nz-icon nzType="laptop"></i>
           <b>工作区</b>
         </a>
       </li>
       <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['projects']">
+        <a [routerLink]="['/projects']">
           <i nz-icon nzType="project"></i>
           <b>所有项目</b>
         </a>
@@ -84,10 +84,14 @@
   </nz-header>
   <nz-layout>
     <nz-sider *ngIf="siderOn" class="sider" nzTheme="light" nzWidth="240px">
-      <ng-container *ngTemplateOutlet="layoutService.sider | async"></ng-container>
+      <ng-container *ngTemplateOutlet="layout.sider"></ng-container>
     </nz-sider>
     <nz-layout>
-      <nz-page-header *ngIf="pageHeaderOn" [nzTitle]="title" [nzGhost]="false">
+      <nz-page-header
+        *ngIf="pageHeaderOn"
+        [nzTitle]="title"
+        [nzGhost]="false"
+      >
         <nz-breadcrumb
           *ngIf="pageHeaderBreadcrumbOn"
           nz-page-header-breadcrumb

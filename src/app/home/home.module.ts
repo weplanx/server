@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WorkbenchComponent } from './workbench.component';
+import { HomeComponent } from './home.component';
 import { AppShareModule } from '@share';
 
 const routes: Routes = [
   {
     path: '',
-    component: WorkbenchComponent
+    component: HomeComponent
   }
 ];
 
@@ -16,11 +16,11 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-    WorkbenchComponent
+    HomeComponent
   ],
   exports: [
-    WorkbenchComponent
+    HomeComponent
   ]
 })
-export class WorkbenchModule {
+export class HomeModule {
 }

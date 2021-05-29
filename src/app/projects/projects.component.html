@@ -1,18 +1,18 @@
-<app-content>
+<app-content title="我的项目">
   <ul app-sider nz-menu nzMode="inline">
-    <li nz-menu-item nzMatchRouter>
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
       <a [routerLink]="['/projects']">
         <i nz-icon nzType="coffee"></i>
         我的项目
       </a>
     </li>
-    <li nz-menu-item>
-      <a [routerLink]="['./archive']">
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+      <a [routerLink]="['/projects/archive']">
         <i nz-icon nzType="inbox"></i>
         已归档
       </a>
     </li>
-    <li nz-menu-item>
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
       <a [routerLink]="['./recycle']">
         <i nz-icon nzType="rest"></i>
         回收站

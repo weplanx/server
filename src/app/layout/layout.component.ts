@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LayoutService } from './layout.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, take } from 'rxjs/operators';
+import { filter, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout',
@@ -20,7 +20,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    public layoutService: LayoutService,
+    public layout: LayoutService,
     private changeDetectorRef: ChangeDetectorRef
   ) {
   }
@@ -40,23 +40,23 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   private layoutUpdate(): void {
     this.route.firstChild.data.pipe(
-      take(1),
-      map(v => {
-        return !v.control ? null : v.control;
-      })
-    ).subscribe(control => {
-      if (!control) {
-        return;
-      }
-      let changed = false;
-      for (const key in control) {
-        if (control.hasOwnProperty(key) && control[key] !== undefined) {
-          Reflect.set(this, key + 'On', control[key]);
-          changed = true;
+      take(1)
+    ).subscribe(data => {
+      for (const key in data) {
+        if (data.hasOwnProperty(key) &&
+          data[key] !== undefined &&
+          Reflect.has(this, key + 'On')
+        ) {
+          Reflect.set(this, key + 'On', data[key]);
         }
       }
-      if (changed) {
-        this.changeDetectorRef.detectChanges();
+      this.changeDetectorRef.detectChanges();
+    });
+    this.route.firstChild?.firstChild.data.pipe(
+      take(1)
+    ).subscribe(data => {
+      if (data.hasOwnProperty('title')) {
+        this.title = data.title;
       }
     });
   }

@@ -1,5 +1,5 @@
-<app-sider>
-  <ul nz-menu nzMode="inline">
+<app-content>
+  <ul app-sider nz-menu nzMode="inline">
     <li nz-menu-item nzMatchRouter>
       <a [routerLink]="['/projects']">
         <i nz-icon nzType="coffee"></i>
@@ -27,7 +27,8 @@
       </ul>
     </li>
   </ul>
-</app-sider>
+
+</app-content>
 
 <ng-template #search>
   <nz-space>

@@ -1,5 +1,5 @@
-<app-sider>
-  <ul nz-menu nzMode="inline">
+<app-content>
+  <ul app-sider nz-menu nzMode="inline">
     <li nz-menu-item nzMatchRouter>
       <a [routerLink]="['/workbench']">
         <i nz-icon nzType="dashboard"></i>
@@ -8,13 +8,13 @@
     </li>
     <li nz-menu-item nzMatchRouter nzDisabled>
       <a [routerLink]="['services']">
-        <i nz-icon nzType="api"></i>
+        <i nz-icon nzType="deployment-unit"></i>
         服务集成
       </a>
     </li>
     <li nz-menu-item nzMatchRouter nzDisabled>
       <a [routerLink]="['repository']">
-        <i nz-icon nzType="code"></i>
+        <i nz-icon nzType="hdd"></i>
         代码仓库
       </a>
     </li>
@@ -88,4 +88,4 @@
       </ul>
     </li>
   </ul>
-</app-sider>
+</app-content>

@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { SiderComponent } from './sider/sider.component';
 import { EmptyComponent } from './empty/empty.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   imports: [
@@ -12,11 +12,11 @@ import { EmptyComponent } from './empty/empty.component';
     RouterModule
   ],
   declarations: [
-    SiderComponent,
+    ContentComponent,
     EmptyComponent
   ],
   exports: [
-    SiderComponent,
+    ContentComponent,
     EmptyComponent
   ]
 })

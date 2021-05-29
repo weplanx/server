@@ -41,7 +41,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
   private layoutUpdate(): void {
     this.route.firstChild.data.pipe(
       take(1),
-      map(v => !v.control ? null : v.control)
+      map(v => {
+        return !v.control ? null : v.control;
+      })
     ).subscribe(control => {
       if (!control) {
         return;

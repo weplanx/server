@@ -1,4 +1,4 @@
-<app-content title="我的项目">
+<app-content>
   <ul app-sider nz-menu nzMode="inline">
     <li nz-menu-item nzMatchRouter nzMatchRouterExact>
       <a [routerLink]="['/projects']">
@@ -27,7 +27,15 @@
       </ul>
     </li>
   </ul>
-
+  <nz-space app-extra>
+    <button *nzSpaceItem nz-button nzType="primary">
+      <i nz-icon nzType="plus"></i>
+      创建项目
+    </button>
+    <button *nzSpaceItem nz-button>
+      <i nz-icon nzType="ellipsis"></i>
+    </button>
+  </nz-space>
 </app-content>
 
 <ng-template #search>

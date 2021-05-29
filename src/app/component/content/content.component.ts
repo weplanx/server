@@ -3,14 +3,11 @@ import { LayoutService } from '@layout/layout.service';
 
 @Component({
   selector: 'app-content',
-  template: `
-    <ng-template #siderTemplateRef>
-      <ng-content select="[app-sider]"></ng-content>
-    </ng-template>
-  `
+  templateUrl: './content.component.html'
 })
 export class ContentComponent implements AfterViewInit {
   @ViewChild('siderTemplateRef') siderTemplateRef: TemplateRef<any>;
+  @ViewChild('extraTemplateRef') extraTemplateRef: TemplateRef<any>;
 
   constructor(
     private layout: LayoutService
@@ -19,5 +16,6 @@ export class ContentComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.layout.sider = this.siderTemplateRef;
+    this.layout.extra = this.extraTemplateRef;
   }
 }

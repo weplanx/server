@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LayoutService } from './layout.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, take } from 'rxjs/operators';
+import { ContentService } from '@common/content.service';
 
 @Component({
   selector: 'app-layout',
@@ -20,7 +20,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    public layout: LayoutService,
+    public content: ContentService,
     private changeDetectorRef: ChangeDetectorRef
   ) {
   }
@@ -52,7 +52,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
       }
       this.changeDetectorRef.detectChanges();
     });
-    this.route.firstChild?.firstChild.data.pipe(
+    this.route.firstChild?.firstChild?.data.pipe(
       take(1)
     ).subscribe(data => {
       if (data.hasOwnProperty('title')) {

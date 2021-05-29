@@ -17,9 +17,6 @@ const routes: Routes = [
   ],
   declarations: [
     CenterComponent
-  ],
-  exports: [
-    CenterComponent
   ]
 })
 export class CenterModule {

@@ -1,7 +1,7 @@
 import { Injectable, TemplateRef } from '@angular/core';
 
-@Injectable()
-export class LayoutService {
+@Injectable({ providedIn: 'root' })
+export class ContentService {
   sider: TemplateRef<any>;
   extra: TemplateRef<any>;
 }

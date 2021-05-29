@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { AppShareModule } from '@share';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectsComponent } from './projects.component';
-import { ProjectsPageComponent } from './projects-page/projects-page.component';
+import { StatusComponent } from './status/status.component';
+import { NavComponent } from './nav/nav.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
 
 const routes: Routes = [
   {
@@ -21,25 +23,25 @@ const routes: Routes = [
   },
   {
     path: 'key/:key/status',
-    component: ProjectsPageComponent,
+    component: StatusComponent,
     data: {
       title: '服务状态'
     }
   },
   {
     path: 'key/:key/authorization',
-    component: ProjectsPageComponent,
+    component: AuthorizationComponent,
     data: {
       title: '应用授权'
     }
   },
-  {
-    path: 'key/:key/schedule',
-    component: ProjectsPageComponent,
-    data: {
-      title: '任务调度'
-    }
-  },
+  // {
+  //   path: 'key/:key/schedule',
+  //   component: ProjectsPageComponent,
+  //   data: {
+  //     title: '任务调度'
+  //   }
+  // },
   {
     path: 'key/:key',
     redirectTo: '/projects/key/:key/status',
@@ -54,11 +56,9 @@ const routes: Routes = [
   ],
   declarations: [
     ProjectsComponent,
-    ProjectsPageComponent
-  ],
-  exports: [
-    ProjectsComponent,
-    ProjectsPageComponent
+    NavComponent,
+    StatusComponent,
+    AuthorizationComponent
   ]
 })
 export class ProjectsModule {

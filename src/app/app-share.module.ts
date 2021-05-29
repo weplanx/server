@@ -1,5 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
@@ -18,15 +20,16 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { FormsModule } from '@angular/forms';
-import { ComponentModule } from './component/component.module';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { ComponentModule } from './component/component.module';
 
 @NgModule({
   exports: [
     CommonModule,
+    RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     NzLayoutModule,
     NzMenuModule,
     NzBreadCrumbModule,

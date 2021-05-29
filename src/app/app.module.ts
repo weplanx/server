@@ -13,6 +13,7 @@ import en from '@angular/common/locales/en';
 registerLocaleData(en);
 
 import { AppComponent } from './app.component';
+import { ContentService } from '@common/content.service';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const ngZorroConfig: NzConfig = {
     RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [
+    ContentService,
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
     { provide: NZ_I18N, useValue: zh_CN }
   ],

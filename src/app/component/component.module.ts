@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ContentComponent } from './content/content.component';
+import { EmptyComponent } from './empty/empty.component';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { EmptyComponent } from './empty/empty.component';
-import { ContentComponent } from './content/content.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [

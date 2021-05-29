@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { LayoutService } from '@layout/layout.service';
+import { AfterViewInit, Component, TemplateRef, ViewChild } from '@angular/core';
+import { ContentService } from '@common/content.service';
 
 @Component({
   selector: 'app-content',
@@ -10,12 +10,12 @@ export class ContentComponent implements AfterViewInit {
   @ViewChild('extraTemplateRef') extraTemplateRef: TemplateRef<any>;
 
   constructor(
-    private layout: LayoutService
+    private content: ContentService
   ) {
   }
 
   ngAfterViewInit(): void {
-    this.layout.sider = this.siderTemplateRef;
-    this.layout.extra = this.extraTemplateRef;
+    this.content.sider = this.siderTemplateRef;
+    this.content.extra = this.extraTemplateRef;
   }
 }

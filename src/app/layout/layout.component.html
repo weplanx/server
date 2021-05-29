@@ -84,7 +84,7 @@
   </nz-header>
   <nz-layout>
     <nz-sider *ngIf="siderOn" class="sider" nzTheme="light" nzWidth="240px">
-      <ng-container *ngTemplateOutlet="layout.sider"></ng-container>
+      <ng-container *ngTemplateOutlet="content.sider"></ng-container>
     </nz-sider>
     <nz-layout>
       <nz-page-header
@@ -96,7 +96,6 @@
           *ngIf="pageHeaderBreadcrumbOn"
           nz-page-header-breadcrumb
           nzSeparator=">"
-          [nzAutoGenerate]="true"
         >
           <nz-breadcrumb-item>
             <a [routerLink]="['/']">
@@ -105,7 +104,7 @@
           </nz-breadcrumb-item>
         </nz-breadcrumb>
         <nz-page-header-extra>
-          <ng-container *ngTemplateOutlet="layout.extra"></ng-container>
+          <ng-container *ngTemplateOutlet="content.extra"></ng-container>
         </nz-page-header-extra>
       </nz-page-header>
       <nz-content>

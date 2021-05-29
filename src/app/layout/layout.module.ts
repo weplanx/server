@@ -1,22 +1,16 @@
 import { NgModule } from '@angular/core';
-import { AppShareModule } from '@share';
-import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-import { LayoutService } from './layout.service';
+import { AppShareModule } from '@share';
 
 @NgModule({
   imports: [
-    AppShareModule,
-    RouterModule
+    AppShareModule
   ],
   declarations: [
     LayoutComponent
   ],
   exports: [
     LayoutComponent
-  ],
-  providers: [
-    LayoutService
   ]
 })
 export class LayoutModule {

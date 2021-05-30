@@ -25,6 +25,8 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { ComponentModule } from './component/component.module';
 import { DirectiveModule } from './directive/directive.module';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 @NgModule({
   exports: [
@@ -53,6 +55,8 @@ import { NzTreeModule } from 'ng-zorro-antd/tree';
     NzResultModule,
     NzEmptyModule,
     NzTreeModule,
+    NzModalModule,
+    NzFormModule,
     ComponentModule,
     DirectiveModule
   ],

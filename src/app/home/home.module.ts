@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    component: HomeComponent,
+    component: UsersComponent,
     data: {
       title: '团队成员'
     }

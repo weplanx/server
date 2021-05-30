@@ -20,16 +20,6 @@
     >
       <input nz-input placeholder="搜索项目" />
     </nz-input-group>
-    <nz-select
-      *nzSpaceItem
-      nzAllowClear
-      nzMode="multiple"
-      [ngModel]="tags"
-      style="width: 260px"
-    >
-      <nz-option nzLabel="通用" [nzValue]="1"></nz-option>
-      <nz-option nzLabel="配送" [nzValue]="2"></nz-option>
-    </nz-select>
     <nz-button-group *nzSpaceItem nz-button>
       <button nz-button>
         创建时间
@@ -41,6 +31,7 @@
     </nz-button-group>
   </nz-space>
 </ng-template>
+
 <ng-template #extra>
   <nz-button-group>
     <button nz-button>

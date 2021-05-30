@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './projects.component.html'
 })
 export class ProjectsComponent implements OnInit {
-  tags = [1, 2];
   listOfData: any[] = [
     {
       name: '解决方案 A'

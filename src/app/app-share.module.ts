@@ -23,6 +23,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { ComponentModule } from './component/component.module';
+import { DirectiveModule } from './directive/directive.module';
 
 @NgModule({
   exports: [
@@ -50,7 +51,8 @@ import { ComponentModule } from './component/component.module';
     NzSelectModule,
     NzResultModule,
     NzEmptyModule,
-    ComponentModule
+    ComponentModule,
+    DirectiveModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

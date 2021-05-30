@@ -36,6 +36,8 @@ nz-header {
 
     li {
       padding: 0 4px;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent;
 
       &.ant-menu-item-active,
       &.ant-menu-item-open,
@@ -45,7 +47,6 @@ nz-header {
       &.ant-menu-submenu-open,
       &.ant-menu-submenu-selected,
       &.ant-menu-submenu:hover {
-        border-bottom: 2px solid transparent;
         border-top: 2px solid #1890ff;
       }
     }

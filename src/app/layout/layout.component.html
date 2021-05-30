@@ -54,27 +54,35 @@
               </div>
             </li>
             <li nz-menu-item>
-              <i nz-icon nzType="idcard"></i>
-              <span>帐号设置</span>
+              <a [routerLink]="['/center']">
+                <i nz-icon nzType="idcard"></i>
+                个人设置
+              </a>
             </li>
-            <li nz-submenu nzTitle="切换语言" nzIcon="translation" nzDisabled>
-              <ul>
-                <li nz-menu-item><span>中文</span></li>
-                <li nz-menu-item><span>English</span></li>
-              </ul>
+            <li nz-menu-item>
+              <a [routerLink]="['/center', 'mail']">
+                <i nz-icon nzType="mail"></i>
+                邮箱设置
+              </a>
             </li>
             <li nz-menu-divider></li>
+            <li nz-submenu nzTitle="切换语言" nzIcon="translation" nzDisabled>
+              <ul>
+                <li nz-menu-item>中文</li>
+                <li nz-menu-item>English</li>
+              </ul>
+            </li>
             <li nz-menu-item nzDisabled>
               <i nz-icon nzType="select"></i>
-              <span>系统公告</span>
+              系统公告
             </li>
             <li nz-menu-item nzDisabled>
               <i nz-icon nzType="smile"></i>
-              <span>问题反馈</span>
+              问题反馈
             </li>
             <li nz-menu-item>
               <i nz-icon nzType="logout"></i>
-              <span>退出</span>
+              退出
             </li>
           </ul>
         </nz-dropdown-menu>
@@ -84,12 +92,12 @@
   </nz-header>
   <nz-layout>
     <nz-sider class="sider" nzTheme="light" nzWidth="240px">
-      <ng-container *ngTemplateOutlet="content.sider"></ng-container>
+      <ng-container *ngTemplateOutlet="content.sider | async"></ng-container>
     </nz-sider>
     <nz-layout>
       <nz-page-header [nzTitle]="title" [nzGhost]="false">
         <nz-breadcrumb
-          *ngIf="content.breadcrumb.length !== 0"
+          *ngIf="(content.breadcrumb | async).length !== 0"
           nz-page-header-breadcrumb
           nzSeparator=">"
         >
@@ -98,7 +106,7 @@
               <i nz-icon nzType="home"></i>
             </a>
           </nz-breadcrumb-item>
-          <ng-container *ngFor="let item of content.breadcrumb; last as isLast">
+          <ng-container *ngFor="let item of content.breadcrumb | async; last as isLast">
             <nz-breadcrumb-item>
               <a [routerLink]="item?.routerlink" *ngIf="!isLast; else last">
                 {{ item.name }}
@@ -110,7 +118,7 @@
           </ng-container>
         </nz-breadcrumb>
         <nz-page-header-extra>
-          <ng-container *ngTemplateOutlet="content.extra"></ng-container>
+          <ng-container *ngTemplateOutlet="content.extra | async"></ng-container>
         </nz-page-header-extra>
       </nz-page-header>
       <nz-content>

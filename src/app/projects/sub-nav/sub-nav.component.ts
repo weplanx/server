@@ -17,10 +17,10 @@ export class SubNavComponent implements OnInit {
     if (!this.key) {
       return;
     }
-    this.content.breadcrumb = [
+    this.content.breadcrumb.next([
       { name: '所有项目', routerlink: ['/projects'] },
       { name: '解决方案 A' }
-    ];
+    ]);
   }
 
   open(path: string[] = []): any[] {

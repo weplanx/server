@@ -26,6 +26,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.events$ = this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     ).subscribe(() => {
+      this.content.clear();
       this.layoutUpdate();
     });
   }

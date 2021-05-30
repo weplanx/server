@@ -1,0 +1,18 @@
+<ul *appSider nz-menu nzMode="inline">
+  <li nz-menu-group nzTitle="帐号设置">
+    <ul>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+        <a [routerLink]="open()">
+          <i nz-icon nzType="idcard"></i>
+          个人帐号
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+        <a [routerLink]="open(['mail'])">
+          <i nz-icon nzType="mail"></i>
+          邮箱设置
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>

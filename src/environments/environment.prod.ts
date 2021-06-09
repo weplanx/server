@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  cloudbase: {
+    env: 'quick-1gsroxus1071afde'
+  }
 };

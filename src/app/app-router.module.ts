@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppShareModule } from '@share';
 import { LayoutComponent } from '@layout/layout.component';
 import { LayoutModule } from '@layout/layout.module';
-import { EmptyComponent } from './component/empty/empty.component';
 
 const routes: Routes = [
   {
@@ -26,10 +25,6 @@ const routes: Routes = [
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
-      },
-      {
-        path: '**',
-        component: EmptyComponent
       }
     ]
   }

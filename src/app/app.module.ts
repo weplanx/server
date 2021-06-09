@@ -14,11 +14,13 @@ registerLocaleData(en);
 
 import { AppComponent } from './app.component';
 import { ContentService } from '@common/content.service';
+import { AuthGuard } from '@common/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./app-router.module').then(m => m.AppRouterModule)
+    loadChildren: () => import('./app-router.module').then(m => m.AppRouterModule),
+    // canActivate: [AuthGuard]
   }
 ];
 
@@ -38,6 +40,7 @@ const ngZorroConfig: NzConfig = {
     RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [
+    AuthGuard,
     ContentService,
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
     { provide: NZ_I18N, useValue: zh_CN }

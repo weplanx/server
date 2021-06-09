@@ -27,6 +27,9 @@ import { DirectiveModule } from './directive/directive.module';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 
 @NgModule({
   exports: [
@@ -57,6 +60,9 @@ import { NzFormModule } from 'ng-zorro-antd/form';
     NzTreeModule,
     NzModalModule,
     NzFormModule,
+    NzTypographyModule,
+    NzCheckboxModule,
+    NzAutocompleteModule,
     ComponentModule,
     DirectiveModule
   ],

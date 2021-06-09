@@ -21,7 +21,7 @@
     <tr>
       <th nzWidth="320px">用户名</th>
       <th nzWidth="320px">电子邮件</th>
-      <th nzWidth="320px">称呼</th>
+      <th>称呼</th>
       <th nzWidth="80px" nzRight>操作</th>
     </tr>
     </thead>
@@ -57,5 +57,30 @@
 </nz-card>
 
 <ng-template #userFormTemplate>
-
+  <form nz-form nzLayout="vertical" [formGroup]="form">
+    <nz-form-item>
+      <nz-form-label nzRequired>用户名</nz-form-label>
+      <nz-form-control>
+        <input nz-input placeholder="请定义长度在4~16位的英文字母" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired>密码</nz-form-label>
+      <nz-form-control>
+        <input nz-input placeholder="" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired>电子邮件</nz-form-label>
+      <nz-form-control>
+        <input nz-input placeholder="" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>您的称呼</nz-form-label>
+      <nz-form-control>
+        <input nz-input placeholder="" />
+      </nz-form-control>
+    </nz-form-item>
+  </form>
 </ng-template>

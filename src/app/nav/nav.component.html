@@ -1,0 +1,28 @@
+<ul *appSider nz-menu nzMode="inline">
+  <li nz-menu-group nzTitle="仪表盘">
+    <ul>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+        <a [routerLink]="['/dashboards']">
+          <i nz-icon nzType="dashboard"></i>
+          监控
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li nz-menu-group nzTitle="所有项目">
+    <ul>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+        <a [routerLink]="['/projects']">
+          <i nz-icon nzType="coffee"></i>
+          我的项目
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+        <a [routerLink]="['/projects','archive']">
+          <i nz-icon nzType="inbox"></i>
+          归档
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>

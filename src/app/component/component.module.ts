@@ -6,6 +6,7 @@ import { EmptyComponent } from './empty/empty.component';
 import { SearchToolboxComponent } from './search-toolbox/search-toolbox.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     NzResultModule,
     NzButtonModule,
     NzToolTipModule,
-    RouterModule
+    RouterModule,
+    NzMenuModule
   ],
   declarations: [
     EmptyComponent,

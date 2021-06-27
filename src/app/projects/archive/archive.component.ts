@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-projects-archive',
+  selector: 'app-archive',
   templateUrl: './archive.component.html'
 })
 export class ArchiveComponent {

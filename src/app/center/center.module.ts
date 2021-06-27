@@ -4,6 +4,7 @@ import { CenterComponent } from './center.component';
 import { AppShareModule } from '@share';
 import { NavComponent } from './nav/nav.component';
 import { MailComponent } from './mail/mail.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,13 @@ const routes: Routes = [
     data: {
       title: '邮箱设置'
     }
+  },
+  {
+    path: 'users',
+    component: UsersComponent,
+    data: {
+      title: '团队成员'
+    }
   }
 ];
 
@@ -30,7 +38,8 @@ const routes: Routes = [
   declarations: [
     CenterComponent,
     NavComponent,
-    MailComponent
+    MailComponent,
+    UsersComponent
   ]
 })
 export class CenterModule {

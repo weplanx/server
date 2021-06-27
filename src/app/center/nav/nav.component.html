@@ -15,4 +15,44 @@
       </li>
     </ul>
   </li>
+  <li nz-menu-divider></li>
+  <li nz-menu-group nzTitle="团队信息">
+    <ul>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+        <a [routerLink]="open(['team'])">
+          <i nz-icon nzType="partition"></i>
+          团队设置
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+        <a [routerLink]="open(['users'])">
+          <i nz-icon nzType="team"></i>
+          团队成员
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li nz-menu-divider></li>
+  <li nz-menu-group nzTitle="安全审计">
+    <ul>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+        <a [routerLink]="open(['security'])">
+          <i nz-icon nzType="safety-certificate"></i>
+          访问控制
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+        <a [routerLink]="open(['logs'])">
+          <i nz-icon nzType="key"></i>
+          登录日志
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact nzDisabled>
+        <a [routerLink]="open(['operation'])">
+          <i nz-icon nzType="history"></i>
+          操作日志
+        </a>
+      </li>
+    </ul>
+  </li>
 </ul>

@@ -3,17 +3,17 @@
     <div class="logo">
       <a href="#"> <img src="/assets/weplanx.png" alt="weplanx" /> WePlanx </a>
     </div>
-    <ul class="nav" nz-menu nzMode="horizontal">
+    <ul class="nav" nz-menu nzMode="horizontal" [nzSelectable]="false">
       <li nz-menu-item nzMatchRouter>
         <a [routerLink]="['/home']">
-          <i nz-icon nzType="laptop"></i>
+          <i nz-icon nzType="project"></i>
           <b>工作区</b>
         </a>
       </li>
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['/projects']">
-          <i nz-icon nzType="project"></i>
-          <b>所有项目</b>
+      <li nz-menu-item>
+        <a href="https://github.com/weplanx" target="_blank">
+          <i nz-icon nzType="github"></i>
+          <b>Github</b>
         </a>
       </li>
     </ul>
@@ -39,30 +39,15 @@
         nzPlacement="bottomRight"
         [nzDropdownMenu]="center"
       >
-        <nz-badge [nzCount]="0" style="margin-right: 24px">
+        <div style="margin-right: 24px">
           <nz-avatar [nzSrc]="'/assets/user.jpg'" [nzShape]="'square'"></nz-avatar>
-        </nz-badge>
+        </div>
         <nz-dropdown-menu #center>
           <ul nz-menu>
-            <li nz-menu-item nzDisabled>
-              <div class="user-detail">
-                <nz-avatar [nzSize]="64" [nzSrc]="'/assets/user.jpg'"></nz-avatar>
-                <nz-space [nzSize]="2" nzDirection="vertical">
-                  <nz-tag *nzSpaceItem nzColor="blue">团队管理员</nz-tag>
-                  <h4 *nzSpaceItem>kain</h4>
-                </nz-space>
-              </div>
-            </li>
             <li nz-menu-item>
               <a [routerLink]="['/center']">
-                <i nz-icon nzType="idcard"></i>
-                个人设置
-              </a>
-            </li>
-            <li nz-menu-item>
-              <a [routerLink]="['/center', 'mail']">
-                <i nz-icon nzType="mail"></i>
-                邮箱设置
+                <i nz-icon nzType="user"></i>
+                kain
               </a>
             </li>
             <li nz-menu-divider></li>
@@ -71,14 +56,6 @@
                 <li nz-menu-item>中文</li>
                 <li nz-menu-item>English</li>
               </ul>
-            </li>
-            <li nz-menu-item nzDisabled>
-              <i nz-icon nzType="select"></i>
-              系统公告
-            </li>
-            <li nz-menu-item nzDisabled>
-              <i nz-icon nzType="smile"></i>
-              问题反馈
             </li>
             <li nz-menu-item>
               <i nz-icon nzType="logout"></i>

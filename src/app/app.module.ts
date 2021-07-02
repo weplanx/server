@@ -1,32 +1,32 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NZ_I18N, zh_CN } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NZ_CONFIG, NzConfig } from 'ng-zorro-antd/core/config';
-import { RouterModule, Routes } from '@angular/router';
-import { AppShareModule } from '@share';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { NZ_I18N, zh_CN } from "ng-zorro-antd/i18n";
+import { registerLocaleData } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NZ_CONFIG, NzConfig } from "ng-zorro-antd/core/config";
+import { RouterModule, Routes } from "@angular/router";
+import { AppShareModule } from "@share";
 
-import en from '@angular/common/locales/en';
+import en from "@angular/common/locales/en";
 
 registerLocaleData(en);
 
-import { AppComponent } from './app.component';
-import { ContentService } from '@common/content.service';
-import { AuthGuard } from '@common/auth.guard';
-import { Config } from '@common/config';
+import { AppComponent } from "./app.component";
+import { ContentService } from "@common/content.service";
+import { AuthGuard } from "@common/auth.guard";
+import { ConfigService } from "@common/config.service";
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./app-router.module').then(m => m.AppRouterModule)
+    path: "",
+    loadChildren: () => import("./app-router.module").then(m => m.AppRouterModule)
     // canActivate: [AuthGuard]
   }
 ];
 
 const ngZorroConfig: NzConfig = {
-  notification: { nzPlacement: 'bottomRight' }
+  notification: { nzPlacement: "bottomRight" }
 };
 
 @NgModule({
@@ -42,7 +42,7 @@ const ngZorroConfig: NzConfig = {
   ],
   providers: [
     AuthGuard,
-    Config,
+    ConfigService,
     ContentService,
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
     { provide: NZ_I18N, useValue: zh_CN }

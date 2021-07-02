@@ -56,13 +56,13 @@
   </nz-table>
 </nz-card>
 
-<nz-modal [nzTitle]="!isEdit ? '创建成员' : '编辑成员'">
-
-</nz-modal>
-
-
-<ng-template #formContent>
-  <form id="sub" nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="submit($event)">
+<nz-modal
+  [nzWidth]="420"
+  [nzTitle]="!formData ? '创建成员' : '编辑成员'"
+  [nzVisible]="formVisable"
+  (nzOnCancel)="closeUserForm()"
+>
+  <form *nzModalContent id="userForm" nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="submit($event)">
     <nz-form-item>
       <nz-form-control nzHasFeedback>
         <input nz-input type="email" placeholder="电子邮件" formControlName="email" />
@@ -79,10 +79,8 @@
       </nz-form-control>
     </nz-form-item>
   </form>
-</ng-template>
-
-<ng-template #formFooter>
-  <button nz-button nzType="default">返回</button>
-  <button form="sub" nz-button nzType="primary">提交</button>
-</ng-template>
-
+  <ng-container *nzModalFooter>
+    <button nz-button (click)="closeUserForm()">返回</button>
+    <button form="userForm" nz-button type="submit" nzType="primary">提交</button>
+  </ng-container>
+</nz-modal>

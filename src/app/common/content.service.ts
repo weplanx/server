@@ -1,27 +1,26 @@
-import { Injectable, TemplateRef } from '@angular/core';
-import { BreadcrumbOption } from '@common/types';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, TemplateRef } from "@angular/core";
+import { BreadcrumbOption } from "@common/types";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class ContentService {
   /**
    * Content Left Sider
    */
-  sider: BehaviorSubject<TemplateRef<any>> = new BehaviorSubject<TemplateRef<any>>(null);
+  sider: TemplateRef<any>;
   /**
    * Content Page Header Breadcrumb
    */
-  breadcrumb: BehaviorSubject<BreadcrumbOption[]> = new BehaviorSubject<BreadcrumbOption[]>([]);
+  breadcrumb: BreadcrumbOption[] = [];
   /**
    * Content Page Header Extra
    */
-  extra: BehaviorSubject<TemplateRef<any>> = new BehaviorSubject<TemplateRef<any>>(null);
+  extra: TemplateRef<any>;
 
   /**
    * On Change Clear
    */
   clear(): void {
-    this.breadcrumb.next([]);
-    this.extra.next(null);
+    this.breadcrumb = [];
+    this.extra = null;
   }
 }

@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ContentService } from '@common/content.service';
+import { Component, Input, OnInit } from "@angular/core";
+import { ContentService } from "@common/content.service";
 
 @Component({
-  selector: 'app-project-nav',
-  templateUrl: './nav.component.html'
+  selector: "app-project-nav",
+  templateUrl: "./nav.component.html"
 })
 export class NavComponent implements OnInit {
   @Input() key: string;
@@ -17,13 +17,13 @@ export class NavComponent implements OnInit {
     if (!this.key) {
       return;
     }
-    this.content.breadcrumb.next([
-      { name: '所有项目', routerlink: ['/projects'] },
-      { name: '解决方案 A' }
-    ]);
+    this.content.breadcrumb = [
+      { name: "所有项目", routerlink: ["/projects"] },
+      { name: "解决方案 A" }
+    ];
   }
 
   open(path: string[] = []): any[] {
-    return ['/projects', 'key', this.key, ...path];
+    return ["/projects", "key", this.key, ...path];
   }
 }

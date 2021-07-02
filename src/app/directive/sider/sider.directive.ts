@@ -1,8 +1,8 @@
-import { Directive, OnInit, TemplateRef } from '@angular/core';
-import { ContentService } from '@common/content.service';
+import { Directive, OnInit, TemplateRef } from "@angular/core";
+import { ContentService } from "@common/content.service";
 
 @Directive({
-  selector: '[appSider]'
+  selector: "[appSider]"
 })
 export class SiderDirective implements OnInit {
   constructor(
@@ -12,6 +12,6 @@ export class SiderDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    this.content.sider.next(this.ref);
+    this.content.sider = this.ref;
   }
 }

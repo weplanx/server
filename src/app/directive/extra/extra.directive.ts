@@ -1,8 +1,8 @@
-import { Directive, OnInit, TemplateRef } from '@angular/core';
-import { ContentService } from '@common/content.service';
+import { Directive, OnInit, TemplateRef } from "@angular/core";
+import { ContentService } from "@common/content.service";
 
 @Directive({
-  selector: '[appExtra]'
+  selector: "[appExtra]"
 })
 export class ExtraDirective implements OnInit {
   constructor(
@@ -12,6 +12,6 @@ export class ExtraDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    this.content.extra.next(this.ref);
+    this.content.extra = this.ref;
   }
 }

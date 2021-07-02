@@ -1,13 +1,13 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, take } from 'rxjs/operators';
-import { ContentService } from '@common/content.service';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
+import { filter, take } from "rxjs/operators";
+import { ContentService } from "@common/content.service";
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  selector: "app-layout",
+  templateUrl: "./layout.component.html",
+  styleUrls: ["./layout.component.scss"]
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   title: string;
@@ -40,7 +40,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.route.firstChild?.firstChild?.data.pipe(
       take(1)
     ).subscribe(data => {
-      if (data.hasOwnProperty('title')) {
+      if (data.hasOwnProperty("title")) {
         this.title = data.title;
       }
     });

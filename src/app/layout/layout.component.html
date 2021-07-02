@@ -69,12 +69,12 @@
   </nz-header>
   <nz-layout>
     <nz-sider class="sider" nzTheme="light" nzWidth="240px">
-      <ng-container *ngTemplateOutlet="content.sider | async"></ng-container>
+      <ng-container *ngTemplateOutlet="content.sider"></ng-container>
     </nz-sider>
     <nz-layout>
       <nz-page-header [nzTitle]="title" [nzGhost]="false">
         <nz-breadcrumb
-          *ngIf="(content.breadcrumb | async).length !== 0"
+          *ngIf="content.breadcrumb.length !== 0"
           nz-page-header-breadcrumb
           nzSeparator=">"
         >
@@ -83,7 +83,7 @@
               <i nz-icon nzType="home"></i>
             </a>
           </nz-breadcrumb-item>
-          <ng-container *ngFor="let item of content.breadcrumb | async; last as isLast">
+          <ng-container *ngFor="let item of content.breadcrumb; last as isLast">
             <nz-breadcrumb-item>
               <a [routerLink]="item?.routerlink" *ngIf="!isLast; else last">
                 {{ item.name }}
@@ -95,7 +95,7 @@
           </ng-container>
         </nz-breadcrumb>
         <nz-page-header-extra>
-          <ng-container *ngTemplateOutlet="content.extra | async"></ng-container>
+          <ng-container *ngTemplateOutlet="content.extra"></ng-container>
         </nz-page-header-extra>
       </nz-page-header>
       <nz-content>

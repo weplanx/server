@@ -19,7 +19,7 @@ import { AuthGuard } from '@common/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./app-router.module').then(m => m.AppRouterModule),
+    loadChildren: () => import('./app-router.module').then(m => m.AppRouterModule)
     // canActivate: [AuthGuard]
   }
 ];

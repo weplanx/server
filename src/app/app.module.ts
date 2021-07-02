@@ -15,6 +15,7 @@ registerLocaleData(en);
 import { AppComponent } from './app.component';
 import { ContentService } from '@common/content.service';
 import { AuthGuard } from '@common/auth.guard';
+import { Config } from '@common/config';
 
 const routes: Routes = [
   {
@@ -41,6 +42,7 @@ const ngZorroConfig: NzConfig = {
   ],
   providers: [
     AuthGuard,
+    Config,
     ContentService,
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
     { provide: NZ_I18N, useValue: zh_CN }

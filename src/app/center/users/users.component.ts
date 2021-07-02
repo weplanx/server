@@ -1,19 +1,22 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
-  form: FormGroup;
-  @ViewChild('userFormTemplate') userFormTemplate: TemplateRef<any>;
-  listOfData: any[] = [
+  lists: any[] = [
     {
       name: 'kain'
     }
   ];
+
+  form: FormGroup;
+  formVisable = false;
+  isEdit = false;
+
 
   constructor(
     private modal: NzModalService,
@@ -26,14 +29,19 @@ export class UsersComponent implements OnInit {
 
   openUserForm(data?: any): void {
     this.form = this.fb.group({
-      username: [],
-      email: [],
-      call: []
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]],
+      name: [null]
     });
     this.modal.create({
-      nzWidth: 420,
       nzTitle: !data ? '创建成员' : '编辑成员',
-      nzContent: this.userFormTemplate
+      nzWidth: 420,
+      nzContent: this.formContent,
+      nzFooter: this.formFooter
     });
+  }
+
+  submit(data: any) {
+
   }
 }

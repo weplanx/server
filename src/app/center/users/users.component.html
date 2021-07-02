@@ -9,19 +9,19 @@
 <ng-template #search>
   <nz-space>
     <nz-input-group *nzSpaceItem nzSearch nzSuffixIcon="search" style="width: 240px">
-      <input nz-input placeholder="搜索用户名" />
+      <input nz-input placeholder="搜索电子邮件" />
     </nz-input-group>
   </nz-space>
 </ng-template>
 <app-search-toolbox #toolbox></app-search-toolbox>
 
 <nz-card [nzTitle]="search" [nzExtra]="toolbox.ref">
-  <nz-table #basicTable [nzData]="listOfData">
+  <nz-table #basicTable [nzData]="lists">
     <thead>
     <tr>
-      <th nzWidth="320px">用户名</th>
-      <th nzWidth="320px">电子邮件</th>
+      <th nzWidth="420px">电子邮件</th>
       <th>称呼</th>
+      <th>状态</th>
       <th nzWidth="80px" nzRight>操作</th>
     </tr>
     </thead>
@@ -56,31 +56,33 @@
   </nz-table>
 </nz-card>
 
-<ng-template #userFormTemplate>
-  <form nz-form nzLayout="vertical" [formGroup]="form">
+<nz-modal [nzTitle]="!isEdit ? '创建成员' : '编辑成员'">
+
+</nz-modal>
+
+
+<ng-template #formContent>
+  <form id="sub" nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="submit($event)">
     <nz-form-item>
-      <nz-form-label nzRequired>用户名</nz-form-label>
-      <nz-form-control>
-        <input nz-input placeholder="请定义长度在4~16位的英文字母" />
+      <nz-form-control nzHasFeedback>
+        <input nz-input type="email" placeholder="电子邮件" formControlName="email" />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label nzRequired>密码</nz-form-label>
-      <nz-form-control>
-        <input nz-input placeholder="" />
+      <nz-form-control nzHasFeedback>
+        <input nz-input placeholder="密码" formControlName="password" />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label nzRequired>电子邮件</nz-form-label>
-      <nz-form-control>
-        <input nz-input placeholder="" />
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label>您的称呼</nz-form-label>
-      <nz-form-control>
-        <input nz-input placeholder="" />
+      <nz-form-control nzHasFeedback>
+        <input nz-input placeholder="称呼" formControlName="name" />
       </nz-form-control>
     </nz-form-item>
   </form>
 </ng-template>
+
+<ng-template #formFooter>
+  <button nz-button nzType="default">返回</button>
+  <button form="sub" nz-button nzType="primary">提交</button>
+</ng-template>
+

@@ -5,6 +5,7 @@ import { AppShareModule } from '@share';
 import { NavComponent } from './nav/nav.component';
 import { MailComponent } from './mail/mail.component';
 import { UsersComponent } from './users/users.component';
+import { NzUploadModule } from "ng-zorro-antd/upload";
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     AppShareModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NzUploadModule
   ],
   declarations: [
     CenterComponent,

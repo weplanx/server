@@ -1,4 +1,4 @@
-header {
+.header {
   padding: 0 16px;
   height: 64px;
   line-height: 64px;
@@ -23,7 +23,12 @@ header {
       height: 64px;
     }
   }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
 }
+
 
 .container {
   height: calc(100% - 65px);

@@ -6,6 +6,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AppShareModule } from "@share";
 
 import { AppComponent } from "./app.component";
+import { MatIconRegistry } from "@angular/material/icon";
 
 const routes: Routes = [
   {
@@ -29,4 +30,9 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(
+    private matIconRegistry: MatIconRegistry
+  ) {
+    this.matIconRegistry.setDefaultFontSetClass("material-icons-outlined");
+  }
 }

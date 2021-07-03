@@ -23,8 +23,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppShareModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes, { useHash: true }),
+    AppShareModule
   ],
   providers: [],
   bootstrap: [AppComponent]

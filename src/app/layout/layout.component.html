@@ -1,0 +1,102 @@
+<header>
+  <div style="float:left;width: 210px;margin-right: 15px">
+    <button mat-button>WEPLANX</button>
+  </div>
+
+  <div style="float: right">
+    <button mat-button [matMenuTriggerFor]="language">
+      <mat-icon>translate</mat-icon>
+      <mat-menu #language="matMenu">
+        <button mat-menu-item>
+          <span>简体中文</span>
+        </button>
+        <button mat-menu-item disabled>
+          <span>English</span>
+        </button>
+      </mat-menu>
+    </button>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>face</mat-icon>
+          <span>个人中心</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>退出</span>
+        </button>
+      </mat-menu>
+    </button>
+  </div>
+  <div class="clear"></div>
+</header>
+
+<mat-sidenav-container class="container" autosize>
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <h3 matSubheader>控制台</h3>
+      <mat-list-item>
+        <mat-icon matListIcon>dashboard</mat-icon>
+        <h4 matLine>仪表盘</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>insights</mat-icon>
+        <h4 matLine>运行状态</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>tips_and_updates</mat-icon>
+        <h4 matLine>我的项目</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h3 matSubheader>系统设置</h3>
+      <mat-list-item>
+        <mat-icon matListIcon>groups</mat-icon>
+        <h4 matLine>团队成员</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>verified_user</mat-icon>
+        <h4 matLine>安全审计</h4>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="sidenav-content">
+      <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput placeholder="Ex. ium" #input>
+      </mat-form-field>
+      <mat-card>
+        <table style="width: 100%" mat-table [dataSource]="dataSource">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> 项目名称</th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Weight</th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol</th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator></mat-paginator>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

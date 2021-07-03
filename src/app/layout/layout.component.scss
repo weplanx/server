@@ -1,0 +1,23 @@
+header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #dadce0;
+  box-shadow: 1px 1px transparent;
+}
+
+.clear {
+  clear: both;
+}
+
+.container {
+  height: calc(100% - 62px);
+}
+
+.sidenav {
+  display: flex;
+  width: 240px;
+  height: 100%;
+}
+
+.sidenav-content {
+  padding: 12px 16px;
+}

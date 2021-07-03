@@ -3,6 +3,14 @@
     <a href="#"><img src="/assets/weplanx.png" alt="weplanx" /> WEPLANX </a>
   </div>
 
+  <button mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-flat-button>
+    <mat-icon>chevron_right</mat-icon>
+    <span>我的项目</span>
+  </button>
+
   <div style="float: right">
     <button mat-button [matMenuTriggerFor]="language">
       <mat-icon>translate</mat-icon>
@@ -23,7 +31,7 @@
           <span>个人中心</span>
         </button>
         <button mat-menu-item>
-          <mat-icon>exit_to_app</mat-icon>
+          <mat-icon>logout</mat-icon>
           <span>退出</span>
         </button>
       </mat-menu>
@@ -63,7 +71,7 @@
   <mat-sidenav-content>
     <div class="sidenav-content">
       <mat-form-field appearance="standard">
-        <mat-label>项目名称</mat-label>
+        <mat-label>搜索项目名称</mat-label>
         <input matInput>
       </mat-form-field>
       <mat-card>

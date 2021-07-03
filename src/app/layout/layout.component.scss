@@ -1,7 +1,28 @@
 header {
-  padding: 12px 16px;
+  padding: 0 16px;
+  height: 64px;
+  line-height: 64px;
   border-bottom: 1px solid #dadce0;
   box-shadow: 1px 1px transparent;
+}
+
+.logo {
+  float: left;
+  vertical-align: middle;
+  width: 225px;
+
+  a {
+    color: rgba(0, 0, 0, .85);
+    font-size: 19.5px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  img {
+    float: left;
+    height: 64px;
+  }
 }
 
 .clear {

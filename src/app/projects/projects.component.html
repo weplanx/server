@@ -9,21 +9,9 @@
   <input nzBorderless nz-input placeholder="搜索项目名称" />
 </ng-template>
 
-<ng-template #extra>
-  <nz-button-group>
-    <button nz-button>
-      <i nz-icon nzType="sync"></i>
-    </button>
-    <button nz-button>
-      <i nz-icon nzType="clear"></i>
-    </button>
-    <button nz-button nzDanger [disabled]="true">
-      <i nz-icon nzType="delete"></i>
-    </button>
-  </nz-button-group>
-</ng-template>
+<app-search-toolbox #toolbox></app-search-toolbox>
 
-<nz-card [nzTitle]="search" [nzExtra]="extra">
+<nz-card [nzTitle]="search" [nzExtra]="toolbox.ref">
   <nz-table #basicTable [nzData]="listOfData">
     <thead>
     <tr>

@@ -8,32 +8,27 @@
 </nz-space>
 
 <ng-template #search>
-  <nz-space>
-    <nz-input-group *nzSpaceItem nzSearch nzSuffixIcon="search" style="width: 240px">
-      <input nz-input placeholder="搜索用户名" />
-    </nz-input-group>
-  </nz-space>
+  <input nzBorderless nz-input placeholder="搜索电子邮件" />
 </ng-template>
+
 <app-search-toolbox #toolbox></app-search-toolbox>
 
 <nz-card [nzTitle]="search" [nzExtra]="toolbox.ref">
   <nz-table #basicTable [nzData]="lists">
     <thead>
     <tr>
+      <th nzWidth="60px"></th>
       <th nzWidth="420px">电子邮件</th>
       <th>称呼</th>
-      <th>状态</th>
-      <th nzWidth="80px" nzRight>操作</th>
+      <th nzWidth="120px" nzRight>操作</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let data of basicTable.data">
+      <td></td>
       <td>
-        <nz-avatar [nzShape]="'square'" nzIcon="user"></nz-avatar>
-        <nz-divider nzType="vertical"></nz-divider>
         {{ data.name }}
       </td>
-      <td></td>
       <td></td>
       <td>
         <button nz-button nzType="text" nz-dropdown [nzDropdownMenu]="actions">

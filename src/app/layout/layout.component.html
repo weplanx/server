@@ -1,98 +1,106 @@
-<mat-toolbar class="header">
-  <div class="logo">
-    <a href="#"><img src="/assets/weplanx.png" alt="weplanx" /> WEPLANX </a>
-  </div>
-
-  <button mat-button>
-    <mat-icon>home</mat-icon>
-  </button>
-  <button mat-button>
-    <mat-icon>chevron_right</mat-icon>
-    <span>我的项目</span>
-  </button>
-  <span class="spacer"></span>
-
-  <button mat-button [matMenuTriggerFor]="language">
-    <mat-icon>translate</mat-icon>
-    <mat-menu #language="matMenu">
-      <button mat-menu-item>
-        <span>简体中文</span>
-      </button>
-      <button mat-menu-item disabled>
-        <span>English</span>
-      </button>
-    </mat-menu>
-  </button>
-  <button mat-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <mat-icon>face</mat-icon>
-        <span>个人中心</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>logout</mat-icon>
-        <span>退出</span>
-      </button>
-    </mat-menu>
-  </button>
-</mat-toolbar>
-
-<mat-sidenav-container class="container" autosize>
-  <mat-sidenav mode="side" opened class="sidenav">
-    <mat-nav-list>
-      <h3 matSubheader>控制台</h3>
-      <mat-list-item>
-        <mat-icon matListIcon>dashboard</mat-icon>
-        <h4 matLine>仪表盘</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon matListIcon>insights</mat-icon>
-        <h4 matLine>运行状态</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon matListIcon>tips_and_updates</mat-icon>
-        <h4 matLine>我的项目</h4>
-      </mat-list-item>
-      <mat-divider></mat-divider>
-      <h3 matSubheader>系统设置</h3>
-      <mat-list-item>
-        <mat-icon matListIcon>groups</mat-icon>
-        <h4 matLine>团队成员</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon matListIcon>verified_user</mat-icon>
-        <h4 matLine>安全审计</h4>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="sidenav-content">
-      <mat-form-field appearance="standard">
-        <mat-label>搜索项目名称</mat-label>
-        <input matInput>
-      </mat-form-field>
-      <mat-card>
-        <table style="width: 100%" mat-table [dataSource]="dataSource">
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> 项目名称</th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
-          <ng-container matColumnDef="weight">
-            <th mat-header-cell *matHeaderCellDef> 描述</th>
-            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-          </ng-container>
-          <ng-container matColumnDef="symbol">
-            <th mat-header-cell *matHeaderCellDef> 参与人</th>
-            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-          </ng-container>
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        <mat-paginator></mat-paginator>
-      </mat-card>
+<nz-layout class="main-layout">
+  <nz-header>
+    <div class="logo">
+      <a href="#"> <img src="/assets/weplanx.png" alt="weplanx" /> WePlanx </a>
     </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-
+    <ul class="nav" nz-menu nzMode="horizontal" [nzSelectable]="false">
+      <li nz-menu-item>
+        <a [routerLink]="['/dashboards']">
+          <i nz-icon nzType="project"></i>
+          <b>工作区</b>
+        </a>
+      </li>
+      <li nz-menu-item>
+        <a href="https://github.com/weplanx" target="_blank">
+          <i nz-icon nzType="github"></i>
+          <b>Github</b>
+        </a>
+      </li>
+    </ul>
+    <nz-space class="extra">
+      <button
+        *nzSpaceItem
+        nz-button
+        nzType="text"
+        nz-popover
+        nzPopoverTitle="消息通知"
+        [nzPopoverContent]="notification"
+        nzPopoverPlacement="bottomRight"
+      >
+        <ng-template #notification>
+          <nz-empty></nz-empty>
+        </ng-template>
+        <i nz-icon nzType="notification"></i>
+      </button>
+      <div
+        *nzSpaceItem
+        class="center"
+        nz-dropdown
+        nzPlacement="bottomRight"
+        [nzDropdownMenu]="center"
+      >
+        <div style="margin-right: 24px">
+          <nz-avatar [nzSrc]="'/assets/user.jpg'" [nzShape]="'square'"></nz-avatar>
+        </div>
+        <nz-dropdown-menu #center>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a [routerLink]="['/center']">
+                <i nz-icon nzType="user"></i>
+                kain
+              </a>
+            </li>
+            <li nz-menu-divider></li>
+            <li nz-submenu nzTitle="切换语言" nzIcon="translation" nzDisabled>
+              <ul>
+                <li nz-menu-item>中文</li>
+                <li nz-menu-item>English</li>
+              </ul>
+            </li>
+            <li nz-menu-item>
+              <i nz-icon nzType="logout"></i>
+              退出
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+    </nz-space>
+    <div class="clearfix"></div>
+  </nz-header>
+  <nz-layout>
+    <nz-sider class="sider" nzTheme="light" nzWidth="240px">
+      <ng-container *ngTemplateOutlet="content.sider"></ng-container>
+    </nz-sider>
+    <nz-layout>
+      <nz-page-header [nzTitle]="title" [nzGhost]="false">
+        <nz-breadcrumb
+          *ngIf="content.breadcrumb.length !== 0"
+          nz-page-header-breadcrumb
+          nzSeparator=">"
+        >
+          <nz-breadcrumb-item>
+            <a [routerLink]="['/']">
+              <i nz-icon nzType="home"></i>
+            </a>
+          </nz-breadcrumb-item>
+          <ng-container *ngFor="let item of content.breadcrumb; last as isLast">
+            <nz-breadcrumb-item>
+              <a [routerLink]="item?.routerlink" *ngIf="!isLast; else last">
+                {{ item.name }}
+              </a>
+              <ng-template #last>
+                {{ item.name }}
+              </ng-template>
+            </nz-breadcrumb-item>
+          </ng-container>
+        </nz-breadcrumb>
+        <nz-page-header-extra>
+          <ng-container *ngTemplateOutlet="content.extra"></ng-container>
+        </nz-page-header-extra>
+      </nz-page-header>
+      <nz-content>
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

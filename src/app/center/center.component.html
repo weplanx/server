@@ -1,0 +1,30 @@
+<app-center-nav></app-center-nav>
+
+<nz-card nzTitle="账号信息">
+  <div nz-row>
+    <div nz-col nzFlex="600px">
+      <nz-descriptions [nzColumn]="1">
+        <nz-descriptions-item nzTitle="UID">56a87f0f-9ca3-476f-9872-d42be548c17f</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="用户名">kainonly</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="电子邮件">zhangtqx@vip.qq.com</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="手机号">+86 122****9868</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="称呼">Kain</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="密码">****</nz-descriptions-item>
+      </nz-descriptions>
+    </div>
+
+    <div nz-col nzFlex="auto">
+      <nz-upload
+        nzName="avatar"
+        nzListType="picture-card"
+        [nzShowUploadList]="false"
+      >
+        <ng-container *ngIf="!avatarUrl">
+          <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></i>
+          <div class="ant-upload-text">Upload</div>
+        </ng-container>
+        <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+      </nz-upload>
+    </div>
+  </div>
+</nz-card>

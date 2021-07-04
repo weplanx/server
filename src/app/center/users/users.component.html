@@ -1,0 +1,86 @@
+<app-center-nav></app-center-nav>
+<nz-space *appExtra>
+  <button *nzSpaceItem nz-button nzType="primary" (click)="openUserForm()">
+    <i nz-icon nzType="plus"></i>
+    创建成员
+  </button>
+</nz-space>
+
+<ng-template #search>
+  <nz-space>
+    <nz-input-group *nzSpaceItem nzSearch nzSuffixIcon="search" style="width: 240px">
+      <input nz-input placeholder="搜索用户名" />
+    </nz-input-group>
+  </nz-space>
+</ng-template>
+<app-search-toolbox #toolbox></app-search-toolbox>
+
+<nz-card [nzTitle]="search" [nzExtra]="toolbox.ref">
+  <nz-table #basicTable [nzData]="lists">
+    <thead>
+    <tr>
+      <th nzWidth="420px">电子邮件</th>
+      <th>称呼</th>
+      <th>状态</th>
+      <th nzWidth="80px" nzRight>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>
+        <nz-avatar [nzShape]="'square'" nzIcon="user"></nz-avatar>
+        <nz-divider nzType="vertical"></nz-divider>
+        {{ data.name }}
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <button nz-button nzType="text" nz-dropdown [nzDropdownMenu]="actions">
+          <i nz-icon nzType="ellipsis"></i>
+        </button>
+        <nz-dropdown-menu #actions>
+          <ul nz-menu nzSelectable>
+            <li nz-menu-item>
+              <i nz-icon nzType="edit"></i>
+              编辑
+            </li>
+            <li nz-menu-item nzDanger>
+              <i nz-icon nzType="delete"></i>
+              删除
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+</nz-card>
+
+<nz-modal
+  [nzWidth]="420"
+  [nzTitle]="!formData ? '创建成员' : '编辑成员'"
+  [nzVisible]="formVisable"
+  (nzOnCancel)="closeUserForm()"
+>
+  <form *nzModalContent id="userForm" nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="submit($event)">
+    <nz-form-item>
+      <nz-form-control nzHasFeedback>
+        <input nz-input type="email" placeholder="电子邮件" formControlName="email" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzHasFeedback>
+        <input nz-input placeholder="密码" formControlName="password" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzHasFeedback>
+        <input nz-input placeholder="称呼" formControlName="name" />
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <ng-container *nzModalFooter>
+    <button nz-button (click)="closeUserForm()">返回</button>
+    <button form="userForm" nz-button type="submit" nzType="primary">提交</button>
+  </ng-container>
+</nz-modal>

@@ -1,16 +1,17 @@
-import { NgModule } from "@angular/core";
-import { AppShareModule } from "@share";
-import { LayoutComponent } from "./layout.component";
-import { MatToolbarModule } from "@angular/material/toolbar";
+import { NgModule } from '@angular/core';
+import { LayoutComponent } from './layout.component';
+import { AppShareModule } from '@share';
 
 @NgModule({
   imports: [
-    AppShareModule,
-    MatToolbarModule
-
+    AppShareModule
   ],
-  declarations: [LayoutComponent],
-  exports: [LayoutComponent]
+  declarations: [
+    LayoutComponent
+  ],
+  exports: [
+    LayoutComponent
+  ]
 })
 export class LayoutModule {
 }

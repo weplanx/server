@@ -1,61 +1,45 @@
 <nz-layout class="main-layout">
   <nz-header>
-    <div class="logo">
-      <a href="#"> <img src="/assets/weplanx.png" alt="weplanx" /> WePlanx </a>
+    <div class="nav-left">
+      <a href="#"> <img src="/assets/weplanx.png" alt="weplanx" /> WEPLANX </a>
     </div>
-    <ul class="nav" nz-menu nzMode="horizontal" [nzSelectable]="false">
-      <li nz-menu-item>
-        <a [routerLink]="['/dashboards']">
-          <i nz-icon nzType="project"></i>
-          <b>工作区</b>
-        </a>
-      </li>
-      <li nz-menu-item>
-        <a href="https://github.com/weplanx" target="_blank">
-          <i nz-icon nzType="github"></i>
-          <b>Github</b>
-        </a>
-      </li>
-    </ul>
-    <nz-space class="extra">
+    <nz-space class="nav-right">
       <button
         *nzSpaceItem
         nz-button
         nzType="text"
-        nz-popover
-        nzPopoverTitle="消息通知"
-        [nzPopoverContent]="notification"
-        nzPopoverPlacement="bottomRight"
-      >
-        <ng-template #notification>
-          <nz-empty></nz-empty>
-        </ng-template>
-        <i nz-icon nzType="notification"></i>
-      </button>
-      <div
-        *nzSpaceItem
-        class="center"
         nz-dropdown
+        [nzDropdownMenu]="translation"
         nzPlacement="bottomRight"
-        [nzDropdownMenu]="center"
       >
-        <div style="margin-right: 24px">
-          <nz-avatar [nzSrc]="'/assets/user.jpg'" [nzShape]="'square'"></nz-avatar>
-        </div>
+        <i nz-icon nzType="translation"></i>
+        <nz-dropdown-menu #translation>
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a>简体中文</a>
+            </li>
+            <li nz-menu-item>
+              <a>English</a>
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </button>
+      <button
+        *nzSpaceItem
+        nz-button
+        nzType="text"
+        nz-dropdown
+        [nzDropdownMenu]="center"
+        nzPlacement="bottomRight"
+      >
+        <i nz-icon nzType="more"></i>
         <nz-dropdown-menu #center>
           <ul nz-menu>
             <li nz-menu-item>
               <a [routerLink]="['/center']">
                 <i nz-icon nzType="user"></i>
-                kain
+                kainonly
               </a>
-            </li>
-            <li nz-menu-divider></li>
-            <li nz-submenu nzTitle="切换语言" nzIcon="translation" nzDisabled>
-              <ul>
-                <li nz-menu-item>中文</li>
-                <li nz-menu-item>English</li>
-              </ul>
             </li>
             <li nz-menu-item>
               <i nz-icon nzType="logout"></i>
@@ -63,7 +47,7 @@
             </li>
           </ul>
         </nz-dropdown-menu>
-      </div>
+      </button>
     </nz-space>
     <div class="clearfix"></div>
   </nz-header>

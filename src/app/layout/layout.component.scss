@@ -5,68 +5,32 @@
 nz-header {
   background: #fff;
   height: auto;
-  padding: 0;
-  line-height: 54px;
+  padding: 0 16px;
+  line-height: 64px;
   border-bottom: 1px solid #dedede;
 
-  .logo {
+  .nav-left {
     float: left;
-    width: 240px;
+    width: 225px;
     height: 100%;
     vertical-align: middle;
 
     a {
       color: rgba(0, 0, 0, .85);
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 18px;
       letter-spacing: 1px;
       white-space: nowrap;
     }
 
     img {
-      padding-left: 8px;
       float: left;
-      height: 50px;
+      height: 64px;
     }
   }
 
-  .nav {
-    float: left;
-    margin-left: 24px;
-
-    li {
-      padding: 0 4px;
-      border-top: 2px solid transparent;
-      border-bottom: 2px solid transparent;
-
-      &.ant-menu-item-active,
-      &.ant-menu-item-open,
-      &.ant-menu-item-selected,
-      &.ant-menu-item:hover,
-      &.ant-menu-submenu-active,
-      &.ant-menu-submenu-open,
-      &.ant-menu-submenu-selected,
-      &.ant-menu-submenu:hover {
-        border-top: 2px solid #1890ff;
-      }
-    }
-
-    .ant-menu-horizontal {
-      border: none;
-    }
-  }
-
-  .extra {
+  .nav-right {
     float: right;
     height: 100%;
-  }
-
-  .center {
-    cursor: pointer;
-    margin-left: 24px;
-    margin-right: 12px;
-    width: 54px;
-    text-align: center;
   }
 }
 

@@ -1,30 +1,34 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AppShareModule } from '@share';
-import { LayoutComponent } from '@layout/layout.component';
-import { LayoutModule } from '@layout/layout.module';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { AppShareModule } from "@share";
+import { LayoutComponent } from "@layout/layout.component";
+import { LayoutModule } from "@layout/layout.module";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: LayoutComponent,
     children: [
       {
-        path: 'dashboards',
-        loadChildren: () => import('./dashboards/dashboards.module').then(m => m.DashboardsModule)
+        path: "dashboards",
+        loadChildren: () => import("./dashboards/dashboards.module").then(m => m.DashboardsModule)
       },
       {
-        path: 'projects',
-        loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule)
+        path: "projects",
+        loadChildren: () => import("./projects/projects.module").then(m => m.ProjectsModule)
       },
       {
-        path: 'center',
-        loadChildren: () => import('./center/center.module').then(m => m.CenterModule)
+        path: "users",
+        loadChildren: () => import("./users/users.module").then(m => m.UsersModule)
       },
       {
-        path: '',
-        redirectTo: '/dashboards',
-        pathMatch: 'full'
+        path: "audit",
+        loadChildren: () => import("./audit/audit.module").then(m => m.AuditModule)
+      },
+      {
+        path: "",
+        redirectTo: "/dashboards",
+        pathMatch: "full"
       }
     ]
   }

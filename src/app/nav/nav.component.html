@@ -1,26 +1,32 @@
 <ul *appSider nz-menu nzMode="inline">
-  <li nz-menu-group nzTitle="仪表盘">
+  <li nz-menu-group nzTitle="控制台">
     <ul>
       <li nz-menu-item nzMatchRouter nzMatchRouterExact>
         <a [routerLink]="['/dashboards']">
           <i nz-icon nzType="dashboard"></i>
-          监控
+          仪表盘
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+        <a [routerLink]="['/projects']">
+          <i nz-icon nzType="project"></i>
+          我的项目
         </a>
       </li>
     </ul>
   </li>
-  <li nz-menu-group nzTitle="所有项目">
+  <li nz-menu-group nzTitle="系统设置">
     <ul>
       <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-        <a [routerLink]="['/projects']">
-          <i nz-icon nzType="coffee"></i>
-          我的项目
+        <a [routerLink]="['/users']">
+          <i nz-icon nzType="team"></i>
+          团队成员
         </a>
       </li>
       <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-        <a [routerLink]="['/projects','archive']">
-          <i nz-icon nzType="inbox"></i>
-          归档
+        <a [routerLink]="['/audit']">
+          <i nz-icon nzType="audit"></i>
+          安全审计
         </a>
       </li>
     </ul>

@@ -51,12 +51,14 @@
     </nz-space>
     <div class="clearfix"></div>
   </nz-header>
+
   <nz-layout>
     <nz-sider class="sider" nzTheme="light" nzWidth="240px">
       <ng-container *ngTemplateOutlet="content.sider"></ng-container>
     </nz-sider>
+
     <nz-layout>
-      <nz-page-header [nzTitle]="title" [nzGhost]="false">
+      <nz-page-header *ngIf="title" [nzTitle]="title" [nzGhost]="false">
         <nz-breadcrumb
           *ngIf="content.breadcrumb.length !== 0"
           nz-page-header-breadcrumb

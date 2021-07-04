@@ -1,15 +1,15 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { AppShareModule } from "@share";
-import { DashboardsComponent } from "./dashboards.component";
 import { NavModule } from "../nav/nav.module";
+import { AppShareModule } from "@share";
+import { RouterModule, Routes } from "@angular/router";
+import { AuditComponent } from "./audit.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: DashboardsComponent,
+    component: AuditComponent,
     data: {
-      title: null
+      title: "安全审计"
     }
   }
 ];
@@ -21,11 +21,12 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-    DashboardsComponent
+    AuditComponent
   ],
   exports: [
-    DashboardsComponent
+    AuditComponent
   ]
 })
-export class DashboardsModule {
+export class AuditModule {
+
 }

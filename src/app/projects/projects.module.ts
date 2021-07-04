@@ -3,11 +3,11 @@ import { AppShareModule } from "@share";
 import { RouterModule, Routes } from "@angular/router";
 import { ProjectsComponent } from "./projects.component";
 import { ScheduleComponent } from "./schedule/schedule.component";
-import { MessageQueueComponent } from "./message-queue/message-queue.component";
-import { MessageTopicComponent } from "./message-topic/message-topic.component";
-import { MessageTriggerComponent } from "./message-trigger/message-trigger.component";
 import { NavComponent } from "./nav/nav.component";
 import { NavModule } from "../nav/nav.module";
+import { MqComponent } from "./mq/mq.component";
+import { MqRobotComponent } from "./mq-robot/mq-robot.component";
+import { ImComponent } from "./im/im.component";
 
 const routes: Routes = [
   {
@@ -21,28 +21,28 @@ const routes: Routes = [
     path: "key/:key/schedule",
     component: ScheduleComponent,
     data: {
-      title: "任务调度"
+      title: "计划任务"
     }
   },
   {
-    path: "key/:key/message-queue",
-    component: MessageQueueComponent,
+    path: "key/:key/im",
+    component: ImComponent,
     data: {
-      title: "队列管理"
+      title: "即时通讯"
     }
   },
   {
-    path: "key/:key/message-topic",
-    component: MessageTopicComponent,
+    path: "key/:key/mq",
+    component: MqComponent,
     data: {
-      title: "主题管理"
+      title: "消息队列"
     }
   },
   {
-    path: "key/:key/message-trigger",
-    component: MessageTriggerComponent,
+    path: "key/:key/mq-robot",
+    component: MqRobotComponent,
     data: {
-      title: "自动网络回调"
+      title: "队列触发器"
     }
   },
   {
@@ -62,9 +62,9 @@ const routes: Routes = [
     ProjectsComponent,
     NavComponent,
     ScheduleComponent,
-    MessageQueueComponent,
-    MessageTopicComponent,
-    MessageTriggerComponent
+    ImComponent,
+    MqComponent,
+    MqRobotComponent
   ]
 })
 export class ProjectsModule {

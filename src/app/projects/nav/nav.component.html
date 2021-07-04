@@ -1,46 +1,33 @@
 <ul *appSider nz-menu nzMode="inline">
-  <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-    <a [routerLink]="open(['schedule'])">
-      <i nz-icon nzType="schedule"></i>
-      任务调度
-    </a>
-  </li>
-  <li nz-menu-divider></li>
-  <li nz-menu-group nzTitle="消息队列">
+  <li nz-menu-group nzTitle="运维编排">
     <ul>
       <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-        <a [routerLink]="open(['message-queue'])">
-          <i nz-icon nzType="mail"></i>
-          队列管理
-        </a>
-      </li>
-      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-        <a [routerLink]="open(['message-topic'])">
-          <i nz-icon nzType="send"></i>
-          主题管理
-        </a>
-      </li>
-      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-        <a [routerLink]="open(['message-trigger'])">
-          <i nz-icon nzType="thunderbolt"></i>
-          自动网络回调
+        <a [routerLink]="open(['schedule'])">
+          <i nz-icon nzType="schedule"></i>
+          计划任务
         </a>
       </li>
     </ul>
   </li>
   <li nz-menu-divider></li>
-  <li nz-menu-group nzTitle="即时通讯">
+  <li nz-menu-group nzTitle="消息中间件">
     <ul>
       <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-        <a [routerLink]="open(['im-token'])">
-          <i nz-icon nzType="safety"></i>
-          认证令牌
+        <a [routerLink]="open(['im'])">
+          <i nz-icon nzType="message"></i>
+          即时通讯
         </a>
       </li>
       <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-        <a [routerLink]="open(['im-topic'])">
-          <i nz-icon nzType="message"></i>
-          通讯主题
+        <a [routerLink]="open(['mq'])">
+          <i nz-icon nzType="gold"></i>
+          消息队列
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+        <a [routerLink]="open(['mq-robot'])">
+          <i nz-icon nzType="robot"></i>
+          队列触发器
         </a>
       </li>
     </ul>

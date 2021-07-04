@@ -22,9 +22,6 @@ const routes: Routes = [
   ],
   declarations: [
     UsersComponent
-  ],
-  exports: [
-    UsersComponent
   ]
 })
 export class UsersModule {

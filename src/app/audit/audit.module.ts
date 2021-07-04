@@ -22,9 +22,6 @@ const routes: Routes = [
   ],
   declarations: [
     AuditComponent
-  ],
-  exports: [
-    AuditComponent
   ]
 })
 export class AuditModule {

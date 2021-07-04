@@ -6,25 +6,7 @@
 </button>
 
 <ng-template #search>
-  <nz-space>
-    <nz-input-group
-      *nzSpaceItem
-      nzSearch
-      nzSuffixIcon="search"
-      style="width: 240px"
-    >
-      <input nz-input placeholder="搜索项目" />
-    </nz-input-group>
-    <nz-button-group *nzSpaceItem nz-button>
-      <button nz-button>
-        创建时间
-        <i nz-icon nzType="down"></i>
-      </button>
-      <button nz-button nz-dropdown nzPlacement="bottomRight">
-        <i nz-icon nzType="sort-ascending"></i>
-      </button>
-    </nz-button-group>
-  </nz-space>
+  <input nzBorderless nz-input placeholder="搜索项目名称" />
 </ng-template>
 
 <ng-template #extra>
@@ -45,29 +27,28 @@
   <nz-table #basicTable [nzData]="listOfData">
     <thead>
     <tr>
-      <th>项目名称</th>
-      <th nzWidth="420px" nzRight>描述</th>
-      <th nzWidth="240px" nzRight>参与人</th>
+      <th nzWidth="60px"></th>
+      <th nzWidth="300px">项目名称</th>
+      <th nzRight>描述</th>
+      <th nzWidth="300px" nzRight>参与人</th>
       <th nzWidth="120px" nzRight>操作</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let data of basicTable.data">
+      <td
+      ></td>
       <td>
-        <nz-avatar [nzShape]="'square'" nzIcon="bulb"></nz-avatar>
-        <nz-divider nzType="vertical"></nz-divider>
         {{ data.name }}
       </td>
+      <td></td>
       <td>
+        <nz-avatar-group>
+          <nz-avatar nzText="张三"></nz-avatar>
+          <nz-avatar nzText="李四"></nz-avatar>
+        </nz-avatar-group>
       </td>
       <td>
-        <nz-avatar [nzSrc]="'/assets/user.jpg'"></nz-avatar>
-      </td>
-      <td>
-        <button nz-button nzType="text">
-          <i nz-icon nzType="star"></i>
-        </button>
-        <nz-divider nzType="vertical"></nz-divider>
         <button nz-button nzType="text">
           <i nz-icon nzType="ellipsis"></i>
         </button>

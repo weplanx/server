@@ -26,6 +26,10 @@ const routes: Routes = [
         loadChildren: () => import("./audit/audit.module").then(m => m.AuditModule)
       },
       {
+        path: "center",
+        loadChildren: () => import("./center/center.module").then(m => m.CenterModule)
+      },
+      {
         path: "",
         redirectTo: "/dashboards",
         pathMatch: "full"

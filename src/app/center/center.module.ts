@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CenterComponent } from "./center.component";
 import { AppShareModule } from "@share";
-import { NzUploadModule } from "ng-zorro-antd/upload";
 import { NavModule } from "../nav/nav.module";
 
 const routes: Routes = [
@@ -10,7 +9,7 @@ const routes: Routes = [
     path: "",
     component: CenterComponent,
     data: {
-      title: "个人中心"
+      title: null
     }
   }
 ];

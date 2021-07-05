@@ -5,4 +5,5 @@ import { Component } from "@angular/core";
   templateUrl: "./mq.component.html"
 })
 export class MqComponent {
+  lists: any[] = [];
 }

@@ -1,1 +1,41 @@
 <app-project-nav key="hello"></app-project-nav>
+
+<button *appExtra nz-button nzType="primary">
+  <i nz-icon nzType="plus"></i>
+  创建任务
+</button>
+
+<ng-template #search>
+  <input nzBorderless nz-input placeholder="搜索任务名称" />
+</ng-template>
+
+<app-search-toolbox #toolbox></app-search-toolbox>
+
+<nz-card [nzTitle]="search" [nzExtra]="toolbox.ref">
+  <nz-table #basicTable [nzData]="lists">
+    <thead>
+    <tr>
+      <th nzWidth="60px"></th>
+      <th nzWidth="360px">任务名称</th>
+      <th>最近调度</th>
+      <th>下次调度</th>
+      <th nzWidth="300px" nzRight>状态</th>
+      <th nzWidth="120px" nzRight>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <button nz-button nzType="text">
+          <i nz-icon nzType="ellipsis"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

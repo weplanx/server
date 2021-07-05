@@ -5,4 +5,5 @@ import { Component } from "@angular/core";
   templateUrl: "./im.component.html"
 })
 export class ImComponent {
+  lists: any[] = [];
 }

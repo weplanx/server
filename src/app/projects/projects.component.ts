@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './projects.component.html'
 })
 export class ProjectsComponent implements OnInit {
-  listOfData: any[] = [
+  lists: any[] = [
     {
       name: '解决方案 A'
     },

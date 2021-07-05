@@ -31,7 +31,19 @@
       <td></td>
       <td>
         <button nz-button nzType="text">
+          <i nz-icon nzType="edit"></i>
+        </button>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button nz-button nzType="text" nz-dropdown [nzDropdownMenu]="actions">
           <i nz-icon nzType="ellipsis"></i>
+          <nz-dropdown-menu #actions>
+            <ul nz-menu>
+              <li nz-menu-item nzDanger>
+                <i nz-icon nzType="delete-row"></i>
+                删除
+              </li>
+            </ul>
+          </nz-dropdown-menu>
         </button>
       </td>
     </tr>

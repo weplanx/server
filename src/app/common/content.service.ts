@@ -4,23 +4,28 @@ import { BreadcrumbOption } from "@common/types";
 @Injectable({ providedIn: "root" })
 export class ContentService {
   /**
-   * Content Left Sider
+   * 左侧导航
    */
   sider: TemplateRef<any>;
   /**
-   * Content Page Header Breadcrumb
+   * 面包屑
    */
   breadcrumb: BreadcrumbOption[] = [];
   /**
-   * Content Page Header Extra
+   * 页头操作版块
    */
   extra: TemplateRef<any>;
+  /**
+   * 页头底部版块
+   */
+  footer: TemplateRef<any>;
 
   /**
-   * On Change Clear
+   * 清空内容
    */
   clear(): void {
     this.breadcrumb = [];
     this.extra = null;
+    this.footer = null;
   }
 }

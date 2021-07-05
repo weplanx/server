@@ -5,5 +5,5 @@ import { Component } from "@angular/core";
   templateUrl: "./audit.component.html"
 })
 export class AuditComponent {
-
+  lists = [];
 }

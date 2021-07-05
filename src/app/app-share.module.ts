@@ -31,6 +31,7 @@ import { NzTypographyModule } from "ng-zorro-antd/typography";
 import { NzCheckboxModule } from "ng-zorro-antd/checkbox";
 import { NzAutocompleteModule } from "ng-zorro-antd/auto-complete";
 import { NzUploadModule } from "ng-zorro-antd/upload";
+import { NzTabsModule } from "ng-zorro-antd/tabs";
 
 @NgModule({
   exports: [
@@ -65,6 +66,7 @@ import { NzUploadModule } from "ng-zorro-antd/upload";
     NzCheckboxModule,
     NzAutocompleteModule,
     NzUploadModule,
+    NzTabsModule,
     ComponentModule,
     DirectiveModule
   ],

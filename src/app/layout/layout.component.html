@@ -83,6 +83,9 @@
         <nz-page-header-extra>
           <ng-container *ngTemplateOutlet="content.extra"></ng-container>
         </nz-page-header-extra>
+        <nz-page-header-footer *ngIf="content.footer">
+          <ng-container *ngTemplateOutlet="content.footer"></ng-container>
+        </nz-page-header-footer>
       </nz-page-header>
       <nz-content>
         <router-outlet></router-outlet>

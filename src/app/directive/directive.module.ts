@@ -1,15 +1,18 @@
-import { NgModule } from '@angular/core';
-import { SiderDirective } from './sider/sider.directive';
-import { ExtraDirective } from './extra/extra.directive';
+import { NgModule } from "@angular/core";
+import { SiderDirective } from "./sider/sider.directive";
+import { ExtraDirective } from "./extra/extra.directive";
+import { FooterDirective } from "./footer/footer.directive";
 
 @NgModule({
   declarations: [
     SiderDirective,
-    ExtraDirective
+    ExtraDirective,
+    FooterDirective
   ],
   exports: [
     SiderDirective,
-    ExtraDirective
+    ExtraDirective,
+    FooterDirective
   ]
 })
 export class DirectiveModule {

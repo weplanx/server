@@ -1,9 +1,14 @@
 <app-nav></app-nav>
 
-<button *appExtra nz-button nzType="primary">
+<button *appExtra nz-button nzType="primary" nzShape="circle">
   <i nz-icon nzType="plus"></i>
-  创建项目
+<!--  创建项目-->
 </button>
+
+<nz-tabset *appFooter [nzSelectedIndex]="0">
+  <nz-tab nzTitle="进行中"></nz-tab>
+  <nz-tab nzTitle="已归档"></nz-tab>
+</nz-tabset>
 
 <ng-template #search>
   <input nzBorderless nz-input placeholder="搜索项目名称" />

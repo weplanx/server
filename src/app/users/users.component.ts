@@ -1,5 +1,4 @@
-import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from "@angular/core";
-import { NzModalService } from "ng-zorro-antd/modal";
+import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
@@ -20,7 +19,6 @@ export class UsersComponent implements OnInit {
   formData: any;
 
   constructor(
-    private modal: NzModalService,
     private fb: FormBuilder
   ) {
   }

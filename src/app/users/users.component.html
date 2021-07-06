@@ -1,6 +1,12 @@
 <app-nav></app-nav>
 
-<button *appExtra nz-button nzType="primary" nzShape="circle" (click)="openUserForm()">
+<button
+  *appExtra
+  nz-button
+  nzType="primary"
+  nzShape="circle"
+  (click)="openUserForm()"
+>
   <i nz-icon nzType="plus"></i>
 </button>
 
@@ -47,41 +53,42 @@
   </nz-table>
 </nz-card>
 
-<nz-modal
-  [nzWidth]="360"
-  [nzTitle]="!formData ? '创建成员' : '编辑成员'"
+<nz-drawer
+  [nzWidth]="640"
   [nzVisible]="formVisable"
-  (nzOnCancel)="closeUserForm()"
+  [nzTitle]="!formData ? '创建成员' : '编辑成员'"
+  (nzOnClose)="closeUserForm()"
 >
-  <form
-    *nzModalContent
-    id="userForm"
-    nz-form
-    nzLayout="vertical"
-    [formGroup]="form"
-    (ngSubmit)="submit($event)"
-  >
-    <nz-form-item>
-      <nz-form-label nzRequired>电子邮件</nz-form-label>
-      <nz-form-control nzHasFeedback>
-        <input nz-input type="email" formControlName="email" />
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label nzRequired>密码</nz-form-label>
-      <nz-form-control nzHasFeedback>
-        <input nz-input type="password" formControlName="password" />
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label>称呼</nz-form-label>
-      <nz-form-control nzHasFeedback>
-        <input nz-input formControlName="name" />
-      </nz-form-control>
-    </nz-form-item>
-  </form>
-  <ng-container *nzModalFooter>
-    <button nz-button (click)="closeUserForm()">返回</button>
-    <button form="userForm" nz-button type="submit" nzType="primary">提交</button>
+  <ng-container *nzDrawerContent>
+    <form
+      *ngIf="form"
+      nz-form
+      [formGroup]="form"
+      (ngSubmit)="submit($event)"
+    >
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>电子邮件</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback>
+          <input nz-input type="email" formControlName="email" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>密码</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback>
+          <input nz-input type="password" formControlName="password" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">称呼</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback>
+          <input nz-input formControlName="name" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button type="submit" nzType="primary">提交</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
   </ng-container>
-</nz-modal>
+</nz-drawer>

@@ -33,6 +33,8 @@ import { NzAutocompleteModule } from "ng-zorro-antd/auto-complete";
 import { NzUploadModule } from "ng-zorro-antd/upload";
 import { NzTabsModule } from "ng-zorro-antd/tabs";
 import { NzDrawerModule } from "ng-zorro-antd/drawer";
+import { NzStatisticModule } from "ng-zorro-antd/statistic";
+import { NzListModule } from "ng-zorro-antd/list";
 
 @NgModule({
   exports: [
@@ -69,6 +71,8 @@ import { NzDrawerModule } from "ng-zorro-antd/drawer";
     NzUploadModule,
     NzTabsModule,
     NzDrawerModule,
+    NzStatisticModule,
+    NzListModule,
     ComponentModule,
     DirectiveModule
   ],

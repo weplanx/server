@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   submit(data: any): void {
     this.logining = true;
     this.main.login(data.email, data.password).subscribe(res => {
-      switch (res.code) {
+      switch (res.error) {
         case 0:
           this.notification.success("认证提示", "登录成功，正在加载数据~");
           this.router.navigateByUrl("/");

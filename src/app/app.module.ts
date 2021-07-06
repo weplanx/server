@@ -8,14 +8,13 @@ import { NZ_CONFIG, NzConfig } from "ng-zorro-antd/core/config";
 import { RouterModule, Routes } from "@angular/router";
 import { AppShareModule } from "@share";
 
-import en from "@angular/common/locales/en";
+import zh from "@angular/common/locales/zh";
 
-registerLocaleData(en);
+registerLocaleData(zh);
 
 import { AppComponent } from "./app.component";
 import { ContentService } from "@common/content.service";
 import { AuthGuard } from "@common/auth.guard";
-import { ConfigService } from "@common/config.service";
 import { MainService } from "@common/main.service";
 
 const routes: Routes = [
@@ -47,7 +46,6 @@ const ngZorroConfig: NzConfig = {
     RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [
-    ConfigService,
     AuthGuard,
     ContentService,
     MainService,

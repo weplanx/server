@@ -35,6 +35,7 @@ import { NzTabsModule } from "ng-zorro-antd/tabs";
 import { NzDrawerModule } from "ng-zorro-antd/drawer";
 import { NzStatisticModule } from "ng-zorro-antd/statistic";
 import { NzListModule } from "ng-zorro-antd/list";
+import { NzNotificationModule } from "ng-zorro-antd/notification";
 
 @NgModule({
   exports: [
@@ -73,6 +74,7 @@ import { NzListModule } from "ng-zorro-antd/list";
     NzDrawerModule,
     NzStatisticModule,
     NzListModule,
+    NzNotificationModule,
     ComponentModule,
     DirectiveModule
   ],

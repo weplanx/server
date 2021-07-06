@@ -1,0 +1,104 @@
+<div class="container-login">
+  <Particles id="tsparticles" [options]="particlesOptions"></Particles>
+  <div class="i18n-btn">
+    <button nz-button nzType="text" nzSize="large" nz-dropdown [nzDropdownMenu]="i18nMenu">
+      <i nz-icon nzType="translation"></i>
+    </button>
+    <nz-dropdown-menu #i18nMenu>
+      <ul nz-menu>
+        <li nz-menu-item>
+          <a title>简体中文</a>
+        </li>
+        <li nz-menu-item>
+          <a title>English(US)</a>
+        </li>
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+
+  <div class="login-wrapper">
+    <div class="logo">
+      <img src="/assets/weplanx.png" alt="weplanx" />
+    </div>
+    <h1>DevOps 一体化研发管理工具</h1>
+    <form nz-form [nzLayout]="'inline'" [formGroup]="form">
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group [nzSuffix]="usernameSuffix" [nzPrefix]="userPrefix">
+            <input
+              type="text"
+              nz-input
+              formControlName="email"
+              placeholder="电子邮件"
+            />
+            <ng-template #userPrefix>
+              <i nz-icon nzType="mail"></i>
+            </ng-template>
+            <ng-template #usernameSuffix>
+              <i
+                *ngIf="form.get('email').value"
+                nz-icon
+                nzType="close-circle"
+                (click)="form.get('email').reset()"
+              >
+              </i>
+            </ng-template>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group [nzSuffix]="passwordSuffix" [nzPrefix]="passwordPrefix">
+            <input
+              nz-input
+              type="password"
+              formControlName="password"
+              autocomplete="new-password"
+              placeholder="口令"
+            />
+          </nz-input-group>
+          <ng-template #passwordPrefix>
+            <i nz-icon nzType="lock"></i>
+          </ng-template>
+          <ng-template #passwordSuffix>
+            <i
+              *ngIf="form.get('password').value"
+              nz-icon
+              nzType="close-circle"
+              (click)="form.get('password').reset()"
+            >
+            </i>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button [nzLoading]="logining" nzType="primary">
+            登 录
+          </button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+
+  <footer>
+    <nz-space [nzSplit]="split">
+      <ng-template #split>
+        <nz-divider nzType="vertical"></nz-divider>
+      </ng-template>
+      <a *nzSpaceItem nz-typography>使用帮助</a>
+      <a *nzSpaceItem nz-typography>开源协议</a>
+      <a *nzSpaceItem nz-typography>意见反馈</a>
+    </nz-space>
+    <p nz-typography>
+      <i nz-icon nzType="copyright"></i>
+      <span> 2021 Design By </span>
+      <a href="https://github.com/kainonly" target="_blank">
+        Kain
+        <i nz-icon nzType="github"></i>
+      </a>
+    </p>
+  </footer>
+</div>

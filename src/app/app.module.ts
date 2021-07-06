@@ -20,8 +20,12 @@ import { ConfigService } from "@common/config.service";
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => import("./app-router.module").then(m => m.AppRouterModule)
-    // canActivate: [AuthGuard]
+    loadChildren: () => import("./app-router.module").then(m => m.AppRouterModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "login",
+    loadChildren: () => import("./login/login.module").then(m => m.LoginModule)
   }
 ];
 

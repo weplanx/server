@@ -14,7 +14,7 @@
   <nz-table #basicTable [nzData]="lists">
     <thead>
     <tr>
-      <th nzWidth="60px"></th>
+      <th nzWidth="60px" [nzChecked]="false"></th>
       <th nzWidth="420px">电子邮件</th>
       <th>称呼</th>
       <th nzWidth="120px" nzRight>操作</th>
@@ -22,13 +22,11 @@
     </thead>
     <tbody>
     <tr *ngFor="let data of basicTable.data">
-      <td></td>
+      <td [nzChecked]="false"></td>
+      <td>{{ data.email }}</td>
+      <td>{{ data.name }}</td>
       <td>
-        {{ data.name }}
-      </td>
-      <td></td>
-      <td>
-        <button nz-button nzType="text">
+        <button nz-button nzType="text" (click)="openUserForm(data)">
           <i nz-icon nzType="edit"></i>
         </button>
         <nz-divider nzType="vertical"></nz-divider>
@@ -50,25 +48,35 @@
 </nz-card>
 
 <nz-modal
-  [nzWidth]="420"
+  [nzWidth]="360"
   [nzTitle]="!formData ? '创建成员' : '编辑成员'"
   [nzVisible]="formVisable"
   (nzOnCancel)="closeUserForm()"
 >
-  <form *nzModalContent id="userForm" nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="submit($event)">
+  <form
+    *nzModalContent
+    id="userForm"
+    nz-form
+    nzLayout="vertical"
+    [formGroup]="form"
+    (ngSubmit)="submit($event)"
+  >
     <nz-form-item>
+      <nz-form-label nzRequired>电子邮件</nz-form-label>
       <nz-form-control nzHasFeedback>
-        <input nz-input type="email" placeholder="电子邮件" formControlName="email" />
+        <input nz-input type="email" formControlName="email" />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
+      <nz-form-label nzRequired>密码</nz-form-label>
       <nz-form-control nzHasFeedback>
-        <input nz-input placeholder="密码" formControlName="password" />
+        <input nz-input type="password" formControlName="password" />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
+      <nz-form-label>称呼</nz-form-label>
       <nz-form-control nzHasFeedback>
-        <input nz-input placeholder="称呼" formControlName="name" />
+        <input nz-input formControlName="name" />
       </nz-form-control>
     </nz-form-item>
   </form>

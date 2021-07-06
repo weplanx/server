@@ -19,7 +19,7 @@
   <nz-table #basicTable [nzData]="lists">
     <thead>
     <tr>
-      <th nzWidth="60px"></th>
+      <th nzWidth="60px" [nzChecked]="false"></th>
       <th nzWidth="300px">项目名称</th>
       <th nzRight>描述</th>
       <th nzWidth="300px" nzRight>参与人</th>
@@ -28,7 +28,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let data of basicTable.data">
-      <td></td>
+      <td [nzChecked]="false"></td>
       <td>{{ data.name }}</td>
       <td></td>
       <td>

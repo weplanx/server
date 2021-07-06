@@ -9,7 +9,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class UsersComponent implements OnInit {
   lists: any[] = [
     {
-      name: "kain"
+      email: "zhangtqx@vip.qq.com",
+      name: "kain",
+      status: true
     }
   ];
 
@@ -34,6 +36,9 @@ export class UsersComponent implements OnInit {
       password: [null, [Validators.required]],
       name: [null]
     });
+    if (this.formData) {
+      this.form.patchValue(this.formData);
+    }
   }
 
   closeUserForm(): void {
@@ -41,6 +46,6 @@ export class UsersComponent implements OnInit {
   }
 
   submit(data: any) {
-    console.log(data) ;
+    console.log(data);
   }
 }

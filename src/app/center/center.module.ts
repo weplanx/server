@@ -9,7 +9,7 @@ const routes: Routes = [
     path: "",
     component: CenterComponent,
     data: {
-      title: null
+      title: "个人中心"
     }
   }
 ];

@@ -16,6 +16,7 @@ import { AppComponent } from "./app.component";
 import { ContentService } from "@common/content.service";
 import { AuthGuard } from "@common/auth.guard";
 import { ConfigService } from "@common/config.service";
+import { MainService } from "@common/main.service";
 
 const routes: Routes = [
   {
@@ -49,6 +50,7 @@ const ngZorroConfig: NzConfig = {
     ConfigService,
     AuthGuard,
     ContentService,
+    MainService,
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
     { provide: NZ_I18N, useValue: zh_CN }
   ],

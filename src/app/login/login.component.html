@@ -22,7 +22,7 @@
       <img src="/assets/weplanx.png" alt="weplanx" />
     </div>
     <h1>DevOps 一体化研发管理工具</h1>
-    <form nz-form [nzLayout]="'inline'" [formGroup]="form">
+    <form nz-form [nzLayout]="'inline'" [formGroup]="form" (appSubmit)="submit($event)">
       <nz-form-item>
         <nz-form-control>
           <nz-input-group [nzSuffix]="usernameSuffix" [nzPrefix]="userPrefix">

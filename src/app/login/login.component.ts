@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { particles } from "./particles";
 import { Router } from "@angular/router";
 import { NzNotificationService } from "ng-zorro-antd/notification";
 import { MainService } from "@common/main.service";
+import { particles } from "./particles";
 
 @Component({
   selector: "app-login",
@@ -31,6 +31,21 @@ export class LoginComponent implements OnInit {
   }
 
   submit(data: any): void {
-    console.log(data);
+    this.logining = true;
+    this.main.login(data.email, data.password).subscribe(res => {
+      switch (res.code) {
+        case 0:
+          this.notification.success("认证提示", "登录成功，正在加载数据~");
+          this.router.navigateByUrl("/");
+          break;
+        case 1:
+          this.notification.error("认证提示", "您的登录失败，请确实账户口令是否正确");
+          break;
+        case 2:
+          this.notification.error("认证提示", "您登录失败的次数过多，请稍后再试");
+          break;
+      }
+      this.logining = false;
+    });
   }
 }

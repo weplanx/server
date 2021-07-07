@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(): Observable<any> {
-    return this.http.get("/api/verify").pipe(
+    return this.http.get("/api/auth").pipe(
       map((res: any) => {
         if (res.error) {
           this.router.navigateByUrl("/login");

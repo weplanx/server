@@ -10,9 +10,13 @@ export class MainService {
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post("/api/login", {
+    return this.http.post("/api/auth", {
       email,
       password
     });
+  }
+
+  logout(): Observable<any> {
+    return this.http.delete("/api/auth");
   }
 }

@@ -3,6 +3,8 @@ import { Subscription } from "rxjs";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { filter, take } from "rxjs/operators";
 import { ContentService } from "@common/content.service";
+import { MainService } from "@common/main.service";
+import { NzNotificationService } from "ng-zorro-antd/notification";
 
 @Component({
   selector: "app-layout",
@@ -17,7 +19,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     public content: ContentService,
-    private changeDetectorRef: ChangeDetectorRef
+    private mainService: MainService,
+    private changeDetectorRef: ChangeDetectorRef,
+    private notification: NzNotificationService
   ) {
   }
 
@@ -43,6 +47,13 @@ export class LayoutComponent implements OnInit, OnDestroy {
       if (data.hasOwnProperty("title")) {
         this.title = data.title;
       }
+    });
+  }
+
+  logout(): void {
+    this.mainService.logout().subscribe(() => {
+      this.router.navigateByUrl("/login");
+      this.notification.info("认证提示", "您已退出管理系统");
     });
   }
 }

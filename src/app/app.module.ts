@@ -31,7 +31,7 @@ const routes: Routes = [
 
 const ngZorroConfig: NzConfig = {
   notification: { nzPlacement: "bottomRight" },
-  table: { nzSize: "middle" }
+  table: { nzSize: "middle" },
 };
 
 @NgModule({

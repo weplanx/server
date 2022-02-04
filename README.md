@@ -1,2 +1,0 @@
-# Weplanx Template
-

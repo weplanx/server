@@ -1,8 +1,0 @@
-{
-  "name": "@weplanx/cli",
-  "version": "0.0.1",
-  "dependencies": {},
-  "devDependencies": {
-    "prettier": "^2.5.1"
-  }
-}

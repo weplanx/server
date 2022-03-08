@@ -4,11 +4,13 @@
 
 ## 预置模板
 
-- `template/crm.json` CRM 应用
+在初始化应用中 “应用页面” 项填入
+
+- `https://raw.githubusercontent.com/weplanx/.github/main/template/crm.json` CRM 应用
 
 ## 自定义预置模板
 
-引入 `schema/pages/v1alpha.json`，定义需要的 `data` 数据
+引入定义文件，然后描述需要的 `data` 数据
 
 ```json
 {

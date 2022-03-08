@@ -1,3 +1,50 @@
+# Weplanx
+
+一个开源的中后台低代码解决方案
+
+## 预置模板
+
+- `template/crm.json` CRM 应用
+
+## 自定义预置模板
+
+引入 `schema/pages/v1alpha.json`，定义需要的 `data` 数据
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/weplanx/.github/main/schema/pages/v1alpha.json",
+  "data": []
+}
+```
+
+## 参数说明
+
+- **page.kind** 种类，枚举字符串
+  - `default` 作为数据源，包含数据列表与数据填充等功能
+  - `form` 独立的数据填充页面
+  - `dashboard` 数据分析处理、结果展示功能，如数据汇总、趋势分析图表
+  - `group` 导航中将其他种类分组显示
+- **field.type** 字段类型，枚举字符串
+  - 基础字段
+    - [x] `string` 单行文本
+    - [x] `text` 多行文本
+    - [x] `number` 数字
+    - [x] `date` 日期
+    - [x] `between-dates` 日期之间
+    - [x] `bool` 状态
+    - [x] `radio` 单选
+    - [x] `checkbox` 复选
+    - [x] `select` 选择器
+  - 高级字段
+    - [x] `richtext` 富文本
+    - [x] `picture` 图片
+    - [x] `video` 视频
+    - [ ] `file` 文件
+    - [ ] `json` 自定义
+
+更多查看文件 `/schema/pages/v1alpha.json`
+
+```json
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
@@ -23,13 +70,8 @@
         },
         "kind": {
           "type": "string",
-          "enum": [
-            "default",
-            "form",
-            "dashboard",
-            "group"
-          ],
-          "description": "种类。\ndefault：作为数据源，包含数据列表与数据填充等功能\nform：独立的数据填充页面\ndashboard：数据分析处理、结果展示功能，如数据汇总、趋势分析图表\ngroup：导航中将其他种类分组显示"
+          "enum": ["default", "form", "dashboard", "group"],
+          "description": "种类。\ndefault：作为数据源，包含数据表格与数据填充\nform：独立的数据填充页\ndashboard：数据汇总图表\ngroup：导航分组"
         },
         "schema": {
           "$ref": "#/definitions/schema"
@@ -43,10 +85,7 @@
           "description": "状态"
         }
       },
-      "required": [
-        "name",
-        "kind"
-      ]
+      "required": ["name", "kind"]
     },
     "schema": {
       "type": "object",
@@ -70,10 +109,7 @@
         }
       },
       "description": "数据 Schema 定义",
-      "required": [
-        "key",
-        "fields"
-      ]
+      "required": ["key", "fields"]
     },
     "field": {
       "type": "object",
@@ -133,12 +169,7 @@
           "$ref": "#/definitions/spec"
         }
       },
-      "required": [
-        "label",
-        "type",
-        "sort",
-        "spec"
-      ]
+      "required": ["label", "type", "sort", "spec"]
     },
     "spec": {
       "type": "object",
@@ -187,13 +218,9 @@
           "description": "数值"
         }
       },
-      "required": [
-        "label",
-        "value"
-      ]
+      "required": ["label", "value"]
     }
   },
-  "required": [
-    "data"
-  ]
+  "required": ["data"]
 }
+```

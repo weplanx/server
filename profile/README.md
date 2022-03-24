@@ -1,3 +1,3 @@
-## Weplanx
+## 架构简介
 
-一个开源的中后台低代码解决方案
+![architecture](./architecture.jpg)

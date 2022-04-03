@@ -1,1 +1,0 @@
-![architecture](/profile/architecture.jpg)

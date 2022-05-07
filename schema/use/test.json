@@ -1,0 +1,385 @@
+{
+  "$schema": "https://raw.githubusercontent.com/weplanx/skeleton/main/schema/draft/v1alpha.json",
+  "contents": [
+    {
+      "name": "线索",
+      "kind": "default",
+      "schema": {
+        "key": "leads",
+        "fields": {
+          "name": {
+            "label": "姓名",
+            "type": "string",
+            "sort": 0,
+            "required": true,
+            "spec": {}
+          },
+          "department": {
+            "label": "部门",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "position": {
+            "label": "职务",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "phone": {
+            "label": "手机号",
+            "type": "string",
+            "sort": 0,
+            "required": true,
+            "spec": {}
+          },
+          "company": {
+            "label": "公司",
+            "type": "string",
+            "sort": 0,
+            "required": true,
+            "spec": {}
+          },
+          "source": {
+            "label": "线索来源",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "sources"
+            }
+          },
+          "details": {
+            "label": "线索详情",
+            "type": "richtext",
+            "sort": 0,
+            "spec": {}
+          },
+          "person_in_charge": {
+            "label": "负责人",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "users"
+            }
+          },
+          "department_in_charge": {
+            "label": "负责部门",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "departments"
+            }
+          },
+          "status": {
+            "label": "线索状态",
+            "type": "bool",
+            "sort": 0,
+            "hide": true,
+            "spec": {}
+          },
+          "pick_up_time": {
+            "label": "领取时间",
+            "type": "date",
+            "sort": 0,
+            "hide": true,
+            "spec": {}
+          },
+          "last_time": {
+            "label": "最后跟进时间",
+            "type": "date",
+            "sort": 0,
+            "hide": true,
+            "spec": {}
+          },
+          "conversion_time": {
+            "label": "转换时间",
+            "type": "date",
+            "sort": 0,
+            "hide": true,
+            "spec": {}
+          },
+          "reason": {
+            "label": "退回原因",
+            "type": "text",
+            "sort": 0,
+            "hide": true,
+            "spec": {}
+          }
+        }
+      }
+    },
+    {
+      "name": "测试A",
+      "kind": "group",
+      "children": [
+        {
+          "name": "测试Aa",
+          "kind": "group"
+        },
+        {
+          "name": "测试Ab",
+          "kind": "group",
+          "children": [
+            {
+              "name": "测试Ab1",
+              "kind": "form"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "客户",
+      "kind": "default",
+      "schema": {
+        "key": "customers",
+        "fields": {
+          "name": {
+            "label": "客户名称",
+            "type": "string",
+            "sort": 0,
+            "required": true,
+            "spec": {}
+          },
+          "no": {
+            "label": "客户编号",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "status": {
+            "label": "客户状态",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "value": [
+                {
+                  "label": "潜在客户",
+                  "value": 0
+                },
+                {
+                  "label": "合作客户",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "level": {
+            "label": "客户级别",
+            "type": "select",
+            "sort": 0,
+            "required": true,
+            "spec": {
+              "reference": "levels"
+            }
+          },
+          "person_in_charge": {
+            "label": "负责人",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "users"
+            }
+          },
+          "department_in_charge": {
+            "label": "负责部门",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "departments"
+            }
+          },
+          "source": {
+            "label": "客户来源",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "sources"
+            }
+          },
+          "website": {
+            "label": "公司网址",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "tel": {
+            "label": "公司电话",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "industry": {
+            "label": "所属行业",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "industries"
+            }
+          },
+          "address": {
+            "label": "地址",
+            "type": "address",
+            "sort": 0,
+            "spec": {}
+          },
+          "detail": {
+            "label": "客户详情",
+            "type": "text",
+            "sort": 0,
+            "spec": {}
+          },
+          "pick_up_time": {
+            "label": "领取时间",
+            "type": "date",
+            "sort": 0,
+            "hide": true,
+            "spec": {}
+          },
+          "reason": {
+            "label": "客户退回原因",
+            "type": "text",
+            "sort": 0,
+            "hide": true,
+            "spec": {}
+          },
+          "last_time": {
+            "label": "最后跟进时间",
+            "type": "date",
+            "sort": 0,
+            "hide": true,
+            "spec": {}
+          }
+        }
+      }
+    },
+    {
+      "name": "联系人",
+      "kind": "default",
+      "schema": {
+        "key": "contacts",
+        "fields": {
+          "name": {
+            "label": "姓名",
+            "type": "string",
+            "sort": 0,
+            "required": true,
+            "spec": {}
+          },
+          "phone": {
+            "label": "手机号",
+            "type": "string",
+            "sort": 0,
+            "required": true,
+            "spec": {}
+          },
+          "customer": {
+            "label": "客户名称",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "customers"
+            }
+          },
+          "department": {
+            "label": "部门",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "position": {
+            "label": "职务",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "wechat": {
+            "label": "微信号",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "email": {
+            "label": "微信号",
+            "type": "string",
+            "sort": 0,
+            "spec": {}
+          },
+          "birthday": {
+            "label": "生日",
+            "type": "date",
+            "sort": 0,
+            "spec": {}
+          },
+          "gender": {
+            "label": "性别",
+            "type": "radio",
+            "sort": 0,
+            "spec": {
+              "value": [
+                {
+                  "label": "男",
+                  "value": 1
+                },
+                {
+                  "label": "女",
+                  "value": 0
+                }
+              ]
+            }
+          },
+          "decision": {
+            "label": "关键决策人",
+            "type": "bool",
+            "sort": 0,
+            "spec": {}
+          },
+          "detail": {
+            "label": "联系人详情",
+            "type": "richtext",
+            "description": "兴趣爱好 决策偏好等",
+            "sort": 0,
+            "spec": {}
+          },
+          "person_in_charge": {
+            "label": "负责人",
+            "type": "select",
+            "sort": 0,
+            "required": true,
+            "spec": {
+              "reference": "users"
+            }
+          },
+          "department_in_charge": {
+            "label": "负责部门",
+            "type": "select",
+            "sort": 0,
+            "spec": {
+              "reference": "departments"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "测试B",
+      "kind": "group",
+      "children": [
+        {
+          "name": "测试Ba",
+          "kind": "group",
+          "children": [
+            {
+              "name": "测试Ba1",
+              "kind": "form"
+            }
+          ]
+        },
+        {
+          "name": "测试Bb",
+          "kind": "group"
+        }
+      ]
+    }
+  ]
+}

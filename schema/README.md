@@ -1,6 +1,6 @@
 ## 预置模板
 
-- `https://raw.githubusercontent.com/weplanx/skeleton/main/schema/use/crm.json` CRM 应用
+- `https://cdn.kainonly.com/schema/use/crm.json` CRM 应用
 
 ## 自定义预置模板
 
@@ -8,7 +8,7 @@
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/weplanx/skeleton/main/schema/draft/v1alpha.json",
+  "$schema": "https://cdn.kainonly.com/schema/draft/v1alpha.json",
   "contents": []
 }
 ```

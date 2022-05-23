@@ -4,6 +4,7 @@
     {
       "name": "线索",
       "kind": "default",
+      "icon": "bulb",
       "schema": {
         "key": "leads",
         "fields": [
@@ -116,9 +117,10 @@
     {
       "name": "客户",
       "kind": "default",
+      "icon": "project",
       "schema": {
         "key": "customers",
-        "fields":[
+        "fields": [
           {
             "key": "name",
             "label": "客户名称",
@@ -246,6 +248,7 @@
     {
       "name": "联系人",
       "kind": "default",
+      "icon": "contacts",
       "schema": {
         "key": "contacts",
         "fields": [

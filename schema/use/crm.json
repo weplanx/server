@@ -64,7 +64,8 @@
             "label": "负责人",
             "type": "ref",
             "option": {
-              "reference": "users"
+              "reference": "users",
+              "target": "name"
             }
           },
           {

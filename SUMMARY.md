@@ -28,7 +28,7 @@
 
 ## API reference
 
-* [Overview](<README (1).md>)
+* [Overview](README.md)
 * [System](api-reference/system.md)
 * [Dynamic KeyValue](api-reference/dynamic-keyvalue.md)
 * [Collections DSL](api-reference/dsl/README.md)

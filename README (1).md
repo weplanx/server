@@ -1,6 +1,0 @@
-# Overview
-
-## Authentication
-
-## Errors
-

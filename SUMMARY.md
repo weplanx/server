@@ -4,21 +4,20 @@
 
 * [Introduction](README.md)
 * [Guide](getting-started/guide.md)
-* [Configurations](getting-started/configurations/README.md)
-  * [Environment](getting-started/configurations/environment.md)
-  * [Dynamic KeyValue](getting-started/configurations/dynamic-keyvalue.md)
+* [Configurations](getting-started/configurations.md)
 * [Deployment](getting-started/deployment/README.md)
   * [Docker](getting-started/deployment/docker.md)
   * [Kubernetes](getting-started/deployment/kubernetes.md)
 
 ## Extended Services
 
-* [Openapi](extended-services/openapi/README.md)
-  * [Excel data flow](extended-services/openapi/excel-data-flow.md)
-* [Schedule](extended-services/schedule.md)
-* [Worker](extended-services/worker.md)
-* [Transfer](extended-services/transfer.md)
-* [Collector](extended-services/collector.md)
+* [API Gateway](extended-services/api-gateway/README.md)
+  * [Openapi](extended-services/api-gateway/openapi.md)
+  * [Excel data flow](extended-services/api-gateway/excel-data-flow.md)
+* [Helper Connector](extended-services/helper-connector/README.md)
+  * [Schedule Node](extended-services/helper-connector/schedule-node.md)
+  * [Worker Node](extended-services/helper-connector/worker-node.md)
+* [Transfer & Collector](extended-services/transfer-and-collector.md)
 
 ## DEVELOPMENT
 
@@ -34,5 +33,8 @@
 * [Dynamic KeyValue](api-reference/dynamic-keyvalue.md)
 * [Collections DSL](api-reference/dsl/README.md)
   * [Create](api-reference/collections-dsl/create.md)
+  * [Read](api-reference/collections-dsl/read.md)
+  * [Update](api-reference/collections-dsl/update.md)
+  * [Delete](api-reference/collections-dsl/delete.md)
 * [Workbench](api-reference/workbench.md)
 * [Media](api-reference/media.md)

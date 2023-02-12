@@ -1,3 +1,3 @@
 # Table of contents
 
-* [profile](README.md)
+* [DSL API](README.md)

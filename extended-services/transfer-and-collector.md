@@ -10,6 +10,8 @@ description: A lightly distributed customizable data collection service
 * A MongoDB, preferably with a version greater than 5.0, so that time series collections can be used.
 * Services can only work together under the same namespace.
 
+> The same namespace defines the database name for mongodb, `${namespace}_logs` for nats key-value, `${namespace}:logs:${key}` for nats stream
+
 ## Collector
 
 The collector service for subscribing to the stream queue and then writing to the log collection.
@@ -47,6 +49,8 @@ spec:
           imagePullPolicy: Always
           name: collector
           env:
+            - name: MODE
+              value: release
             - name: NATS_HOSTS
               value: <*** your nats hosts ***>
             - name: NATS_NKEY
@@ -56,3 +60,12 @@ spec:
             - name: NAMESPACE
               value: example
 ```
+
+The environment variable of the service.
+
+| Parameter    | Description                                   |
+| ------------ | --------------------------------------------- |
+| `MODE`       | Log level is production when set to `release` |
+| `NAMESPACE`  | Namespace for collector and transfer          |
+| `NATS_HOSTS` | Nats connection address                       |
+| `DATABASE`   | MongoDB uri                                   |

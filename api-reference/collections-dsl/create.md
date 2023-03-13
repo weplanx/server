@@ -1,6 +1,6 @@
 # Create
 
-{% swagger method="get" path="/:collection" baseUrl="http://localhost:3001" summary="" %}
+{% swagger method="post" path="/:collection" baseUrl="http://localhost:3001" summary="" %}
 {% swagger-description %}
 
 {% endswagger-description %}

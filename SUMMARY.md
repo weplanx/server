@@ -30,11 +30,7 @@
 
 * [Overview](<README (1).md>)
 * [System](api-reference/system.md)
-* [Dynamic KeyValue](api-reference/dynamic-keyvalue.md)
-* [Resources](api-reference/resources/README.md)
-  * [Create](api-reference/resources/create.md)
-  * [Read](api-reference/resources/read.md)
-  * [Update](api-reference/resources/update.md)
-  * [Delete](api-reference/resources/delete.md)
+* [Values](api-reference/values.md)
+* [Resources](api-reference/resources.md)
 * [Workbench](api-reference/workbench.md)
 * [Media](api-reference/media.md)

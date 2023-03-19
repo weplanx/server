@@ -32,5 +32,4 @@
 * [System](api-reference/system.md)
 * [Values](api-reference/values.md)
 * [Resources](api-reference/resources.md)
-* [Workbench](api-reference/workbench.md)
 * [Media](api-reference/media.md)

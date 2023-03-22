@@ -214,6 +214,7 @@ X-Total: 5000
 {% endtab %}
 
 {% tab title="EXAMPLE 2" %}
+{% code overflow="wrap" %}
 ```http
 GET /orders/_size?filter={"no":{"$in":["CY12008750579FE7390A801K60S7","AZ14FFGW32000766490389800984"]}} HTTP/1.1
 Host: xapi.kainonly.com:8443
@@ -226,9 +227,11 @@ Date: Sat, 23 Jul 2022 07:00:38 GMT
 Server: hertz
 X-Total: 2
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="EXAMPLE 3" %}
+{% code overflow="wrap" %}
 ```http
 GET /orders/_size?filter={"_id":{"$in":["62a455a4d2952c7033643763"]}}&format={"_id.$in":"oids"} HTTP/1.1
 Host: xapi.kainonly.com:8443
@@ -241,11 +244,140 @@ Date: Sat, 23 Jul 2022 07:02:51 GMT
 Server: hertz
 X-Total: 1
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="Create Failure" %}
+```json
+{
+    "message": "Reasons for Failure..."
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/:collection" baseUrl="http://localhost:3001" summary="Find" expanded="true" %}
+{% swagger-description %}
+Find documents
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="collection" type="String" required="true" %}
+collection name, must be lowercase with underscore
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="filter" type="Object" %}
+Query operators
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="format" type="Object" %}
+Format conversion of
+
+_Query.data_
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="sort" type="String[]" %}
+Sorting, the format is 
+
+`<field>:<1|-1>`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="keys" type="String[]" %}
+Projection rules
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="X-Pagesize" type="String(int)" %}
+Paging size, default 
+
+`100`
+
+ supports range 
+
+`1~1000`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="X-Page" type="String(int)" %}
+Pagination
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Return Success" %}
+{% tabs %}
+{% tab title="EXAMPLE 1" %}
+```http
+GET /orders HTTP/1.1
+Host: xapi.kainonly.com:8443
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 54126
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 07:09:03 GMT
+Server: hertz
+X-Total: 5000
+
+[ ... { "_id": "...", ... } 100 raw ... ]
+```
+{% endtab %}
+
+{% tab title="EXAMPLE 2" %}
+```http
+GET /orders HTTP/1.1
+Host: xapi.kainonly.com:8443
+x-page: 2
+x-pagesize: 5
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 2716
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 07:19:53 GMT
+Server: hertz
+X-Total: 5000
+
+[ ... { "_id": "...", ... } 5 raw ... ]
+```
+{% endtab %}
+
+{% tab title="EXAMPLE 3" %}
+{% code overflow="wrap" %}
+```http
+GET /orders?filter={"no":{"$in":["CH3105725N28374415016","TR035076242618008689084428"]}} HTTP/1.1
+Host: xapi.kainonly.com:8443
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="EXAMPLE 4" %}
+{% code overflow="wrap" %}
+```http
+GET /departments?filter={"parent":"62db8e2133c11192c28c61a1"}&format={"parent":"oid"} HTTP/1.1
+Host: xapi.kainonly.com:8443
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="EXAMPLE 5 " %}
+```http
+GET /orders?keys=no&keys=account HTTP/1.1
+Host: xapi.kainonly.com:8443
+```
+{% endtab %}
+
+{% tab title="EXAMPEL 6" %}
+```http
+GET /orders?sort=no:1&sort=account:1 HTTP/1.1
+Host: xapi.kainonly.com:8443
+```
+{% endtab %}
+{% endtabs %}
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="Return Failure" %}
 ```json
 {
     "message": "Reasons for Failure..."

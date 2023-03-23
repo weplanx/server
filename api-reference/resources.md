@@ -260,7 +260,7 @@ X-Total: 1
 
 {% swagger method="get" path="/:collection" baseUrl="http://localhost:3001" summary="Find" expanded="true" %}
 {% swagger-description %}
-Find documents
+Get documents
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="collection" type="String" required="true" %}
@@ -379,6 +379,102 @@ Host: xapi.kainonly.com:8443
 
 {% swagger-response status="400: Bad Request" description="Return Failure" %}
 ```json
+{
+    "message": "Reasons for Failure..."
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/:collection/_one" baseUrl="http://localhost:3001" summary="Find One" %}
+{% swagger-description %}
+Get a Document
+{% endswagger-description %}
+
+{% swagger-parameter in="path" type="String" name="collection" required="true" %}
+collection name, must be lowercase with underscore
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="filter" type="Query" required="true" %}
+Query operators
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="format" type="Object" %}
+Format conversion of
+
+_Query.data_
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="keys" type="String[]" %}
+Projection rules
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Return Success" %}
+{% tabs %}
+{% tab title="EXAMPLE 1" %}
+{% code overflow="wrap" %}
+```http
+GET /orders/_one?filter={"no":"AZ14FFGW32000766490389800984"} HTTP/1.1
+Host: xapi.kainonly.com:8443
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 515
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 07:41:43 GMT
+Server: hertz
+
+{"name":"Generic Bronze Chips","description":"Carbonite web goalkeeper gloves are ergonomically designed to give easy fit","email":"Hallie.Hammes@hotmail.com","phone":"986636789","price":251.28,"valid":["2022-05-15T03:23:58.222+08:00","2022-06-11T23:19:59.856+08:00"],"_id":"62a455a4d2952c7033643764","account":"32210732","customer":"Mr. Roxanne Gutmann","address":"240 Louvenia Groves","create_time":"2022-02-13T10:27:56.083+08:00","update_time":"2022-02-13T10:27:56.083+08:00","no":"AZ14FFGW32000766490389800984"}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="EXAMPLE 2" %}
+{% code overflow="wrap" %}
+```http
+GET /departments/_one?filter={"parent":"62db8e2133c11192c28c61a1"}&format={"parent":"oid"} HTTP/1.1
+Host: xapi.kainonly.com:8443
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 184
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 07:44:00 GMT
+Server: hertz
+
+{"_id":"62db95ec33c11192c28c61a7","name":"Team A","parent":"62db8e2133c11192c28c61a1","create_time":"2022-07-23T14:32:12.502+08:00","update_time":"2022-07-23T14:32:12.502+08:00"}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="EXAMPLE 3" %}
+{% code overflow="wrap" %}
+```http
+GET /orders/_one?filter={"no":"AZ14FFGW32000766490389800984"}&keys=no HTTP/1.1
+Host: xapi.kainonly.com:8443
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 70
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 07:45:31 GMT
+Server: hertz
+
+{"_id":"62a455a4d2952c7033643764","no":"AZ14FFGW32000766490389800984"}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="Return Failure" %}
+```http
 {
     "message": "Reasons for Failure..."
 }

@@ -386,7 +386,7 @@ Host: xapi.kainonly.com:8443
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/:collection/_one" baseUrl="http://localhost:3001" summary="Find One" %}
+{% swagger method="get" path="/:collection/_one" baseUrl="http://localhost:3001" summary="Find One" expanded="true" %}
 {% swagger-description %}
 Get a Document
 {% endswagger-description %}
@@ -467,6 +467,76 @@ Date: Sat, 23 Jul 2022 07:45:31 GMT
 Server: hertz
 
 {"_id":"62a455a4d2952c7033643764","no":"AZ14FFGW32000766490389800984"}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="Return Failure" %}
+```http
+{
+    "message": "Reasons for Failure..."
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/:collection/:id" baseUrl="http://localhost:3001" summary="Find One By Id" expanded="true" %}
+{% swagger-description %}
+Get a Document
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="collection" type="String" required="true" %}
+collection name, must be lowercase with underscore
+{% endswagger-parameter %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %}
+Document ID, must be hex(ObjectId)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="keys" type="String[]" %}
+Projection rules
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Return Success" %}
+{% tabs %}
+{% tab title="EXAMPLE 1" %}
+{% code overflow="wrap" %}
+```http
+GET /orders/62a455a4d2952c7033643763 HTTP/1.1
+Host: xapi.kainonly.com:8443
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 548
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 08:00:01 GMT
+Server: hertz
+
+{"create_time":"2022-03-08T17:12:28.607+08:00","_id":"62a455a4d2952c7033643763","no":"CY12008750579FE7390A801K60S7","name":"Fantastic Plastic Towels","price":980.94,"valid":["2021-09-04T00:23:26.91+08:00","2022-06-12T09:28:07.644+08:00"],"address":"3358 Lang Common","update_time":"2022-03-08T17:12:28.607+08:00","description":"Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support","account":"94213614","customer":"Faye Hermann","email":"Sven20@hotmail.com","phone":"172828438"}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="EXAMPLE 2" %}
+{% code overflow="wrap" %}
+```http
+GET /orders/62a455a4d2952c7033643763?keys=no HTTP/1.1
+Host: xapi.kainonly.com:8443
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 70
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 08:00:28 GMT
+Server: hertz
+
+{"_id":"62a455a4d2952c7033643763","no":"CY12008750579FE7390A801K60S7"}
 ```
 {% endcode %}
 {% endtab %}

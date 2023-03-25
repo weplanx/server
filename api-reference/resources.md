@@ -395,7 +395,7 @@ Get a Document
 collection name, must be lowercase with underscore
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="filter" type="Query" required="true" %}
+{% swagger-parameter in="query" name="filter" type="Object" required="true" %}
 Query operators
 {% endswagger-parameter %}
 
@@ -544,6 +544,111 @@ Server: hertz
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="Return Failure" %}
+```http
+{
+    "message": "Reasons for Failure..."
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="patch" path="/:collection" baseUrl="http://localhost:3001" summary="Update" expanded="true" %}
+{% swagger-description %}
+Update matching documents
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="collection" type="String" required="true" %}
+collection name, must be lowercase with underscore
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="filter" type="Object" required="true" %}
+Query operators
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="format" type="Object" %}
+Format conversion of
+
+_Query.data_
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="data" type="Object" required="true" %}
+Update operation
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="format" type="Object" %}
+Format conversion of
+
+_Body.data_
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Update Success" %}
+{% tabs %}
+{% tab title="EXAMPLE 1" %}
+{% code overflow="wrap" %}
+```http
+PATCH /departments?filter={"_id":{"$in":["62db95ec33c11192c28c61a6","62db95ec33c11192c28c61a7"]}}&format={"_id.$in":"oids"} HTTP/1.1
+Host: xapi.kainonly.com:8443
+Content-Type: application/json
+Content-Length: ...
+
+{
+    "data": {
+        "$set": {
+            "status": true
+        }
+    }
+}
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 72
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 08:12:09 GMT
+Server: hertz
+
+{"MatchedCount":2,"ModifiedCount":2,"UpsertedCount":0,"UpsertedID":null}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="EXAMPLE 2" %}
+{% code overflow="wrap" %}
+```http
+PATCH /departments?filter={"_id":{"$in":["62db95ec33c11192c28c61a6","62db95ec33c11192c28c61a7"]}}&format={"_id.$in":"oids"} HTTP/1.1
+Host: xapi.kainonly.com:8443
+Content-Type: application/json
+Content-Length: ...
+
+{
+    "data": {
+        "$set": {
+            "parent": "62db95ec33c11192c28c61a8"
+        }
+    },
+    "format": {
+        "$set.parent": "oid"
+    }
+}
+
+# Response
+
+HTTP/1.1 200 OK
+Alt-Svc: h3=":8443"; ma=2592000,h3-29=":8443"; ma=2592000
+Content-Length: 72
+Content-Type: application/json; charset=utf-8
+Date: Sat, 23 Jul 2022 08:24:24 GMT
+Server: hertz
+
+{"MatchedCount":2,"ModifiedCount":2,"UpsertedCount":0,"UpsertedID":null}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="Update Failure" %}
 ```http
 {
     "message": "Reasons for Failure..."

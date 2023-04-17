@@ -7,7 +7,7 @@ on:
 env:
   REGISTRY: ghcr.io
   TCR_REGISTRY: hkccr.ccs.tencentyun.com
-  IMAGE_NAME: kainonly/cscm
+  IMAGE_NAME: kainonly/accelerate
 
 jobs:
   build_and_release:

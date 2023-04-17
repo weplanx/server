@@ -34,17 +34,18 @@ func (x *API) EventInvoke(w http.ResponseWriter, req *http.Request) {
 
 func (x *API) Fetch(ctx context.Context) (err error) {
 	var cursor *mongo.Cursor
-	if cursor, err = x.Db.Collection("mirrors").Find(ctx, bson.M{"status": true}); err != nil {
+	if cursor, err = x.Db.Collection("acceleration_tasks").Find(ctx, bson.M{"status": true}); err != nil {
 		return
 	}
 	tasks := make([]model.AccelerationTask, 0)
 	if err = cursor.All(ctx, &tasks); err != nil {
 		return
 	}
-	var wg *sync.WaitGroup
+	var wg sync.WaitGroup
 	wg.Add(len(tasks))
 	for _, v := range tasks {
-		go x.Sync(ctx, v.Source, v.Target, wg)
+		go x.Sync(ctx, v.Source, v.Target, &wg)
+
 	}
 	wg.Wait()
 	return

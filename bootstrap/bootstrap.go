@@ -37,7 +37,7 @@ func LoadValues() (values *common.Values, err error) {
 func UseMongoDB(values *common.Values) (*mongo.Client, error) {
 	return mongo.Connect(
 		context.TODO(),
-		options.Client().ApplyURI(values.Database.Uri),
+		options.Client().ApplyURI(values.Database.Host),
 	)
 }
 
@@ -47,7 +47,7 @@ func UseMongoDB(values *common.Values) (*mongo.Client, error) {
 func UseDatabase(client *mongo.Client, values *common.Values) (db *mongo.Database) {
 	option := options.Database().
 		SetWriteConcern(writeconcern.New(writeconcern.WMajority()))
-	return client.Database(values.Database.DbName, option)
+	return client.Database(values.Database.Name, option)
 }
 
 func UseCos(values *common.Values) *cos.Client {

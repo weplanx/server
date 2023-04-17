@@ -13,17 +13,14 @@ type Inject struct {
 }
 
 type Values struct {
-	// 监听地址
-	Address string `env:"ADDRESS" envDefault:":9000"`
-	// 数据库
+	Address  string   `env:"ADDRESS" envDefault:":9000"`
 	Database Database `envPrefix:"DATABASE_"`
-
-	Cos Cos `envPrefix:"COS_"`
+	Cos      Cos      `envPrefix:"COS_"`
 }
 
 type Database struct {
-	Uri    string `env:"URI"`
-	DbName string `env:"DBNAME"`
+	Host string `env:"HOST"`
+	Name string `env:"NAME"`
 }
 
 type Cos struct {

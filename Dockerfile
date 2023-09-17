@@ -1,9 +1,11 @@
 FROM alpine:edge
 
-COPY dist /app
-
 WORKDIR /app
+
+RUN apk --no-cache add tzdata
+
+ADD accelerate /app/
 
 EXPOSE 9000
 
-CMD [ "./main" ]
+CMD [ "./accelerate" ]

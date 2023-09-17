@@ -45,7 +45,6 @@ func (x *API) Fetch(ctx context.Context) (err error) {
 	wg.Add(len(tasks))
 	for _, v := range tasks {
 		go x.Sync(ctx, v.Source, v.Target, &wg)
-
 	}
 	wg.Wait()
 	return

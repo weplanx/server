@@ -2,25 +2,17 @@ package common
 
 import (
 	"github.com/tencentyun/cos-go-sdk-v5"
-	"go.mongodb.org/mongo-driver/mongo"
 )
 
 type Inject struct {
-	Values      *Values
-	MongoClient *mongo.Client
-	Db          *mongo.Database
-	Client      *cos.Client
+	V      *Values
+	Client *cos.Client
 }
 
 type Values struct {
-	Address  string   `env:"ADDRESS" envDefault:":9000"`
-	Database Database `envPrefix:"DATABASE_"`
-	Cos      Cos      `envPrefix:"COS_"`
-}
-
-type Database struct {
-	Host string `env:"HOST"`
-	Name string `env:"NAME"`
+	Address string `env:"ADDRESS" envDefault:":9000"`
+	Webhook string `env:"WEBHOOK,required"`
+	Cos     Cos    `envPrefix:"COS_"`
 }
 
 type Cos struct {

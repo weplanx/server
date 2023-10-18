@@ -2,11 +2,10 @@ package api
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"github.com/kainonly/accelerate/common"
-	"github.com/kainonly/accelerate/model"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
+	"github.com/panjf2000/ants/v2"
 	"net/http"
 	"sync"
 	"time"
@@ -32,38 +31,51 @@ func (x *API) EventInvoke(w http.ResponseWriter, req *http.Request) {
 	w.Write([]byte(fmt.Sprintf(`已同步: %s`, time.Now())))
 }
 
+type Task struct {
+	Source string `json:"source"`
+	Target string `json:"target"`
+}
+
 func (x *API) Fetch(ctx context.Context) (err error) {
-	var cursor *mongo.Cursor
-	if cursor, err = x.Db.Collection("acceleration_tasks").Find(ctx, bson.M{"status": true}); err != nil {
+	var resp *http.Response
+	if resp, err = http.Get(x.V.Webhook); err != nil {
 		return
 	}
-	tasks := make([]model.AccelerationTask, 0)
-	if err = cursor.All(ctx, &tasks); err != nil {
+	var tasks []Task
+	if err = json.NewDecoder(resp.Body).Decode(&tasks); err != nil {
 		return
 	}
 	var wg sync.WaitGroup
 	wg.Add(len(tasks))
+	p, _ := ants.NewPoolWithFunc(1000, func(i interface{}) {
+		if err = x.Sync(ctx, i.(Task)); err != nil {
+			panic(err)
+		}
+		wg.Done()
+	})
+	defer p.Release()
 	for _, v := range tasks {
-		go x.Sync(ctx, v.Source, v.Target, &wg)
+		if err = p.Invoke(v); err != nil {
+			return
+		}
 	}
 	wg.Wait()
 	return
 }
 
-func (x *API) Sync(ctx context.Context, source string, target string, wg *sync.WaitGroup) (err error) {
+func (x *API) Sync(ctx context.Context, task Task) (err error) {
 	client := http.DefaultClient
 	var req *http.Request
-	if req, err = http.NewRequest("GET", source, nil); err != nil {
+	if req, err = http.NewRequest("GET", task.Source, nil); err != nil {
 		return
 	}
 	var resp *http.Response
 	if resp, err = client.Do(req.WithContext(ctx)); err != nil {
-		panic(err)
-	}
-	defer resp.Body.Close()
-	if _, err = x.Client.Object.Put(ctx, target, resp.Body, nil); err != nil {
 		return
 	}
-	wg.Done()
+	defer resp.Body.Close()
+	if _, err = x.Client.Object.Put(ctx, task.Target, resp.Body, nil); err != nil {
+		return
+	}
 	return
 }

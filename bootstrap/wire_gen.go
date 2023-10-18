@@ -18,17 +18,10 @@ func NewAPI() (*api.API, error) {
 	if err != nil {
 		return nil, err
 	}
-	client, err := UseMongoDB(values)
-	if err != nil {
-		return nil, err
-	}
-	database := UseDatabase(client, values)
-	cosClient := UseCos(values)
+	client := UseCos(values)
 	inject := &common.Inject{
-		Values:      values,
-		MongoClient: client,
-		Db:          database,
-		Client:      cosClient,
+		V:      values,
+		Client: client,
 	}
 	apiAPI := &api.API{
 		Inject: inject,

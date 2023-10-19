@@ -3,7 +3,6 @@ package api
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"github.com/kainonly/accelerate/common"
 	"github.com/panjf2000/ants/v2"
 	"net/http"
@@ -20,7 +19,6 @@ func (x *API) EventInvoke(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	fmt.Println("开始同步镜像")
 	ctx := req.Context()
 	if err := x.Fetch(ctx); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -28,7 +26,11 @@ func (x *API) EventInvoke(w http.ResponseWriter, req *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(fmt.Sprintf(`已同步: %s`, time.Now())))
+	b, _ := json.Marshal(map[string]interface{}{
+		"msg":  "Sync successful",
+		"date": time.Now(),
+	})
+	w.Write(b)
 }
 
 type Task struct {

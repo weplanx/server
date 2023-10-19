@@ -12,6 +12,7 @@ type Inject struct {
 type Values struct {
 	Address string `env:"ADDRESS" envDefault:":9000"`
 	Webhook string `env:"WEBHOOK,required"`
+	Kind    string `env:"KIND" envDefault:"cos"`
 	Cos     Cos    `envPrefix:"COS_"`
 }
 

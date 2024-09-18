@@ -6,8 +6,8 @@ import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/utils"
 	"github.com/google/wire"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/openapi/index"
+	"server/common"
+	"server/openapi/index"
 )
 
 var Provides = wire.NewSet(

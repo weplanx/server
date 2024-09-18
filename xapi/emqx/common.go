@@ -2,7 +2,7 @@ package emqx
 
 import (
 	"github.com/google/wire"
-	"github.com/weplanx/server/common"
+	"server/common"
 )
 
 var Provides = wire.NewSet(

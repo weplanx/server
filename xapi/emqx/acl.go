@@ -7,8 +7,8 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/errors"
 	"github.com/cloudwego/hertz/pkg/common/utils"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
+	"server/model"
 	"strings"
 )
 

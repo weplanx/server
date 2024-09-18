@@ -5,9 +5,9 @@ import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/google/wire"
 	transfer "github.com/weplanx/collector/client"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/xapi/emqx"
-	"github.com/weplanx/server/xapi/index"
+	"server/common"
+	"server/xapi/emqx"
+	"server/xapi/index"
 )
 
 var Provides = wire.NewSet(

@@ -3,9 +3,9 @@ package index
 import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
+	"server/model"
 )
 
 func (x *Controller) Accelerate(ctx context.Context, c *app.RequestContext) {

@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/weplanx/server/api"
-	"github.com/weplanx/server/bootstrap"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
+	"server/api"
+	"server/bootstrap"
+	"server/common"
+	"server/model"
 )
 
 var Sync = &cobra.Command{

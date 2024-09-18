@@ -1,9 +1,9 @@
 package model_test
 
 import (
-	"github.com/weplanx/server/api"
-	"github.com/weplanx/server/bootstrap"
 	"os"
+	"server/api"
+	"server/bootstrap"
 	"testing"
 )
 
@@ -12,9 +12,6 @@ var x *api.API
 func TestMain(m *testing.M) {
 	os.Chdir("../")
 	values, err := bootstrap.LoadStaticValues("./config/default.values.yml")
-	if err != nil {
-		panic(err)
-	}
 	if err != nil {
 		panic(err)
 	}

@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/weplanx/server/api"
-	"github.com/weplanx/server/bootstrap"
-	"github.com/weplanx/server/common"
+	"server/api"
+	"server/bootstrap"
+	"server/common"
 )
 
 var Setup = &cobra.Command{

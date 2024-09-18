@@ -3,7 +3,7 @@ package model_test
 import (
 	"context"
 	"github.com/stretchr/testify/assert"
-	"github.com/weplanx/server/model"
+	"server/model"
 	"testing"
 )
 

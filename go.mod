@@ -1,4 +1,4 @@
-module github.com/weplanx/server
+module server
 
 go 1.23
 

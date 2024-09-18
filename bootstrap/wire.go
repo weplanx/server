@@ -5,10 +5,10 @@ package bootstrap
 
 import (
 	"github.com/google/wire"
-	"github.com/weplanx/server/api"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/openapi"
-	"github.com/weplanx/server/xapi"
+	"server/api"
+	"server/common"
+	"server/openapi"
+	"server/xapi"
 )
 
 func NewAPI(values *common.Values) (*api.API, error) {

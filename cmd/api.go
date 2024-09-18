@@ -3,9 +3,9 @@ package cmd
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/spf13/cobra"
-	"github.com/weplanx/server/api"
-	"github.com/weplanx/server/bootstrap"
-	"github.com/weplanx/server/common"
+	"server/api"
+	"server/bootstrap"
+	"server/common"
 )
 
 var API = &cobra.Command{

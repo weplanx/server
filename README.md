@@ -10,4 +10,4 @@ DevOps API service, based on Hertz's project
 
 ## License
 
-[BSD-3-Clause License](https://github.com/weplanx/server/blob/main/LICENSE)
+[BSD-3-Clause License](https://github.com/weplanx/devops-server/blob/main/LICENSE)

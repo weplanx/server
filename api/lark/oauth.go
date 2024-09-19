@@ -6,11 +6,11 @@ import (
 	"github.com/cloudwego/hertz/pkg/common/utils"
 	"github.com/weplanx/go/help"
 	"github.com/weplanx/go/passport"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
+	"server/common"
+	"server/model"
 )
 
 type OAuthDto struct {

@@ -7,9 +7,9 @@ import (
 	"github.com/google/wire"
 	"github.com/nats-io/nats.go"
 	"github.com/weplanx/go/rest"
-	"github.com/weplanx/server/api/endpoints"
-	"github.com/weplanx/server/common"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"server/api/endpoints"
+	"server/common"
 	"time"
 )
 

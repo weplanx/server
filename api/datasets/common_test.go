@@ -3,10 +3,10 @@ package datasets_test
 import (
 	"context"
 	"github.com/stretchr/testify/assert"
-	"github.com/weplanx/server/api"
-	"github.com/weplanx/server/bootstrap"
-	"github.com/weplanx/server/common"
 	"os"
+	"server/api"
+	"server/bootstrap"
+	"server/common"
 	"testing"
 	"time"
 )

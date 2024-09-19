@@ -8,12 +8,12 @@ import (
 	"github.com/weplanx/go/help"
 	"github.com/weplanx/go/locker"
 	"github.com/weplanx/go/sessions"
-	"github.com/weplanx/server/api/tencent"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"net"
+	"server/api/tencent"
+	"server/common"
+	"server/model"
 	"time"
 )
 

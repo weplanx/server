@@ -2,8 +2,8 @@ package acc_tasks
 
 import (
 	"github.com/google/wire"
-	"github.com/weplanx/server/api/tencent"
-	"github.com/weplanx/server/common"
+	"server/api/tencent"
+	"server/common"
 )
 
 var Provides = wire.NewSet(

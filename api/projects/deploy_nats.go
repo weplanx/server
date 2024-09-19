@@ -4,13 +4,13 @@ import (
 	"bytes"
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"html/template"
 	core "k8s.io/api/core/v1"
 	meta "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
+	"server/model"
 )
 
 type DeployNatsDto struct {

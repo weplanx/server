@@ -5,10 +5,10 @@ import (
 	"github.com/google/wire"
 	schedule "github.com/weplanx/schedule/client"
 	sctyp "github.com/weplanx/schedule/common"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"server/common"
+	"server/model"
 	"sync"
 )
 

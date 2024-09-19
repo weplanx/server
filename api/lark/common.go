@@ -14,9 +14,9 @@ import (
 	"github.com/weplanx/go/locker"
 	"github.com/weplanx/go/passport"
 	"github.com/weplanx/go/sessions"
-	"github.com/weplanx/server/api/index"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
+	"server/api/index"
+	"server/common"
+	"server/model"
 	"strings"
 	"time"
 )

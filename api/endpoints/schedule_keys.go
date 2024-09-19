@@ -4,9 +4,9 @@ import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
 	schedule "github.com/weplanx/schedule/client"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"server/model"
 )
 
 type ScheduleKeysDto struct {

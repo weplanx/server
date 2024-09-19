@@ -8,8 +8,8 @@ import (
 	"github.com/imroc/req/v3"
 	"github.com/nats-io/nats.go"
 	"github.com/weplanx/go/rest"
-	"github.com/weplanx/server/common"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"server/common"
 	"time"
 )
 

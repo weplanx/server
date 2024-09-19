@@ -4,9 +4,9 @@ import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/nats-io/nats.go"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"server/model"
 )
 
 type SyncDto struct {

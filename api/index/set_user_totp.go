@@ -4,8 +4,8 @@ import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/weplanx/go/totp"
-	"github.com/weplanx/server/common"
 	"go.mongodb.org/mongo-driver/bson"
+	"server/common"
 )
 
 type SetUserTotp struct {

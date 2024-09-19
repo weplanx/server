@@ -3,8 +3,8 @@ package index
 import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/weplanx/server/common"
 	"go.mongodb.org/mongo-driver/bson"
+	"server/common"
 )
 
 type UnsetUserDto struct {

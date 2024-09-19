@@ -3,10 +3,10 @@ package index
 import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"server/common"
+	"server/model"
 )
 
 func (x *Controller) GetUser(ctx context.Context, c *app.RequestContext) {

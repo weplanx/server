@@ -3,8 +3,8 @@ package builders
 import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"server/model"
 )
 
 type SortFieldsDto struct {

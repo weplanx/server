@@ -3,9 +3,9 @@ package acc_tasks
 import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/weplanx/server/api/tencent"
-	"github.com/weplanx/server/common"
 	"net/url"
+	"server/api/tencent"
+	"server/common"
 	"strconv"
 	"time"
 )

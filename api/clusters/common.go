@@ -5,12 +5,12 @@ import (
 	"encoding/base64"
 	"github.com/bytedance/sonic"
 	"github.com/google/wire"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
+	"server/common"
+	"server/model"
 	"sync"
 )
 

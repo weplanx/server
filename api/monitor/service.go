@@ -6,7 +6,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 	influxdb2 "github.com/influxdata/influxdb-client-go/v2"
 	"github.com/influxdata/influxdb-client-go/v2/api"
-	"github.com/weplanx/server/common"
+	"server/common"
 	"strings"
 	"time"
 )

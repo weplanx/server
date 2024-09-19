@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/weplanx/go/help"
-	"github.com/weplanx/server/common"
+	"server/common"
 	"time"
 )
 

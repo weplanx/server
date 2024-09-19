@@ -3,7 +3,7 @@ package index
 import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/weplanx/server/common"
+	"server/common"
 )
 
 func (x *Controller) Logout(ctx context.Context, c *app.RequestContext) {

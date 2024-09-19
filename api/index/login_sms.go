@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
+	"server/common"
+	"server/model"
 )
 
 type LoginSmsDto struct {

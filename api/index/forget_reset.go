@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/weplanx/go/passlib"
-	"github.com/weplanx/server/common"
 	"go.mongodb.org/mongo-driver/bson"
+	"server/common"
 )
 
 type ForgetResetDto struct {

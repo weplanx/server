@@ -9,12 +9,12 @@ import (
 	"github.com/jordan-wright/email"
 	"github.com/weplanx/go/help"
 	"github.com/weplanx/go/locker"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"html/template"
 	"net/smtp"
+	"server/common"
+	"server/model"
 	"time"
 )
 

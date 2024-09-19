@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/weplanx/go/passport"
-	"github.com/weplanx/server/common"
+	"server/common"
 )
 
 func (x *Controller) Verify(ctx context.Context, c *app.RequestContext) {

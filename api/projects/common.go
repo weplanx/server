@@ -4,12 +4,12 @@ import (
 	"context"
 	"github.com/google/wire"
 	"github.com/nats-io/nkeys"
-	"github.com/weplanx/server/api/clusters"
-	"github.com/weplanx/server/common"
-	"github.com/weplanx/server/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
+	"server/api/clusters"
+	"server/common"
+	"server/model"
 )
 
 var Provides = wire.NewSet(

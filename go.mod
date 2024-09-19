@@ -25,7 +25,6 @@ require (
 	github.com/weplanx/collector v1.12.0
 	github.com/weplanx/go v0.9.0
 	github.com/weplanx/schedule v1.6.0
-	github.com/weplanx/server v0.2.5
 	go.mongodb.org/mongo-driver v1.16.1
 	gopkg.in/yaml.v3 v3.0.1
 	k8s.io/api v0.31.0

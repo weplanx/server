@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 	"github.com/spf13/cobra"
-	"github.com/weplanx/server/bootstrap"
-	"github.com/weplanx/server/cmd"
-	"github.com/weplanx/server/common"
 	"os"
+	"server/bootstrap"
+	"server/cmd"
+	"server/common"
 )
 
 func main() {
